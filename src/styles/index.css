@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #05070d;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Custom Parchment Scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.4);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.4);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.7);
+  }
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #fdf4d4 0%, #d4af37 50%, #996515 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-cyan-glow {
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.6), 0 0 24px rgba(56, 189, 248, 0.3);
+}
+
+.text-gold-glow {
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.6), 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.border-celestial-gold {
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.box-celestial-glow {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.15), 0 0 60px rgba(56, 189, 248, 0.1);
+}
+
+/* Parchment Page Texture & Typography */
+.parchment-container {
+  background-color: #f7eedb;
+  background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.4), rgba(212, 175, 55, 0.05));
+  color: #1e1b18;
+  font-family: 'EB Garamond', 'Georgia', serif;
+}
+
+.parchment-heading {
+  font-family: 'Cinzel', serif;
+  color: #5c1818;
+}
+
+.parchment-subheading {
+  font-family: 'Cinzel', serif;
+  color: #2b394e;
+}
