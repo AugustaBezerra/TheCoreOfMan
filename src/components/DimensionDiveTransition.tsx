@@ -11,10 +11,10 @@ export const DimensionDiveTransition: React.FC<DimensionDiveTransitionProps> = (
   const playerRef = React.useRef<PlayerRef>(null);
 
   useEffect(() => {
-    // Fallback timer: 4.2 seconds just in case player event doesn't fire
+    // 9.5s animation duration + safety buffer
     const timer = setTimeout(() => {
       onFinish();
-    }, 4200);
+    }, 10000);
 
     return () => clearTimeout(timer);
   }, [onFinish]);
@@ -24,7 +24,7 @@ export const DimensionDiveTransition: React.FC<DimensionDiveTransitionProps> = (
       <Player
         ref={playerRef}
         component={BookPortalComposition}
-        durationInFrames={120}
+        durationInFrames={285}
         compositionWidth={1920}
         compositionHeight={1080}
         fps={30}
@@ -43,7 +43,7 @@ export const DimensionDiveTransition: React.FC<DimensionDiveTransitionProps> = (
       {/* Skip button for user convenience */}
       <button
         onClick={onFinish}
-        className="absolute bottom-8 right-8 z-50 flex items-center space-x-2 px-5 py-2.5 rounded-full bg-slate-900/80 border border-amber-500/40 text-amber-200 text-xs font-serif tracking-widest uppercase hover:bg-slate-800 hover:border-amber-300 hover:text-white transition-all backdrop-blur-md shadow-2xl group cursor-pointer"
+        className="absolute bottom-8 right-8 z-50 flex items-center space-x-2 px-5 py-2.5 rounded-full bg-slate-900/85 border border-amber-500/40 text-amber-200 text-xs font-serif tracking-widest uppercase hover:bg-slate-800 hover:border-amber-300 hover:text-white transition-all backdrop-blur-md shadow-2xl group cursor-pointer"
       >
         <span>Pular Travessia</span>
         <FastForward className="w-4 h-4 text-amber-400 group-hover:translate-x-0.5 transition-transform" />

@@ -4,105 +4,131 @@ import { interpolate, useCurrentFrame, AbsoluteFill } from 'remotion';
 export const BookPortalComposition: React.FC = () => {
   const frame = useCurrentFrame();
 
-  // Cross fades between the scenes
-  // Phase 1: Closed book (0 - 35)
-  const closedBookOpacity = interpolate(frame, [25, 40], [1, 0], {
+  // Total composition: 285 frames (~9.5 seconds at 30 FPS)
+  // Stage 1: Closed Book Awakening (0 -> 75 frames / ~2.5s)
+  // Stage 2: Book Opening & Radiant Mana Eruption (60 -> 155 frames / ~3.1s)
+  // Stage 3: Hyperspace Flight across Golden Citadel (140 -> 230 frames / ~3.0s)
+  // Stage 4: Arrival in the Deep Universe (215 -> 285 frames / ~2.3s)
+
+  // 1. Closed Book Opacity & Subtle Drift
+  const closedBookOpacity = interpolate(frame, [0, 55, 75], [1, 1, 0], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+  const closedBookScale = interpolate(frame, [0, 75], [1, 1.15], {
+    extrapolateRight: 'clamp',
+  });
+
+  // Astrological Seal on the Closed Book
+  const sealRotation = interpolate(frame, [0, 75], [0, 180]);
+  const sealScale = interpolate(frame, [0, 50, 75], [1, 1.25, 0], {
+    extrapolateRight: 'clamp',
+  });
+  const sealGlow = interpolate(frame, [0, 55, 75], [15, 60, 100]);
+
+  // 2. Open Book Opacity & Zoom into Pages
+  const openBookOpacity = interpolate(frame, [55, 75, 145, 165], [0, 1, 1, 0], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+  const openBookScale = interpolate(frame, [65, 160], [1.02, 2.8], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+  const lightAuraOpacity = interpolate(frame, [65, 110, 150, 165], [0, 0.7, 0.95, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // Phase 2: Open book with erupting light (25 - 75)
-  const openBookOpacity = interpolate(frame, [25, 40, 70, 85], [0, 1, 1, 0], {
+  // 3. Golden Citadel Warp Flight Opacity & Scale
+  const journeyOpacity = interpolate(frame, [145, 165, 215, 235], [0, 1, 1, 0], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+  const journeyScale = interpolate(frame, [150, 235], [1.25, 1.0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // Phase 3: Hyperspace / Citadel flight (70 - 105)
-  const journeyOpacity = interpolate(frame, [70, 85, 100, 115], [0, 1, 1, 0], {
+  // 4. Universe Destination Opacity & Settling Pan
+  const universeOpacity = interpolate(frame, [215, 240, 285], [0, 1, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+  const universeScale = interpolate(frame, [220, 285], [1.1, 1.0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // Phase 4: Arrival in the Deep Universe (100 - 120)
-  const universeOpacity = interpolate(frame, [100, 115], [0, 1], {
+  // Optical Portal Light Flash
+  const flashOpacity = interpolate(frame, [135, 155, 175], [0, 0.85, 0], {
     extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-  });
-
-  // Light burst flash at the moment of entering the book portal (around frame 65-80)
-  const flashOpacity = interpolate(frame, [60, 75, 90], [0, 0.9, 0], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-  });
-
-  // Seal rotation and expansion
-  const sealRotation = interpolate(frame, [0, 45], [0, 360]);
-  const sealScale = interpolate(frame, [0, 30, 45], [1, 1.3, 0], {
     extrapolateRight: 'clamp',
   });
 
   return (
-    <AbsoluteFill className="bg-[#05070d] overflow-hidden">
+    <AbsoluteFill className="bg-[#05070d] overflow-hidden select-none">
       {/* 1. Closed Book Layer */}
       <AbsoluteFill
         style={{
           opacity: closedBookOpacity,
-          transform: `scale(${interpolate(frame, [0, 40], [1, 1.25])})`,
+          transform: `scale(${closedBookScale})`,
+          transition: 'transform 0.1s ease-out',
         }}
       >
         <img
           src="./art/book-closed.webp"
-          alt="Grimoire"
+          alt="Grimório no Pedestal"
           className="w-full h-full object-cover object-center"
         />
-        {/* Pulsing seal breaking */}
+        {/* Glowing Awakening Seal */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <img
             src="./art/emblem.webp"
-            alt="Breaking Seal"
+            alt="Selo Despertando"
             style={{
-              width: '260px',
-              height: '260px',
+              width: '280px',
+              height: '280px',
               transform: `rotate(${sealRotation}deg) scale(${sealScale})`,
-              filter: `drop-shadow(0 0 ${interpolate(frame, [0, 35], [20, 80])}px rgba(56, 189, 248, 0.9))`,
+              filter: `drop-shadow(0 0 ${sealGlow}px rgba(56, 189, 248, 0.95)) drop-shadow(0 0 35px rgba(212, 175, 55, 0.8))`,
             }}
           />
         </div>
       </AbsoluteFill>
 
-      {/* 2. Open Book Layer (Light Portal) */}
+      {/* 2. Open Book Layer (Portal of Light) */}
       <AbsoluteFill
         style={{
           opacity: openBookOpacity,
-          transform: `scale(${interpolate(frame, [30, 85], [1, 3.5])})`,
-          transformOrigin: '50% 60%',
+          transform: `scale(${openBookScale})`,
+          transformOrigin: '50% 62%',
         }}
       >
         <img
           src="./art/book-open.webp"
-          alt="Open Grimoire Portal"
+          alt="Grimório Aberto"
           className="w-full h-full object-cover object-center"
         />
-        {/* Radiant Arcane Light Cone */}
+        {/* Ethereal Volumetric Light Cone Rising from Pages */}
         <div
-          className="absolute inset-0 bg-radial-gradient from-amber-200/90 via-sky-400/50 to-transparent pointer-events-none"
+          className="absolute inset-0 bg-radial-gradient from-amber-100/95 via-sky-300/40 to-transparent pointer-events-none"
           style={{
-            opacity: interpolate(frame, [35, 65, 80], [0, 0.8, 1]),
+            opacity: lightAuraOpacity,
             mixBlendMode: 'screen',
           }}
         />
       </AbsoluteFill>
 
-      {/* 3. Hyperspace Citadel Warp Layer */}
+      {/* 3. Golden Citadel Sky-Islands Warp Layer */}
       <AbsoluteFill
         style={{
           opacity: journeyOpacity,
-          transform: `scale(${interpolate(frame, [70, 115], [1.4, 1])})`,
+          transform: `scale(${journeyScale})`,
         }}
       >
         <img
           src="./art/journey.webp"
-          alt="Cosmic Citadel Warp"
+          alt="Cidadela Dourada e Ilhas Flutuantes"
           className="w-full h-full object-cover object-center"
         />
       </AbsoluteFill>
@@ -111,46 +137,93 @@ export const BookPortalComposition: React.FC = () => {
       <AbsoluteFill
         style={{
           opacity: universeOpacity,
-          transform: `scale(${interpolate(frame, [100, 120], [1.08, 1])})`,
+          transform: `scale(${universeScale})`,
         }}
       >
         <img
           src="./art/universe.webp"
-          alt="The Broken Heavens Universe"
+          alt="O Universo dos Céus Partidos"
           className="w-full h-full object-cover object-center"
         />
       </AbsoluteFill>
 
-      {/* Optical Transition Flash (White/Gold blinding surge) */}
+      {/* Portal Flash Surge */}
       <AbsoluteFill
-        className="bg-gradient-to-t from-sky-100 via-amber-100 to-white pointer-events-none"
+        className="bg-gradient-to-t from-sky-200 via-amber-100 to-white pointer-events-none"
         style={{
           opacity: flashOpacity,
           mixBlendMode: 'screen',
         }}
       />
 
-      {/* Atmospheric Cinematic Text during warp */}
-      <AbsoluteFill className="flex flex-col items-center justify-center pointer-events-none">
-        {frame > 35 && frame < 85 && (
-          <h2
-            className="text-4xl md:text-6xl font-serif font-black tracking-[0.3em] uppercase text-amber-100 text-center drop-shadow-[0_0_30px_rgba(212,175,55,1)]"
+      {/* Atmospheric Cinematic Captions */}
+      <AbsoluteFill className="flex flex-col items-center justify-end pb-24 pointer-events-none px-6">
+        {/* Stage 1 Caption */}
+        {frame >= 10 && frame < 65 && (
+          <div
+            className="text-center"
             style={{
-              opacity: interpolate(frame, [40, 55, 75, 85], [0, 1, 1, 0]),
+              opacity: interpolate(frame, [15, 30, 50, 65], [0, 1, 1, 0]),
             }}
           >
-            Atravessando o Verbo...
-          </h2>
+            <span className="text-xs font-mono tracking-[0.4em] uppercase text-amber-400 block mb-1">
+              Despertando o Grimório
+            </span>
+            <p className="text-2xl md:text-3xl font-serif text-amber-100 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] italic">
+              "O selo milenar do Verbo reage ao seu toque..."
+            </p>
+          </div>
         )}
-        {frame >= 95 && (
-          <h2
-            className="text-3xl md:text-5xl font-serif font-bold tracking-[0.25em] uppercase text-sky-200 text-center drop-shadow-[0_0_30px_rgba(56,189,248,1)]"
+
+        {/* Stage 2 Caption */}
+        {frame >= 70 && frame < 145 && (
+          <div
+            className="text-center"
             style={{
-              opacity: interpolate(frame, [95, 110], [0, 1]),
+              opacity: interpolate(frame, [75, 95, 125, 145], [0, 1, 1, 0]),
             }}
           >
-            Bem-vindo aos Céus Partidos
-          </h2>
+            <span className="text-xs font-mono tracking-[0.4em] uppercase text-sky-400 block mb-1">
+              Ruptura do Véu
+            </span>
+            <p className="text-2xl md:text-3xl font-serif text-sky-100 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] italic">
+              "As páginas se abrem como um portal entre mundos..."
+            </p>
+          </div>
+        )}
+
+        {/* Stage 3 Caption */}
+        {frame >= 150 && frame < 225 && (
+          <div
+            className="text-center"
+            style={{
+              opacity: interpolate(frame, [155, 175, 205, 225], [0, 1, 1, 0]),
+            }}
+          >
+            <span className="text-xs font-mono tracking-[0.4em] uppercase text-amber-300 block mb-1">
+              A Travessia dos Céus
+            </span>
+            <p className="text-2xl md:text-3xl font-serif text-amber-100 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] italic">
+              "Cruzando o mar de nuvens e as cidades suspensas..."
+            </p>
+          </div>
+        )}
+
+        {/* Stage 4 Caption */}
+        {frame >= 230 && (
+          <div
+            className="text-center"
+            style={{
+              opacity: interpolate(frame, [230, 250], [0, 1]),
+            }}
+          >
+            <span className="text-xs font-mono tracking-[0.4em] uppercase text-amber-400 block mb-1">
+              Destino Alcançado
+            </span>
+            <p className="text-2xl md:text-4xl font-serif font-black tracking-wider text-gold-gradient drop-shadow-[0_4px_15px_rgba(0,0,0,1)] uppercase">
+              Bem-vindo aos Céus Partidos
+            </p>
+          </div>
         )}
       </AbsoluteFill>
     </AbsoluteFill>

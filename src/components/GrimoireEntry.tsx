@@ -1,23 +1,21 @@
 import React, { useState } from 'react';
-import { Sparkles, BookOpen, Volume2, VolumeX } from 'lucide-react';
+import { Sparkles, BookOpen } from 'lucide-react';
 import { StarfieldCanvas } from './StarfieldCanvas';
-import { sound } from '../utils/audio';
+import { MusicPlayerWidget } from './MusicPlayerWidget';
+import { music } from '../utils/musicPlayer';
 
 interface GrimoireEntryProps {
   onOpenBook: () => void;
-  soundEnabled: boolean;
-  onToggleSound: () => void;
 }
 
-export const GrimoireEntry: React.FC<GrimoireEntryProps> = ({
-  onOpenBook,
-  soundEnabled,
-  onToggleSound,
-}) => {
+export const GrimoireEntry: React.FC<GrimoireEntryProps> = ({ onOpenBook }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleOpen = () => {
-    sound.playWarp();
+    // Start soundtrack on player interaction if not already playing
+    if (!music.getState().isPlaying) {
+      music.play();
+    }
     onOpenBook();
   };
 
@@ -39,8 +37,8 @@ export const GrimoireEntry: React.FC<GrimoireEntryProps> = ({
       {/* Interactive Particle Starfield */}
       <StarfieldCanvas density={70} speedFactor={0.4} />
 
-      {/* Top Bar: Universe Logo & Audio Toggle */}
-      <header className="relative z-20 w-full max-w-7xl px-6 py-6 flex items-center justify-between">
+      {/* Top Bar: Universe Logo & Playlist Music Player */}
+      <header className="relative z-20 w-full max-w-7xl px-4 md:px-8 py-5 flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <img 
             src="./art/emblem.webp" 
@@ -48,18 +46,13 @@ export const GrimoireEntry: React.FC<GrimoireEntryProps> = ({
             className="w-10 h-10 object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.7)] animate-spin-slow"
           />
           <div>
-            <span className="text-xs tracking-[0.3em] font-serif text-amber-200/80 block uppercase">Manual do Jogador</span>
-            <span className="text-sm font-bold font-serif text-gold-gradient tracking-widest block">THE CORE OF MAN</span>
+            <span className="text-[10px] md:text-xs tracking-[0.3em] font-serif text-amber-200/80 block uppercase">Manual do Jogador</span>
+            <span className="text-sm md:text-base font-bold font-serif text-gold-gradient tracking-widest block">THE CORE OF MAN</span>
           </div>
         </div>
 
-        <button
-          onClick={onToggleSound}
-          className="p-2.5 rounded-full bg-slate-900/60 border border-amber-500/30 text-amber-300 hover:text-amber-100 hover:border-amber-400 hover:bg-slate-800/80 transition-all backdrop-blur-md shadow-lg cursor-pointer"
-          title={soundEnabled ? 'Silenciar Áudio' : 'Ativar Efeitos Sonoros'}
-        >
-          {soundEnabled ? <Volume2 className="w-5 h-5" /> : <VolumeX className="w-5 h-5 text-slate-400" />}
-        </button>
+        {/* Music Player Widget */}
+        <MusicPlayerWidget />
       </header>
 
       {/* Central Content: Book Interaction Area */}

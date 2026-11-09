@@ -19,23 +19,17 @@ import {
   Swords, 
   Users, 
   Scroll, 
-  TrendingUp, 
-  Volume2, 
-  VolumeX
+  TrendingUp
 } from 'lucide-react';
 import { StarfieldCanvas } from './StarfieldCanvas';
-import { sound } from '../utils/audio';
+import { MusicPlayerWidget } from './MusicPlayerWidget';
 
 interface CosmicUniverseExplorerProps {
   onReturnToGrimoire: () => void;
-  soundEnabled: boolean;
-  onToggleSound: () => void;
 }
 
 export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
   onReturnToGrimoire,
-  soundEnabled,
-  onToggleSound,
 }) => {
   const [selectedChapter, setSelectedChapter] = useState<Chapter | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -68,7 +62,6 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
   }, [searchQuery]);
 
   const handleSelectChapter = (chapter: Chapter) => {
-    sound.playPageTurn();
     setSelectedChapter(chapter);
   };
 
@@ -77,7 +70,6 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
     const nextIdx = (selectedChapter.id % BOOK_CHAPTERS.length) + 1;
     const nextChap = BOOK_CHAPTERS.find((c) => c.id === nextIdx);
     if (nextChap) {
-      sound.playPageTurn();
       setSelectedChapter(nextChap);
     }
   };
@@ -87,7 +79,6 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
     const prevIdx = selectedChapter.id === 1 ? BOOK_CHAPTERS.length : selectedChapter.id - 1;
     const prevChap = BOOK_CHAPTERS.find((c) => c.id === prevIdx);
     if (prevChap) {
-      sound.playPageTurn();
       setSelectedChapter(prevChap);
     }
   };
@@ -123,41 +114,41 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
       <StarfieldCanvas density={selectedChapter ? 30 : 90} speedFactor={0.3} />
 
       {/* Top Header Bar */}
-      <header className="relative z-30 w-full px-4 md:px-8 py-4 flex items-center justify-between border-b border-amber-500/20 bg-slate-950/70 backdrop-blur-md">
-        {/* Return Button */}
+      <header className="relative z-30 w-full px-4 md:px-8 py-3.5 flex items-center justify-between border-b border-amber-500/20 bg-slate-950/75 backdrop-blur-md">
+        {/* Left: Return Button */}
         <button
           onClick={onReturnToGrimoire}
-          className="flex items-center space-x-2 px-3 py-1.5 md:px-4 md:py-2 rounded-lg bg-amber-950/40 border border-amber-500/40 text-amber-200 hover:text-white hover:bg-amber-900/60 transition-all font-serif text-xs md:text-sm tracking-wider shadow-lg group"
+          className="flex items-center space-x-2 px-3 py-1.5 md:px-4 md:py-2 rounded-lg bg-amber-950/40 border border-amber-500/40 text-amber-200 hover:text-white hover:bg-amber-900/60 transition-all font-serif text-xs md:text-sm tracking-wider shadow-lg group cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4 text-amber-400 group-hover:-translate-x-1 transition-transform" />
           <span className="hidden sm:inline">Fechar e Voltar ao Livro</span>
           <span className="sm:hidden">Voltar</span>
         </button>
 
-        {/* Center Title & Emblem */}
-        <div className="flex items-center space-x-3 text-center">
+        {/* Center: Title & Emblem */}
+        <div className="hidden lg:flex items-center space-x-3 text-center">
           <img
             src="./art/emblem.webp"
             alt="Core Emblem"
-            className="w-8 h-8 md:w-10 md:h-10 object-contain drop-shadow-[0_0_12px_rgba(212,175,55,0.8)]"
+            className="w-8 h-8 object-contain drop-shadow-[0_0_12px_rgba(212,175,55,0.8)]"
           />
           <div>
-            <span className="text-[10px] md:text-xs font-serif tracking-[0.3em] uppercase text-amber-300/80 block">
+            <span className="text-[10px] font-serif tracking-[0.3em] uppercase text-amber-300/80 block">
               Universo dos Céus Partidos
             </span>
-            <span className="text-sm md:text-base font-bold font-serif text-gold-gradient tracking-widest block">
+            <span className="text-sm font-bold font-serif text-gold-gradient tracking-widest block">
               CÓDICE DO NAVEGANTE
             </span>
           </div>
         </div>
 
-        {/* Controls: Scene Switcher & Audio */}
-        <div className="flex items-center space-x-2">
-          {/* Scene Switcher Dropdown */}
+        {/* Right Controls: Scene Switcher & Music Player Widget */}
+        <div className="flex items-center space-x-3">
+          {/* Scene Switcher */}
           <div className="hidden md:flex items-center bg-slate-900/80 rounded-lg p-1 border border-amber-500/30 text-xs font-serif">
             <button
               onClick={() => setBackgroundScene('universe')}
-              className={`px-2.5 py-1 rounded transition-colors ${
+              className={`px-2.5 py-1 rounded transition-colors cursor-pointer ${
                 backgroundScene === 'universe' ? 'bg-amber-600 text-slate-950 font-bold' : 'text-slate-300 hover:text-white'
               }`}
             >
@@ -165,7 +156,7 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
             </button>
             <button
               onClick={() => setBackgroundScene('library')}
-              className={`px-2.5 py-1 rounded transition-colors ${
+              className={`px-2.5 py-1 rounded transition-colors cursor-pointer ${
                 backgroundScene === 'library' ? 'bg-amber-600 text-slate-950 font-bold' : 'text-slate-300 hover:text-white'
               }`}
             >
@@ -173,7 +164,7 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
             </button>
             <button
               onClick={() => setBackgroundScene('citadel')}
-              className={`px-2.5 py-1 rounded transition-colors ${
+              className={`px-2.5 py-1 rounded transition-colors cursor-pointer ${
                 backgroundScene === 'citadel' ? 'bg-amber-600 text-slate-950 font-bold' : 'text-slate-300 hover:text-white'
               }`}
             >
@@ -181,13 +172,8 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
             </button>
           </div>
 
-          <button
-            onClick={onToggleSound}
-            className="p-2 rounded-full bg-slate-900/80 border border-amber-500/30 text-amber-300 hover:text-white hover:border-amber-400 transition-all"
-            title={soundEnabled ? 'Silenciar Áudio' : 'Ativar Efeitos Sonoros'}
-          >
-            {soundEnabled ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4 text-slate-500" />}
-          </button>
+          {/* Music Player Widget with Tracks */}
+          <MusicPlayerWidget compact={false} />
         </div>
       </header>
 
@@ -288,7 +274,7 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
             <div className="flex items-center justify-between mb-3 px-2">
               <button
                 onClick={() => setSelectedChapter(null)}
-                className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-amber-500/40 text-amber-200 hover:text-white hover:bg-slate-800 text-xs font-serif tracking-wider shadow-md"
+                className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-amber-500/40 text-amber-200 hover:text-white hover:bg-slate-800 text-xs font-serif tracking-wider shadow-md cursor-pointer"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
                 <span>Voltar ao Códice</span>
@@ -298,7 +284,7 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
               <div className="flex items-center space-x-2">
                 <button
                   onClick={handlePrevChapter}
-                  className="flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-amber-500/40 text-amber-200 hover:text-white text-xs font-serif tracking-wider"
+                  className="flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-amber-500/40 text-amber-200 hover:text-white text-xs font-serif tracking-wider cursor-pointer"
                   title="Capítulo Anterior"
                 >
                   <ChevronLeft className="w-4 h-4" />
@@ -309,7 +295,7 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
                 </span>
                 <button
                   onClick={handleNextChapter}
-                  className="flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-amber-500/40 text-amber-200 hover:text-white text-xs font-serif tracking-wider"
+                  className="flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-amber-500/40 text-amber-200 hover:text-white text-xs font-serif tracking-wider cursor-pointer"
                   title="Próximo Capítulo"
                 >
                   <span className="hidden sm:inline">Próximo</span>
@@ -317,7 +303,7 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
                 </button>
                 <button
                   onClick={() => setSelectedChapter(null)}
-                  className="p-1.5 rounded-lg bg-slate-900/90 border border-red-500/40 text-red-300 hover:text-white hover:bg-red-950/80"
+                  className="p-1.5 rounded-lg bg-slate-900/90 border border-red-500/40 text-red-300 hover:text-white hover:bg-red-950/80 cursor-pointer"
                   title="Fechar"
                 >
                   <X className="w-4 h-4" />
@@ -386,7 +372,7 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
         <span>10 CAPÍTULOS INTEGRADOS &bull; DONS DO CERNE & FARDOS DO VERBO COMPLETOS</span>
         <button
           onClick={onReturnToGrimoire}
-          className="hover:text-amber-300 transition-colors underline font-serif"
+          className="hover:text-amber-300 transition-colors underline font-serif cursor-pointer"
         >
           Retornar ao Grimório
         </button>
