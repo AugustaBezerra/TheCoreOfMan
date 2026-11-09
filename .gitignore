@@ -1,0 +1,34 @@
+# ==============================================================================
+# SEGURANÇA E PRIVACIDADE - ARQUIVOS LOCAIS NÃO VERSIONADOS
+# ==============================================================================
+# Documentos originais de Lore e RPG (Confidenciais - NUNCA subir para o Git)
+*.docx
+*.pdf
+*.html.bak
+Antes Do Verbo.docx
+Bestiário.docx
+GRIMÓRIO DO CERNE.docx
+Primordiais.docx
+Tarot - Core.docx
+Leia-me.pdf
+Leia-me.html
+final_p1-01.png
+Imagens de personagens/
+Art/
+
+# Dependências e compilação web
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Logs e arquivos temporários do sistema / IDE
+.vscode/
+.idea/
+*.log
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
