@@ -80,19 +80,19 @@ export const GrimoireEntry: React.FC<GrimoireEntryProps> = ({ onOpenBook }) => {
             />
           </div>
 
-          {/* Subtitle - High Contrast */}
-          <span className="text-xs md:text-sm tracking-[0.45em] font-serif uppercase text-amber-300 font-bold mb-2 drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
+          {/* Subtitle - Large & High Contrast */}
+          <span className="text-sm md:text-base tracking-[0.3em] font-serif uppercase text-amber-300 font-extrabold mb-2 drop-shadow-[0_2px_6px_rgba(0,0,0,1)]">
             A Era dos Céus Partidos
           </span>
           
           {/* Main Title */}
-          <h1 className="text-4xl md:text-6xl font-serif font-black tracking-wider text-gold-gradient drop-shadow-[0_4px_16px_rgba(0,0,0,1)] mb-3">
+          <h1 className="text-4xl md:text-6xl font-serif font-black tracking-wider text-gold-gradient drop-shadow-[0_4px_16px_rgba(0,0,0,1)] mb-4">
             THE CORE OF MAN
           </h1>
 
-          {/* Lore Quote with High Contrast Background Box */}
-          <div className="bg-black/50 border border-amber-500/20 rounded-xl px-5 py-3 max-w-xl mb-6 shadow-inner">
-            <p className="text-xs md:text-sm text-amber-100 font-reading leading-relaxed italic drop-shadow">
+          {/* Lore Quote with High Contrast & Large Legible Typography */}
+          <div className="bg-black/70 border border-amber-500/40 rounded-2xl px-6 py-4 max-w-2xl mb-8 shadow-2xl">
+            <p className="text-base md:text-lg text-amber-50 font-reading font-medium leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
               "O grimório ancestral repousa em silêncio sobre o pedestal de bronze. Suas páginas guardam os segredos esquecidos de um mundo que ruiu."
             </p>
           </div>
@@ -102,19 +102,19 @@ export const GrimoireEntry: React.FC<GrimoireEntryProps> = ({ onOpenBook }) => {
             onClick={handleOpen}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="group relative inline-flex items-center justify-center px-10 py-4 overflow-hidden rounded-full font-serif text-base tracking-[0.2em] font-bold text-amber-100 uppercase transition-all duration-300 bg-gradient-to-r from-amber-800 via-slate-900 to-amber-900 border-2 border-amber-400 shadow-[0_0_35px_rgba(212,175,55,0.6)] hover:shadow-[0_0_55px_rgba(56,189,248,0.85)] hover:border-sky-300 hover:scale-105 active:scale-95 cursor-pointer"
+            className="group relative inline-flex items-center justify-center px-12 py-5 overflow-hidden rounded-full font-serif text-lg md:text-xl tracking-[0.2em] font-black text-amber-100 uppercase transition-all duration-300 bg-gradient-to-r from-amber-800 via-slate-900 to-amber-900 border-2 border-amber-400 shadow-[0_0_40px_rgba(212,175,55,0.7)] hover:shadow-[0_0_60px_rgba(56,189,248,0.9)] hover:border-sky-300 hover:scale-105 active:scale-95 cursor-pointer"
           >
             {/* Button Shine Sweep */}
             <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-amber-200/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
             
-            <BookOpen className="w-5 h-5 mr-3 text-amber-300 group-hover:text-sky-200 transition-colors animate-pulse" />
+            <BookOpen className="w-6 h-6 mr-3 text-amber-300 group-hover:text-sky-200 transition-colors animate-pulse" />
             <span className="text-gold-glow font-black">LEIA-ME &bull; ABRIR O GRIMÓRIO</span>
-            <Sparkles className="w-5 h-5 ml-3 text-sky-300 group-hover:text-amber-200 transition-colors animate-pulse" />
+            <Sparkles className="w-6 h-6 ml-3 text-sky-300 group-hover:text-amber-200 transition-colors animate-pulse" />
           </button>
 
           {/* High Contrast Helper Pill */}
-          <div className="mt-4 px-4 py-1.5 rounded-full bg-black/60 border border-amber-500/40 shadow-md">
-            <span className="text-[11px] md:text-xs font-mono font-semibold text-amber-200 tracking-widest uppercase">
+          <div className="mt-5 px-6 py-2 rounded-full bg-black/80 border border-amber-400/60 shadow-lg">
+            <span className="text-xs md:text-sm font-sans font-bold text-amber-300 tracking-wider uppercase">
               Clique para romper o selo e entrar no universo
             </span>
           </div>
@@ -123,7 +123,7 @@ export const GrimoireEntry: React.FC<GrimoireEntryProps> = ({ onOpenBook }) => {
       </main>
 
       {/* Bottom Footer */}
-      <footer className="relative z-20 w-full py-4 text-center text-xs text-amber-400/80 font-mono tracking-wider drop-shadow">
+      <footer className="relative z-20 w-full py-4 text-center text-xs md:text-sm text-amber-300 font-mono font-semibold tracking-wider drop-shadow">
         <span>SISTEMA DE RPG AUTORAL &bull; VERSÃO 2.0 &bull; CRIAÇÃO AUGUSTA BEZERRA</span>
       </footer>
     </div>

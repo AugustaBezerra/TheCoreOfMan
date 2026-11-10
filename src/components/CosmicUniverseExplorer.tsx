@@ -61,8 +61,11 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
     );
   }, [searchQuery]);
 
+  const [scrollPercent, setScrollPercent] = useState(0);
+
   const handleSelectChapter = (chapter: Chapter) => {
     setSelectedChapter(chapter);
+    setScrollPercent(0);
   };
 
   const handleNextChapter = () => {
@@ -71,6 +74,7 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
     const nextChap = BOOK_CHAPTERS.find((c) => c.id === nextIdx);
     if (nextChap) {
       setSelectedChapter(nextChap);
+      setScrollPercent(0);
     }
   };
 
@@ -80,6 +84,15 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
     const prevChap = BOOK_CHAPTERS.find((c) => c.id === prevIdx);
     if (prevChap) {
       setSelectedChapter(prevChap);
+      setScrollPercent(0);
+    }
+  };
+
+  const handleReaderScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
+    const maxScroll = scrollHeight - clientHeight;
+    if (maxScroll > 0) {
+      setScrollPercent(scrollTop / maxScroll);
     }
   };
 
@@ -187,48 +200,48 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
             {/* Banner & Search */}
             <div className="mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
               <div>
-                <h2 className="text-2xl md:text-3xl font-serif font-bold text-amber-100 flex items-center space-x-2">
-                  <BookOpen className="w-6 h-6 text-amber-400" />
+                <h2 className="text-2xl md:text-3xl font-serif font-black text-amber-100 flex items-center space-x-2.5 drop-shadow">
+                  <BookOpen className="w-7 h-7 text-amber-400" />
                   <span>Compêndio de Regras e Ambientação</span>
                 </h2>
-                <p className="text-xs md:text-sm text-slate-400 font-reading mt-1">
+                <p className="text-sm md:text-base text-amber-200 font-semibold drop-shadow mt-1.5">
                   Selecione um capítulo celestial para desvendar suas leis, sistemas e mistérios.
                 </p>
               </div>
 
-              {/* Search Bar */}
-              <div className="relative w-full md:w-80">
-                <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-amber-400/60" />
+              {/* Search Bar with high contrast */}
+              <div className="relative w-full md:w-88">
+                <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-amber-400" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Pesquisar Dons, Fardos, Regras..."
-                  className="w-full pl-9 pr-4 py-2 bg-slate-900/80 border border-amber-500/40 rounded-full text-xs font-serif text-amber-100 placeholder:text-slate-500 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 backdrop-blur-md"
+                  className="w-full pl-10 pr-4 py-2.5 bg-slate-950/90 border-2 border-amber-500/50 rounded-full text-sm font-serif font-medium text-amber-100 placeholder:text-slate-400 focus:outline-none focus:border-amber-300 focus:ring-2 focus:ring-amber-400/40 backdrop-blur-md shadow-lg"
                 />
               </div>
             </div>
 
-            {/* Chapters Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {/* Chapters Grid with High Contrast Typography */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredChapters.map((chapter) => (
                 <div
                   key={chapter.id}
                   onClick={() => handleSelectChapter(chapter)}
-                  className={`group relative p-5 rounded-xl cursor-pointer transition-all duration-300 border flex flex-col justify-between backdrop-blur-md overflow-hidden ${
+                  className={`group relative p-6 rounded-2xl cursor-pointer transition-all duration-300 border-2 flex flex-col justify-between backdrop-blur-xl overflow-hidden shadow-xl ${
                     chapter.id === 9
-                      ? 'bg-gradient-to-br from-amber-950/80 via-slate-900/90 to-red-950/80 border-amber-500/80 shadow-[0_0_25px_rgba(212,175,55,0.25)] hover:border-amber-300 hover:scale-[1.02]'
-                      : 'bg-slate-950/70 border-amber-500/30 hover:border-amber-400/80 hover:bg-slate-900/80 hover:scale-[1.02]'
+                      ? 'bg-gradient-to-br from-amber-950/90 via-slate-950/95 to-red-950/90 border-amber-400 shadow-[0_0_35px_rgba(212,175,55,0.35)] hover:border-amber-300 hover:scale-[1.02]'
+                      : 'bg-slate-950/90 border-amber-500/40 hover:border-amber-400 hover:bg-slate-900/95 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(212,175,55,0.25)]'
                   }`}
                 >
                   {/* Subtle Corner Ornament Glow */}
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/5 rounded-bl-full pointer-events-none group-hover:bg-amber-500/10 transition-colors" />
+                  <div className="absolute top-0 right-0 w-28 h-28 bg-amber-500/10 rounded-bl-full pointer-events-none group-hover:bg-amber-500/20 transition-colors" />
 
                   <div>
                     {/* Chapter Header */}
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center space-x-2">
-                        <span className="font-mono text-xs font-bold text-amber-400/80 px-2 py-0.5 rounded bg-amber-950/60 border border-amber-500/30">
+                    <div className="flex items-center justify-between mb-3.5">
+                      <div className="flex items-center space-x-2.5">
+                        <span className="font-mono text-xs font-black text-amber-300 px-2.5 py-1 rounded bg-amber-950/80 border border-amber-500/50 shadow">
                           {chapter.roman}
                         </span>
                         <div className="text-amber-300 group-hover:text-amber-100 transition-colors">
@@ -237,29 +250,29 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
                       </div>
 
                       {chapter.id === 9 && (
-                        <span className="text-[10px] font-mono font-bold tracking-wider uppercase text-amber-300 bg-amber-900/80 px-2 py-0.5 rounded-full border border-amber-500/60 animate-pulse">
+                        <span className="text-[11px] font-mono font-black tracking-wider uppercase text-amber-200 bg-amber-900/90 px-2.5 py-1 rounded-full border border-amber-400 shadow-md animate-pulse">
                           Integral &bull; Níveis 0-5
                         </span>
                       )}
                     </div>
 
-                    <h3 className="font-serif font-bold text-lg text-amber-100 group-hover:text-gold-gradient transition-colors mb-1">
+                    <h3 className="font-serif font-black text-xl md:text-2xl text-amber-100 group-hover:text-gold-gradient transition-colors mb-1.5 drop-shadow">
                       {chapter.title}
                     </h3>
 
-                    <h4 className="text-xs text-amber-300/70 font-serif italic mb-3">
+                    <h4 className="text-xs md:text-sm text-amber-300 font-serif font-bold tracking-wide mb-3">
                       {chapter.subtitle}
                     </h4>
 
-                    <p className="text-xs text-slate-300/80 font-reading leading-relaxed line-clamp-3">
+                    <p className="text-sm md:text-base text-slate-100 font-reading leading-relaxed line-clamp-3 font-normal drop-shadow-sm">
                       {chapter.summary}
                     </p>
                   </div>
 
                   {/* Read Link */}
-                  <div className="mt-4 pt-3 border-t border-amber-500/20 flex items-center justify-between text-xs font-serif text-amber-400 group-hover:text-amber-200">
+                  <div className="mt-5 pt-3.5 border-t border-amber-500/30 flex items-center justify-between text-sm font-serif font-bold text-amber-300 group-hover:text-white transition-colors">
                     <span>Abrir Pergaminho</span>
-                    <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                    <span className="group-hover:translate-x-1.5 transition-transform text-base">&rarr;</span>
                   </div>
                 </div>
               ))}
@@ -267,16 +280,16 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
           </div>
         ) : (
           /* =========================================================================
-             MODE B: PARCHMENT CHAPTER VIEWER
+             MODE B: PARCHMENT CHAPTER VIEWER WITH KINETIC GEARS & SAFE MARGINS
              ========================================================================= */
-          <div className="relative w-full max-w-4xl h-full flex flex-col my-auto pb-4">
+          <div className="relative w-full max-w-5xl h-full flex flex-col my-auto pb-4">
             {/* Top Reader Actions Bar */}
             <div className="flex items-center justify-between mb-3 px-2">
               <button
                 onClick={() => setSelectedChapter(null)}
-                className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-amber-500/40 text-amber-200 hover:text-white hover:bg-slate-800 text-xs font-serif tracking-wider shadow-md cursor-pointer"
+                className="flex items-center space-x-2 px-4 py-2 rounded-xl bg-slate-900/90 border border-amber-500/50 text-amber-200 hover:text-white hover:bg-slate-800 text-sm font-serif font-bold tracking-wider shadow-lg cursor-pointer transition-all hover:scale-105"
               >
-                <ArrowLeft className="w-3.5 h-3.5" />
+                <ArrowLeft className="w-4 h-4" />
                 <span>Voltar ao Códice</span>
               </button>
 
@@ -284,18 +297,18 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
               <div className="flex items-center space-x-2">
                 <button
                   onClick={handlePrevChapter}
-                  className="flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-amber-500/40 text-amber-200 hover:text-white text-xs font-serif tracking-wider cursor-pointer"
+                  className="flex items-center space-x-1 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-amber-500/50 text-amber-200 hover:text-white text-xs md:text-sm font-serif font-semibold tracking-wider cursor-pointer transition-all hover:bg-slate-800"
                   title="Capítulo Anterior"
                 >
                   <ChevronLeft className="w-4 h-4" />
                   <span className="hidden sm:inline">Anterior</span>
                 </button>
-                <span className="text-xs font-mono text-amber-300 font-bold px-2">
+                <span className="text-sm font-mono text-amber-300 font-bold px-3 py-1 rounded-lg bg-black/60 border border-amber-500/30">
                   {selectedChapter.roman} / X
                 </span>
                 <button
                   onClick={handleNextChapter}
-                  className="flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-amber-500/40 text-amber-200 hover:text-white text-xs font-serif tracking-wider cursor-pointer"
+                  className="flex items-center space-x-1 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-amber-500/50 text-amber-200 hover:text-white text-xs md:text-sm font-serif font-semibold tracking-wider cursor-pointer transition-all hover:bg-slate-800"
                   title="Próximo Capítulo"
                 >
                   <span className="hidden sm:inline">Próximo</span>
@@ -303,65 +316,107 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
                 </button>
                 <button
                   onClick={() => setSelectedChapter(null)}
-                  className="p-1.5 rounded-lg bg-slate-900/90 border border-red-500/40 text-red-300 hover:text-white hover:bg-red-950/80 cursor-pointer"
+                  className="p-2 rounded-xl bg-slate-900/90 border border-red-500/50 text-red-300 hover:text-white hover:bg-red-950/80 cursor-pointer transition-colors"
                   title="Fechar"
                 >
-                  <X className="w-4 h-4" />
+                  <X className="w-5 h-5" />
                 </button>
               </div>
             </div>
 
-            {/* The Parchment Sheet with Illuminated Ancient Grimoire Frame */}
+            {/* The Parchment Sheet with Animated Gear Pillars */}
             <div className="relative flex-1 rounded-2xl shadow-[0_0_80px_rgba(0,0,0,0.95)] border-4 border-[#8c6d3b] overflow-hidden flex flex-col text-stone-950 font-reading bg-[#0a0f1d]">
-              {/* Illuminated Book Page Background Texture */}
+              
+              {/* Central Parchment Texture (Clean center, no sidebars baked in) */}
               <div 
                 className="absolute inset-0 bg-cover bg-center pointer-events-none opacity-90"
-                style={{ backgroundImage: `url('./art/page-bg.webp')` }}
+                style={{ backgroundImage: `url('./art/parchment-center.webp')` }}
               />
 
-              {/* Inner Parchment Readability Shield with Soft Warm Glow */}
-              <div className="absolute inset-3 md:inset-6 bg-[#f7eedb]/92 rounded-xl backdrop-blur-[1px] pointer-events-none border border-[#8c6d3b]/40 shadow-inner" />
+              {/* Inner Warm Parchment Readability Shield */}
+              <div className="absolute inset-2 md:inset-4 bg-[#fbf4e4]/95 rounded-xl pointer-events-none border border-[#8c6d3b]/40 shadow-inner" />
 
-              {/* Scrollable Chapter Content */}
-              <div className="relative z-10 flex-1 overflow-y-auto px-6 md:px-16 py-8">
-                {/* Chapter Heading Banner */}
-                <div className="text-center mb-6">
-                  <span className="text-xs font-serif tracking-[0.4em] uppercase text-amber-900 font-bold block mb-1">
-                    Capítulo {selectedChapter.roman}
-                  </span>
-                  <h1 className="text-3xl md:text-4xl font-serif font-black text-[#5c1818] tracking-wide mb-1">
-                    {selectedChapter.title}
-                  </h1>
-                  <h2 className="text-sm md:text-base font-serif italic text-stone-800 font-medium mb-4">
-                    {selectedChapter.subtitle}
-                  </h2>
-
-                  {/* Celestial Golden Divider Art */}
-                  <div className="flex justify-center my-3">
-                    <img
-                      src="./art/divider.webp"
-                      alt="Divisor Celestial"
-                      className="max-w-[260px] md:max-w-sm h-auto object-contain opacity-95 drop-shadow-md"
-                    />
-                  </div>
-                </div>
-
-                {/* Chapter HTML Body with High-Contrast Dark Ink */}
-                <div
-                  className="prose prose-stone max-w-none text-stone-950 leading-relaxed font-normal"
-                  dangerouslySetInnerHTML={{ __html: selectedChapter.contentHtml }}
+              {/* LEFT MOVING GEAR PILLAR (Rolls up/down with scroll) */}
+              <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-16 md:w-20 overflow-hidden pointer-events-none z-20 border-r border-[#8c6d3b]/50 shadow-[4px_0_15px_rgba(0,0,0,0.35)]">
+                <div 
+                  className="w-full h-[160%] bg-cover bg-top transition-transform duration-75 ease-out"
+                  style={{
+                    backgroundImage: `url('./art/border-left.webp')`,
+                    transform: `translateY(-${scrollPercent * 180}px)`,
+                  }}
                 />
+              </div>
 
-                {/* Bottom Divider and Signature */}
-                <div className="mt-12 pt-6 border-t border-amber-900/30 text-center flex flex-col items-center">
-                  <img
-                    src="./art/emblem.webp"
-                    alt="Emblem Signature"
-                    className="w-14 h-14 object-contain opacity-90 drop-shadow mb-2"
+              {/* RIGHT MOVING GEAR PILLAR (Rolls up/down with scroll) */}
+              <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-16 md:w-20 overflow-hidden pointer-events-none z-20 border-l border-[#8c6d3b]/50 shadow-[-4px_0_15px_rgba(0,0,0,0.35)]">
+                <div 
+                  className="w-full h-[160%] bg-cover bg-top transition-transform duration-75 ease-out"
+                  style={{
+                    backgroundImage: `url('./art/border-right.webp')`,
+                    transform: `translateY(-${scrollPercent * 180}px)`,
+                  }}
+                />
+              </div>
+
+              {/* Top Astrolabes Rotating with Scroll */}
+              <div 
+                className="absolute top-2 left-2 w-8 h-8 md:w-10 md:h-10 pointer-events-none z-30 transition-transform duration-75 ease-out opacity-90"
+                style={{ transform: `rotate(${scrollPercent * 360}deg)` }}
+              >
+                <img src="./art/emblem.webp" alt="Engrenagem Astrolábio" className="w-full h-full object-contain drop-shadow" />
+              </div>
+              <div 
+                className="absolute top-2 right-2 w-8 h-8 md:w-10 md:h-10 pointer-events-none z-30 transition-transform duration-75 ease-out opacity-90"
+                style={{ transform: `rotate(-${scrollPercent * 360}deg)` }}
+              >
+                <img src="./art/emblem.webp" alt="Engrenagem Astrolábio" className="w-full h-full object-contain drop-shadow" />
+              </div>
+
+              {/* Scrollable Chapter Content with GENEROUS SAFE MARGINS */}
+              <div 
+                onScroll={handleReaderScroll}
+                className="relative z-10 flex-1 overflow-y-auto px-16 sm:px-24 md:px-32 lg:px-40 py-10"
+              >
+                <div className="max-w-2xl lg:max-w-3xl mx-auto">
+                  {/* Chapter Heading Banner */}
+                  <div className="text-center mb-8">
+                    <span className="text-xs md:text-sm font-serif tracking-[0.45em] uppercase text-amber-950 font-black block mb-2">
+                      Capítulo {selectedChapter.roman}
+                    </span>
+                    <h1 className="text-3xl md:text-5xl font-serif font-black text-[#5c1818] tracking-wide mb-2 drop-shadow-sm">
+                      {selectedChapter.title}
+                    </h1>
+                    <h2 className="text-base md:text-xl font-serif italic text-stone-900 font-bold mb-6">
+                      {selectedChapter.subtitle}
+                    </h2>
+
+                    {/* Celestial Golden Divider Art */}
+                    <div className="flex justify-center my-4">
+                      <img
+                        src="./art/divider.webp"
+                        alt="Divisor Celestial"
+                        className="max-w-[280px] md:max-w-md h-auto object-contain opacity-95 drop-shadow-md"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Chapter HTML Body with High-Contrast Dark Ink & Reader Typography */}
+                  <div
+                    className="parchment-reader leading-relaxed font-normal"
+                    dangerouslySetInnerHTML={{ __html: selectedChapter.contentHtml }}
                   />
-                  <span className="text-xs font-serif font-semibold tracking-widest uppercase text-stone-700">
-                    The Core of Man &bull; A Era dos Céus Partidos
-                  </span>
+
+                  {/* Bottom Divider and Signature */}
+                  <div className="mt-16 pt-8 border-t-2 border-amber-900/30 text-center flex flex-col items-center">
+                    <img
+                      src="./art/emblem.webp"
+                      alt="Emblem Signature"
+                      className="w-16 h-16 object-contain opacity-90 drop-shadow mb-3"
+                    />
+                    <span className="text-sm font-serif font-bold tracking-widest uppercase text-stone-800">
+                      The Core of Man &bull; A Era dos Céus Partidos
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
