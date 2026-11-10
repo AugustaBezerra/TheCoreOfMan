@@ -22,6 +22,15 @@ dist/
 dist-ssr/
 *.local
 
+# Credenciais e Chaves de API (Segurança Crítica)
+*firebase*.json
+*adminsdk*.json
+serviceAccount*.json
+*credentials*.json
+.env
+.env.local
+.env.*.local
+
 # Logs e arquivos temporários do sistema / IDE
 .vscode/
 .idea/
