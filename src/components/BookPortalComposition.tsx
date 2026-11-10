@@ -19,7 +19,7 @@ export const BookPortalComposition: React.FC = () => {
     extrapolateRight: 'clamp',
   });
 
-  // Astrological Seal on the Closed Book
+  // Astrological Seal on the Closed Book (Transparent Alpha)
   const sealRotation = interpolate(frame, [0, 75], [0, 180]);
   const sealScale = interpolate(frame, [0, 50, 75], [1, 1.25, 0], {
     extrapolateRight: 'clamp',
@@ -40,7 +40,7 @@ export const BookPortalComposition: React.FC = () => {
     extrapolateRight: 'clamp',
   });
 
-  // 3. Golden Citadel Warp Flight Opacity & Scale
+  // 3. Golden Citadel Sky-Islands Warp Layer
   const journeyOpacity = interpolate(frame, [145, 165, 215, 235], [0, 1, 1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
@@ -73,7 +73,6 @@ export const BookPortalComposition: React.FC = () => {
         style={{
           opacity: closedBookOpacity,
           transform: `scale(${closedBookScale})`,
-          transition: 'transform 0.1s ease-out',
         }}
       >
         <img
@@ -81,7 +80,7 @@ export const BookPortalComposition: React.FC = () => {
           alt="Grimório no Pedestal"
           className="w-full h-full object-cover object-center"
         />
-        {/* Glowing Awakening Seal */}
+        {/* Glowing Awakening Seal with clean alpha */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <img
             src="./art/emblem.webp"
@@ -156,20 +155,21 @@ export const BookPortalComposition: React.FC = () => {
         }}
       />
 
-      {/* Atmospheric Cinematic Captions */}
-      <AbsoluteFill className="flex flex-col items-center justify-end pb-24 pointer-events-none px-6">
+      {/* Elevated High-Contrast Caption Banner (Positioned above bottom bezel with dark glass pill) */}
+      <AbsoluteFill className="flex flex-col items-center justify-end pb-28 md:pb-36 pointer-events-none px-6">
+        
         {/* Stage 1 Caption */}
         {frame >= 10 && frame < 65 && (
           <div
-            className="text-center"
+            className="bg-slate-950/85 border-2 border-amber-400/60 rounded-2xl px-8 py-4 shadow-[0_0_40px_rgba(0,0,0,0.95)] backdrop-blur-md text-center max-w-2xl"
             style={{
               opacity: interpolate(frame, [15, 30, 50, 65], [0, 1, 1, 0]),
             }}
           >
-            <span className="text-xs font-mono tracking-[0.4em] uppercase text-amber-400 block mb-1">
+            <span className="text-xs md:text-sm font-mono tracking-[0.4em] uppercase text-amber-300 font-bold block mb-1 drop-shadow">
               Despertando o Grimório
             </span>
-            <p className="text-2xl md:text-3xl font-serif text-amber-100 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] italic">
+            <p className="text-xl md:text-3xl font-serif font-bold text-amber-100 drop-shadow-[0_2px_8px_rgba(0,0,0,1)] italic">
               "O selo milenar do Verbo reage ao seu toque..."
             </p>
           </div>
@@ -178,15 +178,15 @@ export const BookPortalComposition: React.FC = () => {
         {/* Stage 2 Caption */}
         {frame >= 70 && frame < 145 && (
           <div
-            className="text-center"
+            className="bg-slate-950/85 border-2 border-sky-400/60 rounded-2xl px-8 py-4 shadow-[0_0_40px_rgba(0,0,0,0.95)] backdrop-blur-md text-center max-w-2xl"
             style={{
               opacity: interpolate(frame, [75, 95, 125, 145], [0, 1, 1, 0]),
             }}
           >
-            <span className="text-xs font-mono tracking-[0.4em] uppercase text-sky-400 block mb-1">
+            <span className="text-xs md:text-sm font-mono tracking-[0.4em] uppercase text-sky-300 font-bold block mb-1 drop-shadow">
               Ruptura do Véu
             </span>
-            <p className="text-2xl md:text-3xl font-serif text-sky-100 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] italic">
+            <p className="text-xl md:text-3xl font-serif font-bold text-sky-50 drop-shadow-[0_2px_8px_rgba(0,0,0,1)] italic">
               "As páginas se abrem como um portal entre mundos..."
             </p>
           </div>
@@ -195,15 +195,15 @@ export const BookPortalComposition: React.FC = () => {
         {/* Stage 3 Caption */}
         {frame >= 150 && frame < 225 && (
           <div
-            className="text-center"
+            className="bg-slate-950/85 border-2 border-amber-400/60 rounded-2xl px-8 py-4 shadow-[0_0_40px_rgba(0,0,0,0.95)] backdrop-blur-md text-center max-w-2xl"
             style={{
               opacity: interpolate(frame, [155, 175, 205, 225], [0, 1, 1, 0]),
             }}
           >
-            <span className="text-xs font-mono tracking-[0.4em] uppercase text-amber-300 block mb-1">
+            <span className="text-xs md:text-sm font-mono tracking-[0.4em] uppercase text-amber-300 font-bold block mb-1 drop-shadow">
               A Travessia dos Céus
             </span>
-            <p className="text-2xl md:text-3xl font-serif text-amber-100 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] italic">
+            <p className="text-xl md:text-3xl font-serif font-bold text-amber-100 drop-shadow-[0_2px_8px_rgba(0,0,0,1)] italic">
               "Cruzando o mar de nuvens e as cidades suspensas..."
             </p>
           </div>
@@ -212,12 +212,12 @@ export const BookPortalComposition: React.FC = () => {
         {/* Stage 4 Caption */}
         {frame >= 230 && (
           <div
-            className="text-center"
+            className="bg-slate-950/90 border-2 border-amber-400/80 rounded-2xl px-8 py-5 shadow-[0_0_50px_rgba(212,175,55,0.5)] backdrop-blur-md text-center max-w-2xl"
             style={{
               opacity: interpolate(frame, [230, 250], [0, 1]),
             }}
           >
-            <span className="text-xs font-mono tracking-[0.4em] uppercase text-amber-400 block mb-1">
+            <span className="text-xs md:text-sm font-mono tracking-[0.4em] uppercase text-amber-300 font-bold block mb-1 drop-shadow">
               Destino Alcançado
             </span>
             <p className="text-2xl md:text-4xl font-serif font-black tracking-wider text-gold-gradient drop-shadow-[0_4px_15px_rgba(0,0,0,1)] uppercase">
@@ -225,6 +225,7 @@ export const BookPortalComposition: React.FC = () => {
             </p>
           </div>
         )}
+
       </AbsoluteFill>
     </AbsoluteFill>
   );
