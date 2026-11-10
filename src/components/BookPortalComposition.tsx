@@ -155,21 +155,23 @@ export const BookPortalComposition: React.FC = () => {
         }}
       />
 
-      {/* Elevated High-Contrast Caption Banner (Positioned above bottom bezel with dark glass pill) */}
-      <AbsoluteFill className="flex flex-col items-center justify-end pb-28 md:pb-36 pointer-events-none px-6">
-        
+      {/* Elevated High-Contrast Caption Banner (Positioned well above bottom rim with dark glass pill) */}
+      <AbsoluteFill 
+        className="flex flex-col items-center justify-end pointer-events-none px-6"
+        style={{ paddingBottom: '160px' }}
+      >
         {/* Stage 1 Caption */}
         {frame >= 10 && frame < 65 && (
           <div
-            className="bg-slate-950/85 border-2 border-amber-400/60 rounded-2xl px-8 py-4 shadow-[0_0_40px_rgba(0,0,0,0.95)] backdrop-blur-md text-center max-w-2xl"
+            className="bg-[#05070d]/92 border-2 border-amber-400/80 rounded-2xl px-8 md:px-12 py-4 md:py-5 shadow-[0_0_50px_rgba(0,0,0,0.98),0_0_20px_rgba(245,158,11,0.25)] backdrop-blur-md text-center max-w-3xl"
             style={{
               opacity: interpolate(frame, [15, 30, 50, 65], [0, 1, 1, 0]),
             }}
           >
-            <span className="text-xs md:text-sm font-mono tracking-[0.4em] uppercase text-amber-300 font-bold block mb-1 drop-shadow">
+            <span className="text-xs md:text-sm font-mono tracking-[0.45em] uppercase text-amber-300 font-extrabold block mb-1 drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
               Despertando o Grimório
             </span>
-            <p className="text-xl md:text-3xl font-serif font-bold text-amber-100 drop-shadow-[0_2px_8px_rgba(0,0,0,1)] italic">
+            <p className="text-xl md:text-3xl font-serif font-black text-white drop-shadow-[0_2px_10px_rgba(0,0,0,1)] italic">
               "O selo milenar do Verbo reage ao seu toque..."
             </p>
           </div>
@@ -178,15 +180,15 @@ export const BookPortalComposition: React.FC = () => {
         {/* Stage 2 Caption */}
         {frame >= 70 && frame < 145 && (
           <div
-            className="bg-slate-950/85 border-2 border-sky-400/60 rounded-2xl px-8 py-4 shadow-[0_0_40px_rgba(0,0,0,0.95)] backdrop-blur-md text-center max-w-2xl"
+            className="bg-[#05070d]/92 border-2 border-sky-400/80 rounded-2xl px-8 md:px-12 py-4 md:py-5 shadow-[0_0_50px_rgba(0,0,0,0.98),0_0_20px_rgba(56,189,248,0.3)] backdrop-blur-md text-center max-w-3xl"
             style={{
               opacity: interpolate(frame, [75, 95, 125, 145], [0, 1, 1, 0]),
             }}
           >
-            <span className="text-xs md:text-sm font-mono tracking-[0.4em] uppercase text-sky-300 font-bold block mb-1 drop-shadow">
+            <span className="text-xs md:text-sm font-mono tracking-[0.45em] uppercase text-sky-300 font-extrabold block mb-1 drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
               Ruptura do Véu
             </span>
-            <p className="text-xl md:text-3xl font-serif font-bold text-sky-50 drop-shadow-[0_2px_8px_rgba(0,0,0,1)] italic">
+            <p className="text-xl md:text-3xl font-serif font-black text-white drop-shadow-[0_2px_10px_rgba(0,0,0,1)] italic">
               "As páginas se abrem como um portal entre mundos..."
             </p>
           </div>
@@ -195,15 +197,15 @@ export const BookPortalComposition: React.FC = () => {
         {/* Stage 3 Caption */}
         {frame >= 150 && frame < 225 && (
           <div
-            className="bg-slate-950/85 border-2 border-amber-400/60 rounded-2xl px-8 py-4 shadow-[0_0_40px_rgba(0,0,0,0.95)] backdrop-blur-md text-center max-w-2xl"
+            className="bg-[#05070d]/92 border-2 border-amber-400/80 rounded-2xl px-8 md:px-12 py-4 md:py-5 shadow-[0_0_50px_rgba(0,0,0,0.98),0_0_20px_rgba(245,158,11,0.25)] backdrop-blur-md text-center max-w-3xl"
             style={{
               opacity: interpolate(frame, [155, 175, 205, 225], [0, 1, 1, 0]),
             }}
           >
-            <span className="text-xs md:text-sm font-mono tracking-[0.4em] uppercase text-amber-300 font-bold block mb-1 drop-shadow">
+            <span className="text-xs md:text-sm font-mono tracking-[0.45em] uppercase text-amber-300 font-extrabold block mb-1 drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
               A Travessia dos Céus
             </span>
-            <p className="text-xl md:text-3xl font-serif font-bold text-amber-100 drop-shadow-[0_2px_8px_rgba(0,0,0,1)] italic">
+            <p className="text-xl md:text-3xl font-serif font-black text-white drop-shadow-[0_2px_10px_rgba(0,0,0,1)] italic">
               "Cruzando o mar de nuvens e as cidades suspensas..."
             </p>
           </div>
@@ -212,20 +214,19 @@ export const BookPortalComposition: React.FC = () => {
         {/* Stage 4 Caption */}
         {frame >= 230 && (
           <div
-            className="bg-slate-950/90 border-2 border-amber-400/80 rounded-2xl px-8 py-5 shadow-[0_0_50px_rgba(212,175,55,0.5)] backdrop-blur-md text-center max-w-2xl"
+            className="bg-[#05070d]/95 border-2 border-amber-400 rounded-2xl px-8 md:px-14 py-5 md:py-6 shadow-[0_0_60px_rgba(212,175,55,0.6)] backdrop-blur-md text-center max-w-3xl"
             style={{
               opacity: interpolate(frame, [230, 250], [0, 1]),
             }}
           >
-            <span className="text-xs md:text-sm font-mono tracking-[0.4em] uppercase text-amber-300 font-bold block mb-1 drop-shadow">
+            <span className="text-xs md:text-sm font-mono tracking-[0.45em] uppercase text-amber-300 font-extrabold block mb-1 drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
               Destino Alcançado
             </span>
-            <p className="text-2xl md:text-4xl font-serif font-black tracking-wider text-gold-gradient drop-shadow-[0_4px_15px_rgba(0,0,0,1)] uppercase">
+            <p className="text-2xl md:text-4xl font-serif font-black tracking-wider text-gold-gradient drop-shadow-[0_4px_18px_rgba(0,0,0,1)] uppercase">
               Bem-vindo aos Céus Partidos
             </p>
           </div>
         )}
-
       </AbsoluteFill>
     </AbsoluteFill>
   );

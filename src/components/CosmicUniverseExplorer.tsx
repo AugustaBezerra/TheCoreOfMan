@@ -311,13 +311,19 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
               </div>
             </div>
 
-            {/* The Parchment Sheet */}
-            <div className="relative flex-1 bg-[#f7eedb] rounded-2xl shadow-[0_0_60px_rgba(0,0,0,0.9)] border-4 border-[#8c6d3b] overflow-hidden flex flex-col text-stone-900 font-reading">
-              {/* Parchment Inner Border Frame */}
-              <div className="absolute inset-2 md:inset-4 border border-[#8c6d3b]/40 rounded-xl pointer-events-none" />
+            {/* The Parchment Sheet with Illuminated Ancient Grimoire Frame */}
+            <div className="relative flex-1 rounded-2xl shadow-[0_0_80px_rgba(0,0,0,0.95)] border-4 border-[#8c6d3b] overflow-hidden flex flex-col text-stone-950 font-reading bg-[#0a0f1d]">
+              {/* Illuminated Book Page Background Texture */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center pointer-events-none opacity-90"
+                style={{ backgroundImage: `url('./art/page-bg.webp')` }}
+              />
+
+              {/* Inner Parchment Readability Shield with Soft Warm Glow */}
+              <div className="absolute inset-3 md:inset-6 bg-[#f7eedb]/92 rounded-xl backdrop-blur-[1px] pointer-events-none border border-[#8c6d3b]/40 shadow-inner" />
 
               {/* Scrollable Chapter Content */}
-              <div className="relative z-10 flex-1 overflow-y-auto px-6 md:px-14 py-8">
+              <div className="relative z-10 flex-1 overflow-y-auto px-6 md:px-16 py-8">
                 {/* Chapter Heading Banner */}
                 <div className="text-center mb-6">
                   <span className="text-xs font-serif tracking-[0.4em] uppercase text-amber-900 font-bold block mb-1">
@@ -326,7 +332,7 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
                   <h1 className="text-3xl md:text-4xl font-serif font-black text-[#5c1818] tracking-wide mb-1">
                     {selectedChapter.title}
                   </h1>
-                  <h2 className="text-sm md:text-base font-serif italic text-stone-700 mb-4">
+                  <h2 className="text-sm md:text-base font-serif italic text-stone-800 font-medium mb-4">
                     {selectedChapter.subtitle}
                   </h2>
 
@@ -334,26 +340,26 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
                   <div className="flex justify-center my-3">
                     <img
                       src="./art/divider.webp"
-                      alt="Divider"
-                      className="max-w-[280px] md:max-w-md h-auto object-contain opacity-90 drop-shadow-sm"
+                      alt="Divisor Celestial"
+                      className="max-w-[260px] md:max-w-sm h-auto object-contain opacity-95 drop-shadow-md"
                     />
                   </div>
                 </div>
 
-                {/* Chapter HTML Body */}
+                {/* Chapter HTML Body with High-Contrast Dark Ink */}
                 <div
-                  className="prose prose-stone max-w-none text-stone-900 leading-relaxed"
+                  className="prose prose-stone max-w-none text-stone-950 leading-relaxed font-normal"
                   dangerouslySetInnerHTML={{ __html: selectedChapter.contentHtml }}
                 />
 
                 {/* Bottom Divider and Signature */}
-                <div className="mt-12 pt-6 border-t border-amber-900/20 text-center flex flex-col items-center">
+                <div className="mt-12 pt-6 border-t border-amber-900/30 text-center flex flex-col items-center">
                   <img
                     src="./art/emblem.webp"
                     alt="Emblem Signature"
-                    className="w-12 h-12 object-contain opacity-80 mb-2"
+                    className="w-14 h-14 object-contain opacity-90 drop-shadow mb-2"
                   />
-                  <span className="text-xs font-serif tracking-widest uppercase text-stone-600">
+                  <span className="text-xs font-serif font-semibold tracking-widest uppercase text-stone-700">
                     The Core of Man &bull; A Era dos Céus Partidos
                   </span>
                 </div>
