@@ -5,9 +5,7 @@ import {
   loginWithGoogle, 
   logoutUser, 
   updateUserProfile,
-  changeUserPassword,
-  GM_EMAIL, 
-  DEFAULT_PLAYER 
+  changeUserPassword
 } from '../../services/authService';
 import { UserProfile } from '../../types/character';
 
@@ -119,18 +117,6 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     } finally {
       setLoading(false);
     }
-  };
-
-  const fillQuickSergio = () => {
-    setTab('login');
-    setIdentifier(DEFAULT_PLAYER.email);
-    setPassword(DEFAULT_PLAYER.defaultPassword);
-  };
-
-  const fillQuickAugusta = () => {
-    setTab('login');
-    setIdentifier(GM_EMAIL);
-    setPassword('AugustaCore2026');
   };
 
   return (
@@ -332,31 +318,6 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               >
                 <span>🌐</span> Entrar com Google
               </button>
-
-              {/* Botões de Acesso Rápido para Augusta & Sérgio */}
-              <div className="mt-4 p-3 rounded-lg border border-amber-500/20 bg-amber-950/10 space-y-2">
-                <p className="text-[11px] text-amber-400/80 font-serif font-semibold uppercase tracking-wider text-center">
-                  ⚡ Atalhos de Acesso Rápido da Mesa
-                </p>
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    type="button"
-                    onClick={fillQuickAugusta}
-                    className="p-2 text-left rounded bg-purple-950/40 hover:bg-purple-900/50 border border-purple-500/30 text-purple-200 text-xs transition-colors"
-                  >
-                    <div className="font-bold">👑 Augusta (Mestre)</div>
-                    <div className="text-[10px] text-purple-400/80 truncate">batrizaugusta13@...</div>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={fillQuickSergio}
-                    className="p-2 text-left rounded bg-cyan-950/40 hover:bg-cyan-900/50 border border-cyan-500/30 text-cyan-200 text-xs transition-colors"
-                  >
-                    <div className="font-bold">🧭 Sérgio (Jogador)</div>
-                    <div className="text-[10px] text-cyan-400/80 truncate">sergioaugusto...</div>
-                  </button>
-                </div>
-              </div>
             </form>
           ) : (
             /* VIEW: REGISTER */

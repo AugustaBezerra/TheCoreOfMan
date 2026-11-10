@@ -14,12 +14,6 @@ import { auth, db } from './firebase';
 import { UserProfile } from '../types/character';
 
 export const GM_EMAIL = 'batrizaugusta13@gmail.com';
-export const DEFAULT_PLAYER = {
-  email: 'sergioaugusto.bezerra.jr@gmail.com',
-  username: 'sergio',
-  defaultPassword: 'Core2026@Sergio',
-  displayName: 'Sérgio',
-};
 
 const LOCAL_STORAGE_USER_KEY = 'core_of_man_auth_user';
 
@@ -86,18 +80,13 @@ export function getSavedUser(): UserProfile | null {
 export async function loginWithEmailOrUsername(identifier: string, password: string): Promise<UserProfile> {
   let emailToUse = identifier.trim();
 
-  // If user entered username instead of email, check if it's test user or lookup
+  // If user entered username instead of email, check if it matches a stored profile or append domain
   if (!emailToUse.includes('@')) {
-    if (emailToUse.toLowerCase() === 'sergio' || emailToUse.toLowerCase() === 'sergioaugusto') {
-      emailToUse = DEFAULT_PLAYER.email;
+    const saved = getSavedUser();
+    if (saved && saved.username.toLowerCase() === emailToUse.toLowerCase()) {
+      emailToUse = saved.email;
     } else {
-      // Check stored user or append domain
-      const saved = getSavedUser();
-      if (saved && saved.username.toLowerCase() === emailToUse.toLowerCase()) {
-        emailToUse = saved.email;
-      } else {
-        emailToUse = `${emailToUse}@coreofman.local`;
-      }
+      emailToUse = `${emailToUse}@coreofman.local`;
     }
   }
 
@@ -107,27 +96,15 @@ export async function loginWithEmailOrUsername(identifier: string, password: str
   } catch (firebaseErr: any) {
     console.warn('Firebase login encountered error:', firebaseErr);
     
-    // Fallback login for demo/test accounts if Firebase Auth email provider is not yet enabled
     if (
-      emailToUse.toLowerCase() === GM_EMAIL.toLowerCase() ||
-      emailToUse.toLowerCase() === DEFAULT_PLAYER.email.toLowerCase() ||
-      firebaseErr.code === 'auth/operation-not-allowed' ||
-      firebaseErr.code === 'auth/configuration-not-found' ||
-      firebaseErr.code === 'auth/network-request-failed'
+      firebaseErr.code === 'auth/wrong-password' || 
+      firebaseErr.code === 'auth/invalid-credential' || 
+      firebaseErr.code === 'auth/user-not-found'
     ) {
-      const isGm = emailToUse.toLowerCase() === GM_EMAIL.toLowerCase();
-      const fallbackUser: UserProfile = {
-        uid: isGm ? 'gm_batrizaugusta' : 'player_sergio',
-        email: emailToUse,
-        username: isGm ? 'mestre_augusta' : 'sergio',
-        displayName: isGm ? 'Augusta Bezerra (Mestre)' : 'Sérgio',
-        role: isGm ? 'gm' : 'player',
-      };
-      localStorage.setItem(LOCAL_STORAGE_USER_KEY, JSON.stringify(fallbackUser));
-      return fallbackUser;
+      throw new Error('E-mail, usuário ou senha incorretos.');
     }
 
-    throw new Error(firebaseErr.message || 'Falha ao autenticar no servidor.');
+    throw new Error(firebaseErr.message || 'Falha ao autenticar.');
   }
 }
 
