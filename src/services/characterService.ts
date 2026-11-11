@@ -71,55 +71,28 @@ export function getDefaultCoreAttributes(): CharacterAttributes {
   };
 }
 
-// Initial Sample Character for Sérgio
+// Default initial characters (Empty by default - characters are created by logged-in users)
 export function getInitialDemoCharacters(): Character[] {
-  return [
-    {
-      id: 'char_theron_001',
-      userId: 'player_sergio',
-      playerName: 'Sérgio',
-      name: 'Capitão Theron Vane',
-      title: 'O Corsário das Nuvens Partidas',
-      lineage: 'Humano dos Céus',
-      avatarUrl: './art/journey.webp',
-      quote: '"O horizonte não pertence aos reis da terra, mas àqueles que ousam içar ferro contra o vácuo."',
-      status: 'alive',
-      pv: { current: 48, max: 55 },
-      ca: 15,
-      psique: { current: 36, max: 40 },
-      si: { current: 18, max: 20 },
-      essencias: { current: 8, max: 10 },
-      attributes: getDefaultCoreAttributes(),
-      habilidadesNotas: `• Don do Cerne: Caminhante (Nível 2) - Comunica-se e percebe ecos de almas recentes.
-• Don do Cerne: Predecessor da Ordem (Nível 1) - Estabiliza motores de éter avariados por 1 hora.
-• Fardo do Verbo: Doença da Fera (Cepa Corvo) - Olhos dourados com visão noturna no vácuo, suscetível aos ciclos lunares.
-• Talento de Navegante: Manobra de Vento Cortante (+2 em testes de Pilotagem sob tempestade elétrica).`,
-      biografia: `Theron nasceu nas docas suspensas de Aethelgard. Filho de um engenheiro de motores de éter desaparecido no Grande Abismo, aprendeu a pilotar trajes planadores antes mesmo de empunhar uma espada. Após a queda da fragata "Vento Negro", assumiu o comando de uma tripulação de renegados buscando as lendárias Ilhas de Quartzo antes que o Verbo Primordial se extinga completamente.`,
-      inventario: `• Sabre de Éter Cristalino (Dano 1d8 + 2 cortante)
-• Pistola de Ignição a Vapor (Dano 1d10 perfurante, 6 tiros)
-• Traje de Vôo Reforçado com placas de bronze (CA 15)
-• 3x Frascos de Éter Líquido Refinado
-• Bússola Astral de Bronze com ponteiro de pedra-guia
-• Lanterna de Fogo Fátuo (não se apaga em tempestades)`,
-      diario: `Entrada 14: Cruzamos a Barreira de Nuvens Negras ao amanhecer. Os motores gemeram sob a pressão, mas a engenharia resistiu. Avistamos ruínas flutuantes que não constam em nenhuma carta da Mestre. Algo se moveu entre as pedras.`,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-    },
-  ];
+  return [];
 }
 
 // Get all characters from localStorage
 function getLocalCharacters(): Character[] {
   try {
     const raw = localStorage.getItem(CHARACTERS_STORAGE_KEY);
-    if (!raw) {
-      const initial = getInitialDemoCharacters();
-      localStorage.setItem(CHARACTERS_STORAGE_KEY, JSON.stringify(initial));
-      return initial;
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed)) {
+      // Purge any stale demo character
+      const sanitized = parsed.filter((c) => c.id !== 'char_theron_001');
+      if (sanitized.length !== parsed.length) {
+        localStorage.setItem(CHARACTERS_STORAGE_KEY, JSON.stringify(sanitized));
+      }
+      return sanitized;
     }
-    return JSON.parse(raw);
+    return [];
   } catch {
-    return getInitialDemoCharacters();
+    return [];
   }
 }
 
@@ -130,10 +103,15 @@ function saveLocalCharacters(chars: Character[]) {
 
 // Realtime subscription for a player's characters
 export function subscribePlayerCharacters(userId: string, callback: (chars: Character[]) => void) {
+  if (!userId || userId === 'guest') {
+    callback([]);
+    return () => {};
+  }
+
   // Initial local response
   const localAll = getLocalCharacters();
-  const playerLocal = localAll.filter((c) => c.userId === userId || userId === 'all' || userId === 'player_sergio');
-  callback(playerLocal.length > 0 ? playerLocal : localAll);
+  const playerLocal = userId === 'all' ? localAll : localAll.filter((c) => c.userId === userId);
+  callback(playerLocal);
 
   // Firestore Realtime Listener
   try {

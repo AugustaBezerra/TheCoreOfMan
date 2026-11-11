@@ -23,13 +23,20 @@ import {
 } from 'lucide-react';
 import { StarfieldCanvas } from './StarfieldCanvas';
 import { MusicPlayerWidget } from './MusicPlayerWidget';
+import { UserProfile } from '../types/character';
 
 interface CosmicUniverseExplorerProps {
   onReturnToGrimoire: () => void;
+  currentUser?: UserProfile | null;
+  onOpenAuth?: () => void;
+  onOpenHangar?: () => void;
 }
 
 export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
   onReturnToGrimoire,
+  currentUser,
+  onOpenAuth,
+  onOpenHangar,
 }) => {
   const [selectedChapter, setSelectedChapter] = useState<Chapter | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -128,15 +135,41 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
 
       {/* Top Header Bar */}
       <header className="relative z-30 w-full px-4 md:px-8 py-3.5 flex items-center justify-between border-b border-amber-500/20 bg-slate-950/75 backdrop-blur-md">
-        {/* Left: Return Button */}
-        <button
-          onClick={onReturnToGrimoire}
-          className="flex items-center space-x-2 px-3 py-1.5 md:px-4 md:py-2 rounded-lg bg-amber-950/40 border border-amber-500/40 text-amber-200 hover:text-white hover:bg-amber-900/60 transition-all font-serif text-xs md:text-sm tracking-wider shadow-lg group cursor-pointer"
-        >
-          <ArrowLeft className="w-4 h-4 text-amber-400 group-hover:-translate-x-1 transition-transform" />
-          <span className="hidden sm:inline">Fechar e Voltar ao Livro</span>
-          <span className="sm:hidden">Voltar</span>
-        </button>
+        {/* Left: Return Button and Login Button */}
+        <div className="flex items-center space-x-2 md:space-x-3">
+          <button
+            onClick={onReturnToGrimoire}
+            className="flex items-center space-x-2 px-3 py-1.5 md:px-4 md:py-2 rounded-lg bg-amber-950/40 border border-amber-500/40 text-amber-200 hover:text-white hover:bg-amber-900/60 transition-all font-serif text-xs md:text-sm tracking-wider shadow-lg group cursor-pointer"
+          >
+            <ArrowLeft className="w-4 h-4 text-amber-400 group-hover:-translate-x-1 transition-transform" />
+            <span className="hidden sm:inline">Fechar e Voltar ao Livro</span>
+            <span className="sm:hidden">Voltar</span>
+          </button>
+
+          {/* Botão de Entrar ao lado de Fechar e Voltar ao Livro */}
+          {onOpenAuth && (
+            <button
+              onClick={onOpenAuth}
+              className="flex items-center space-x-1.5 md:space-x-2 px-3 py-1.5 md:px-4 md:py-2 rounded-lg bg-amber-950/50 border border-amber-500/50 text-amber-200 hover:text-amber-100 hover:bg-amber-900/70 hover:border-amber-400 transition-all font-serif text-xs md:text-sm tracking-wider shadow-lg cursor-pointer"
+              title={currentUser ? "Meu Perfil" : "Entrar no Sistema"}
+            >
+              <span>{currentUser ? '👤' : '🔑'}</span>
+              <span>{currentUser ? currentUser.displayName : 'Entrar'}</span>
+            </button>
+          )}
+
+          {/* Se logado, atalho para o Hangar */}
+          {currentUser && onOpenHangar && (
+            <button
+              onClick={onOpenHangar}
+              className="hidden sm:flex items-center space-x-1.5 px-3 py-1.5 md:py-2 rounded-lg bg-stone-900/80 border border-stone-700 text-stone-300 hover:text-amber-200 hover:border-amber-500/40 text-xs md:text-sm font-serif transition-all cursor-pointer"
+              title="Acessar Hangar de Navegantes"
+            >
+              <span>⚙️</span>
+              <span>Hangar</span>
+            </button>
+          )}
+        </div>
 
         {/* Center: Title & Emblem */}
         <div className="hidden lg:flex items-center space-x-3 text-center">

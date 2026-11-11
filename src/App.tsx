@@ -12,7 +12,6 @@ import { DiceRollerModal } from './components/dice/DiceRollerModal';
 import { Character, UserProfile } from './types/character';
 import { onAuthUserChange } from './services/authService';
 import { 
-  getInitialDemoCharacters, 
   saveCharacter, 
   subscribePlayerCharacters 
 } from './services/characterService';
@@ -31,27 +30,36 @@ export const App: React.FC = () => {
   const [isDiceOpen, setIsDiceOpen] = useState(false);
   const [sharedWorldType, setSharedWorldType] = useState<'maps' | 'bestiary' | 'npcs' | null>(null);
 
-  // Initialize Auth & default character
+  // Initialize Auth
   useEffect(() => {
     const unsubAuth = onAuthUserChange((user) => {
       setCurrentUser(user);
     });
 
-    // Load initial character
-    const unsubChars = subscribePlayerCharacters('all', (chars) => {
+    return () => {
+      if (typeof unsubAuth === 'function') unsubAuth();
+    };
+  }, []);
+
+  // Subscribe to characters only when authenticated
+  useEffect(() => {
+    if (!currentUser) {
+      setActiveCharacter(null);
+      return;
+    }
+
+    const unsubChars = subscribePlayerCharacters(currentUser.uid, (chars) => {
       if (chars.length > 0) {
-        setActiveCharacter((prev) => prev || chars[0]);
+        setActiveCharacter((prev) => (prev && chars.some((c) => c.id === prev.id) ? prev : chars[0]));
       } else {
-        const demo = getInitialDemoCharacters();
-        setActiveCharacter((prev) => prev || demo[0]);
+        setActiveCharacter(null);
       }
     });
 
     return () => {
-      if (typeof unsubAuth === 'function') unsubAuth();
       if (typeof unsubChars === 'function') unsubChars();
     };
-  }, []);
+  }, [currentUser]);
 
   // Keyboard shortcut: TAB or C toggles Radial Compass
   useEffect(() => {
@@ -121,8 +129,8 @@ export const App: React.FC = () => {
   return (
     <div className="relative w-screen h-screen overflow-hidden bg-[#05070d] text-slate-100 flex flex-col">
       
-      {/* GLOBAL TOP NAV BAR (Hidden on Grimoire / Transition) */}
-      {screen !== 'grimoire' && screen !== 'transition' && (
+      {/* GLOBAL TOP NAV BAR (Hidden on Grimoire / Transition / Universe) */}
+      {screen !== 'grimoire' && screen !== 'transition' && screen !== 'universe' && (
         <header className="relative z-40 w-full px-4 py-2.5 flex items-center justify-between border-b border-amber-500/20 bg-[#070a12]/90 backdrop-blur-md">
           
           {/* Left: Quick screen jumps */}
@@ -149,11 +157,7 @@ export const App: React.FC = () => {
 
             <button
               onClick={() => setScreen('universe')}
-              className={`px-3 py-1.5 rounded-lg border text-xs font-serif transition-colors ${
-                screen === 'universe'
-                  ? 'border-amber-400 bg-amber-950/40 text-amber-200 font-bold'
-                  : 'border-stone-800 text-stone-400 hover:text-stone-200'
-              }`}
+              className="px-3 py-1.5 rounded-lg border border-stone-800 text-stone-400 hover:text-stone-200 text-xs font-serif transition-colors"
             >
               📖 Livro (10 Capítulos)
             </button>
@@ -228,7 +232,12 @@ export const App: React.FC = () => {
 
         {/* VIEW 3: 10 CHAPTERS BOOK READER */}
         {screen === 'universe' && (
-          <CosmicUniverseExplorer onReturnToGrimoire={() => setScreen('grimoire')} />
+          <CosmicUniverseExplorer 
+            onReturnToGrimoire={() => setScreen('grimoire')}
+            currentUser={currentUser}
+            onOpenAuth={() => setIsAuthOpen(true)}
+            onOpenHangar={() => setScreen('hangar')}
+          />
         )}
 
         {/* VIEW 4: CHARACTER HANGAR */}
@@ -272,8 +281,8 @@ export const App: React.FC = () => {
 
       </div>
 
-      {/* FLOATING ACTION PILL FOR RADIAL COMPASS (When in Game) */}
-      {screen !== 'grimoire' && screen !== 'transition' && !isRadialOpen && (
+      {/* FLOATING ACTION PILL FOR RADIAL COMPASS (Only when logged in) */}
+      {currentUser && screen !== 'grimoire' && screen !== 'transition' && !isRadialOpen && (
         <button
           onClick={() => setIsRadialOpen(true)}
           className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full border-2 border-amber-400 bg-stone-950/95 text-amber-300 shadow-[0_0_25px_rgba(245,158,11,0.5)] flex items-center justify-center text-2xl hover:scale-110 active:scale-95 transition-all group cursor-pointer"
