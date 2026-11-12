@@ -258,24 +258,246 @@ export const BOOK_CHAPTERS: Chapter[] = [
   {
     id: 7,
     roman: "VII",
-    title: "Combate Tático nos Céus",
-    subtitle: "Confrontos Aéreos, Abordagens e Iniciativa",
+    title: "Combate Tático & Arsenal Tecno-Arcano",
+    subtitle: "Ações, Armas Tecno-Mágicas, Blindagens e Equipamento",
     iconName: "Swords",
-    summary: "A dinâmica de combate: turnos, ações táticas, movimentação em três dimensões e disparos em convés balançante.",
+    summary: "A dinâmica de combate: economia de ações, lâminas de frequência, armas a cartuchos alquímicos, arcos elétricos, armaduras reativas e kits de bordo.",
     contentHtml: `
       <div class="space-y-6">
         <p class="leading-relaxed text-stone-800 text-justify">
-          O combate em Core é cinético, perigoso e tridimensional. Quando os sinos de bordo tocam e os mosquetes rugem, a ordem dos acontecimentos segue a <strong>Iniciativa (1d20 + Agilidade)</strong>.
+          O combate em Core é cinético, perigoso e tridimensional. Quando os sinos de bordo tocam e os canhões rugem contra as correntes de ar, a ordem dos acontecimentos segue a <strong>Iniciativa (1d20 + Agilidade)</strong>.
         </p>
 
         <h3 class="text-xl font-bold font-serif text-amber-950 border-b border-amber-900/30 pb-2 mt-4">A Economia de Ações no Turno</h3>
         <p class="text-xs text-stone-700 leading-relaxed">A cada rodada de combate, um navegante dispõe de:</p>
         <ul class="list-disc list-inside space-y-2 text-stone-800 text-xs leading-relaxed">
-          <li><strong>Uma Ação Principal:</strong> Disparar uma arma, desferir um golpe de sabre, conjurar um feitiço de éter, operar um canhão de estibordo ou tratar um companheiro caído.</li>
-          <li><strong>Um Movimento:</strong> Deslocar-se no convés até o valor do seu Deslocamento, subir em cordames ou buscar cobertura atrás de anteparas.</li>
-          <li><strong>Uma Ação Bônus / Rápida:</strong> Sacar uma segunda pistola, beber uma ampola de cristal líquido ou puxar uma alavanca de emergência.</li>
-          <li><strong>Uma Reação:</strong> Esquivar-se de um arpão voador ou aparar um golpe de lâmina quando atacado.</li>
+          <li><strong>Uma Ação Principal:</strong> Disparar uma arma, desferir um golpe de vibro-sabre, conjurar um feitiço de éter, operar maquinário pesado ou tratar um companheiro caído.</li>
+          <li><strong>Um Movimento:</strong> Deslocar-se no convés até o valor do seu Deslocamento, subir em cordames ou buscar cobertura atrás de anteparas blindadas.</li>
+          <li><strong>Uma Ação Bônus / Rápida:</strong> Trocar um cartucho alquímico, sacar uma pistola secundária, beber um frasco de essência ou acionar um micro-injetor médico.</li>
+          <li><strong>Uma Reação:</strong> Esquivar-se de um disparo direto, aparar uma lâmina ou acionar um escudo defletor de emergência.</li>
         </ul>
+
+        {/* SEÇÃO 1: ARMAS BRANCAS TECNO-ARCANAS */}
+        <h3 class="text-xl font-bold font-serif text-amber-950 border-b border-amber-900/30 pb-2 mt-6 flex items-center gap-2">
+          <span>🗡️</span> Lâminas & Armas de Combate Corporal
+        </h3>
+        <p class="text-xs text-stone-700 leading-relaxed">
+          Forjadas com metalurgia de bronze negro e vidro estelar, combinando gumes tradicionais com circuitos e micro-frequências de éter:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl bg-amber-950/5 border border-amber-900/20 space-y-1">
+            <div class="flex justify-between items-center">
+              <h4 class="font-serif font-bold text-amber-900 text-sm">Lâmina de Ressonância (Vibro-Sabre)</h4>
+              <span class="text-xs font-mono font-bold text-amber-800 bg-amber-200/50 px-2 py-0.5 rounded">Dano: 1d8 cortante</span>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              Um filamento condutor corre pelo gume de aço. Ao acionar o interruptor na empunhadura, um micro-cristal faz a lâmina vibrar em alta frequência com um zumbido elétrico, cortando blindagens metálicas e anteparas como se fossem manteiga.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-950/5 border border-amber-900/20 space-y-1">
+            <div class="flex justify-between items-center">
+              <h4 class="font-serif font-bold text-amber-900 text-sm">Machado de Impacto Hidráulico</h4>
+              <span class="text-xs font-mono font-bold text-amber-800 bg-amber-200/50 px-2 py-0.5 rounded">Dano: 1d10 contundente/cortante</span>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              Equipado com um pistão pneumático pressurizado na haste. No exato instante do impacto, o pistão descarrega uma força cinética violenta, quebrando escudos de madeira reforçada e quebrando juntas de exo-armaduras.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-950/5 border border-amber-900/20 space-y-1">
+            <div class="flex justify-between items-center">
+              <h4 class="font-serif font-bold text-amber-900 text-sm">Adaga Injetora de Fluidos</h4>
+              <span class="text-xs font-mono font-bold text-amber-800 bg-amber-200/50 px-2 py-0.5 rounded">Dano: 1d4 perfurante + químico</span>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              Lâmina oca com canaleta de pressurização e receptáculo para ampolas no pomo. Ao cravar no adversário, uma mola interna injeta toxinas alquímicas, ácidos ou sedativos diretamente na carne do alvo.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-950/5 border border-amber-900/20 space-y-1">
+            <div class="flex justify-between items-center">
+              <h4 class="font-serif font-bold text-amber-900 text-sm">Sabre Tradicional de Bordo</h4>
+              <span class="text-xs font-mono font-bold text-amber-800 bg-amber-200/50 px-2 py-0.5 rounded">Dano: 1d6 cortante (Ágil)</span>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              A clássica espada curta de marinharia em aço forjado em frio, equilibrada para duelos rápidos entre cordames e conveses apertados. Leve, não depende de éter e nunca emperra.
+            </p>
+          </div>
+        </div>
+
+        {/* SEÇÃO 2: ARMAS DE ALCANCE, FOGO & ARCOS ELÉTRICOS */}
+        <h3 class="text-xl font-bold font-serif text-amber-950 border-b border-amber-900/30 pb-2 mt-6 flex items-center gap-2">
+          <span>🏹</span> Armas de Disparo, Fogo & Fiação Elétrica
+        </h3>
+        <p class="text-xs text-stone-700 leading-relaxed">
+          A balística dos Céus Partidos não utiliza pólvora negra arcaica, mas centelhas de ignição arcanoceleste e cartuchos substituíveis:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl bg-amber-950/5 border border-amber-900/20 space-y-1">
+            <div class="flex justify-between items-center">
+              <h4 class="font-serif font-bold text-amber-900 text-sm">Arco Composto de Fiação Elétrica</h4>
+              <span class="text-xs font-mono font-bold text-amber-800 bg-amber-200/50 px-2 py-0.5 rounded">Dano: 1d8 perfurante + 1d4 elétrico</span>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              Lâminas de fibra estelar ligadas por polias de bronze e fiação condutora. Ao retesar a corda, pequenos dínamos nos eixos acumulam carga que eletriza a ponta metálica da flecha antes da soltura, paralisando membros atingidos.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-950/5 border border-amber-900/20 space-y-1">
+            <div class="flex justify-between items-center">
+              <h4 class="font-serif font-bold text-amber-900 text-sm">Pistola a Centelha (Spark-Lock)</h4>
+              <span class="text-xs font-mono font-bold text-amber-800 bg-amber-200/50 px-2 py-0.5 rounded">Dano: 1d10 perfurante (6 tiros)</span>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              Revólver de cano duplo com tambor de vidro temperado que revela o fluido de éter borbulhante. Um cão de percussão com pedra-guia detona cada câmara sem emitir cheiro de enxofre, deixando apenas um rastro de calor azulado.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-950/5 border border-amber-900/20 space-y-1">
+            <div class="flex justify-between items-center">
+              <h4 class="font-serif font-bold text-amber-900 text-sm">Mosquete de Bordo a Tambor</h4>
+              <span class="text-xs font-mono font-bold text-amber-800 bg-amber-200/50 px-2 py-0.5 rounded">Dano: 2d8 perfurante (Longo Alcance)</span>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              Arma de ombro estriada com trilho superior para miras telescópicas de cristal lapidado. Dispara projéteis de chumbo revestidos em cobre a distâncias de até 150 metros mesmo sob ventos tempestuosos.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-950/5 border border-amber-900/20 space-y-1">
+            <div class="flex justify-between items-center">
+              <h4 class="font-serif font-bold text-amber-900 text-sm">Rifle de Pulso Gravitacional</h4>
+              <span class="text-xs font-mono font-bold text-amber-800 bg-amber-200/50 px-2 py-0.5 rounded">Dano: 1d12 concussão (Recuo Pesado)</span>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              Cano largo dotado de bobinas em espiral expostas. Dispara uma onda de choque de ar colapsado capaz de arremessar inimigos contra mastros ou projetá-los para fora da borda do navio.
+            </p>
+          </div>
+        </div>
+
+        {/* CARTUCHOS ALQUÍMICOS */}
+        <div class="p-4 rounded-xl bg-stone-100/90 border border-amber-900/30 space-y-3 mt-4">
+          <h4 class="font-serif font-bold text-amber-950 text-sm flex items-center gap-2">
+            <span>🧪</span> Cartuchos Alquímicos para Armas de Fogo
+          </h4>
+          <p class="text-xs text-stone-700 leading-relaxed">
+            Atiradores de elite podem municiar suas armas com cartuchos alquímicos especiais:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+            <div class="p-2.5 rounded bg-amber-50 border border-amber-700/20">
+              <strong class="text-amber-900 block font-serif">🔥 Fogo Fátuo</strong>
+              <p class="text-stone-600 mt-1">Chamas azuis persistentes que continuam queimando (+1d6 por rodada) e não se apagam com água ou vento forte.</p>
+            </div>
+            <div class="p-2.5 rounded bg-emerald-50 border border-emerald-700/20">
+              <strong class="text-emerald-900 block font-serif">☠️ Ácido Corrosivo</strong>
+              <p class="text-stone-600 mt-1">Dissolve anteparas metálicas e reduz a Classe de Armadura (CA) do alvo atingido em -2 até ser reparada.</p>
+            </div>
+            <div class="p-2.5 rounded bg-cyan-50 border border-cyan-700/20">
+              <strong class="text-cyan-900 block font-serif">❄️ Éter Criogênico</strong>
+              <p class="text-stone-600 mt-1">Resfria instantaneamente o ponto de impacto, congelando engrenagens de exoesqueletos e reduzindo o movimento do alvo pela metade.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* SEÇÃO 3: DISPOSITIVOS TÁTICOS & GRANADAS */}
+        <h3 class="text-xl font-bold font-serif text-amber-950 border-b border-amber-900/30 pb-2 mt-6 flex items-center gap-2">
+          <span>💣</span> Dispositivos Táticos, Arpões & Granadas
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="p-3.5 rounded-xl bg-amber-950/5 border border-amber-900/20 space-y-1">
+            <h4 class="font-serif font-bold text-amber-900 text-xs">Granada de Vácuo (Vórtice)</h4>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              Esfera de bronze com núcleo de éter comprimido. Ao explodir, gera uma micro-implosão gravitacional por 2 segundos, puxando todos os alvos a até 6 metros para o ponto central.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-amber-950/5 border border-amber-900/20 space-y-1">
+            <h4 class="font-serif font-bold text-amber-900 text-xs">Bomba de Pulso de Silêncio</h4>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              Emite uma onda ressonante que anula conjurações arcanas e desliga circuitos tecno-mágicos por 1 rodada em um raio de 9 metros.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-amber-950/5 border border-amber-900/20 space-y-1">
+            <h4 class="font-serif font-bold text-amber-900 text-xs">Arpão Pneumático de Bordo</h4>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              Disparador de pulso com 25 metros de cabo de aço trançado e ponta de garra. Permite escalar mastros e realizar abordagens de convés com segurança.
+            </p>
+          </div>
+        </div>
+
+        {/* SEÇÃO 4: ARMADURAS & TRAJES TECNO-ARCANOS */}
+        <h3 class="text-xl font-bold font-serif text-amber-950 border-b border-amber-900/30 pb-2 mt-6 flex items-center gap-2">
+          <span>🛡️</span> Armaduras, Trajes de Vôo & Exo-Chassis
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-4 rounded-xl bg-amber-950/5 border border-amber-900/20 space-y-2">
+            <div class="flex justify-between items-center">
+              <h4 class="font-serif font-bold text-amber-900 text-sm">Traje de Vôo Tático</h4>
+              <span class="text-xs font-mono font-bold text-amber-800">CA 13 + Agilidade</span>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              Feito de couro impermeabilizado e placas de bronze sobre peitoral e ombros. Possui arnês integrado com micro-injetores de sustentação que reduzem dano de queda pela metade e garantem vantagem em testes de Acrobacia.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-950/5 border border-amber-900/20 space-y-2">
+            <div class="flex justify-between items-center">
+              <h4 class="font-serif font-bold text-amber-900 text-sm">Couraça de Barreira Reativa</h4>
+              <span class="text-xs font-mono font-bold text-amber-800">CA 16 (Média)</span>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              Placas sobrepostas de liga de quartzo e bronze. Um pequeno emissor no peitoral gera um campo de dispersão translúcido que absorve 5 pontos de dano em cada acerto crítico sofrido.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-950/5 border border-amber-900/20 space-y-2">
+            <div class="flex justify-between items-center">
+              <h4 class="font-serif font-bold text-amber-900 text-sm">Exo-Armadura de Bordo</h4>
+              <span class="text-xs font-mono font-bold text-amber-800">CA 18 (Pesada)</span>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              Chassi de ferro fundido com pistões a vapor nos ombros e membros inferiores. Concede +2 em testes de Força e capacidade de carregar armamento de artilharia, mas impõe desvantagem em testes de Furtividade e Natação.
+            </p>
+          </div>
+        </div>
+
+        {/* SEÇÃO 5: KITS MÉDICOS & EQUIPAMENTO DE SOBREVIVÊNCIA */}
+        <h3 class="text-xl font-bold font-serif text-amber-950 border-b border-amber-900/30 pb-2 mt-6 flex items-center gap-2">
+          <span>🩹</span> Kits Médicos & Sobrevivência do Navegante
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl bg-amber-950/5 border border-amber-900/20 space-y-1">
+            <h4 class="font-serif font-bold text-amber-900 text-sm">Kit Médico de Bordo & Injetores de Coagulação</h4>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              Contém gaze hemostática tratada com resina de sal-marinho, agulhas de sutura cirúrgica, ampolas de antisséptico e 3 seringas pressurizadas de coagulante instantâneo. Uma ação com teste de <em>Medicina (DT 12)</em> estanca sangramentos severos e recupera 2d6+2 Pontos de Vida (PV).
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-950/5 border border-amber-900/20 space-y-1">
+            <h4 class="font-serif font-bold text-amber-900 text-sm">Ampolas de Éter Líquido Refinado</h4>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              Frasco de vidro reforçado com líquido luminescente azul. Ao ser inalado ou ingerido através do filtro do respirador, restaura 1d4 Essências gastas em rituais do Cerne.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-950/5 border border-amber-900/20 space-y-1">
+            <h4 class="font-serif font-bold text-amber-900 text-sm">Lanterna de Fogo Fátuo & Bússola Náutica</h4>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              A lanterna arde com luz fria e contínua alimentada por micro-cristal, jamais se apagando sob tempestades ou ventos cortantes. Acompanha bússola náutica de latão com agulha de pedra-guia balanceada.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-950/5 border border-amber-900/20 space-y-1">
+            <h4 class="font-serif font-bold text-amber-900 text-sm">Rações Desidratadas & Cantil com Filtro de Carvão</h4>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              Provisões para 7 dias em tiras de carne curada e biscoito de bordo fortificado com sal mineral, acompanhadas de cantil de cobre com filtro de carvão e resina para purificar água doce recolhida de nuvens baixas.
+            </p>
+          </div>
+        </div>
+
       </div>
     `
   },

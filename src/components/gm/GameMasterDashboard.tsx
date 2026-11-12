@@ -6,6 +6,7 @@ import {
   toggleMediaSecretStatus 
 } from '../../services/characterService';
 import { DiceRollerModal } from '../dice/DiceRollerModal';
+import { SecretGrimoireModal } from './SecretGrimoireModal';
 
 interface GameMasterDashboardProps {
   currentUser: UserProfile | null;
@@ -25,6 +26,7 @@ export const GameMasterDashboard: React.FC<GameMasterDashboardProps> = ({
   
   // Quick dice roller state
   const [showDiceModal, setShowDiceModal] = useState(false);
+  const [showGrimoireModal, setShowGrimoireModal] = useState(false);
   const [diceRollInfo, setDiceRollInfo] = useState<{ label: string; bonus: number }>({
     label: 'Rolagem da Mestre',
     bonus: 0,
@@ -135,6 +137,14 @@ export const GameMasterDashboard: React.FC<GameMasterDashboardProps> = ({
 
             {/* Ações da Mestre */}
             <div className="flex flex-wrap items-center gap-3">
+              <button
+                onClick={() => setShowGrimoireModal(true)}
+                className="px-4 py-2.5 rounded-xl border border-purple-400 bg-gradient-to-r from-purple-900 to-indigo-950 hover:from-purple-850 hover:to-indigo-900 text-purple-100 font-serif font-bold text-xs tracking-wider transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(168,85,247,0.35)]"
+                title="Abrir o Livro Secreto da Mestre com as 4 Armadas Piratas e Cidades Invisíveis"
+              >
+                <span>📖</span> Grimório da Mestre (Segredos)
+              </button>
+
               <button
                 onClick={() => openMasterRoll('Teste de Vontade do Vácuo', 0)}
                 className="px-4 py-2.5 rounded-xl border border-purple-500/50 bg-purple-950/60 hover:bg-purple-900/80 text-purple-200 font-serif font-bold text-xs tracking-wider transition-all flex items-center gap-2 shadow"
@@ -509,6 +519,13 @@ export const GameMasterDashboard: React.FC<GameMasterDashboardProps> = ({
         onClose={() => setShowDiceModal(false)}
         label={diceRollInfo.label}
         bonus={diceRollInfo.bonus}
+      />
+
+      {/* GRIMÓRIO SECRETO DA MESTRE */}
+      <SecretGrimoireModal
+        isOpen={showGrimoireModal}
+        onClose={() => setShowGrimoireModal(false)}
+        onRollDice={(label, bonus) => openMasterRoll(label, bonus)}
       />
 
     </div>
