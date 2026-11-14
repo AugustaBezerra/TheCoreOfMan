@@ -16,6 +16,15 @@ final_p1-01.png
 Imagens de personagens/
 Art/
 
+# Anotações e Segredos Confidenciais da Mestre
+LIVRO_DA_MESTRE*
+ANOTACOES_DA_MESTRE*
+DOSSIE_VISUAL*
+CORE_2_TERRA*
+PROJETO_CADERNINHO*
+LIVRO_DO_JOGADOR_CORE2*
+*.zip
+
 # Dependências e compilação web
 node_modules/
 dist/

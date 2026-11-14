@@ -82,7 +82,7 @@
 .parchment-reader p {
   font-size: 1.15rem !important;
   line-height: 1.85 !important;
-  color: #1c1917 !important;
+  color: #1c1917;
   margin-bottom: 1.4rem !important;
 }
 
@@ -115,8 +115,8 @@
 }
 
 .parchment-reader strong {
-  color: #000000 !important;
-  font-weight: 700 !important;
+  color: inherit;
+  font-weight: 800 !important;
 }
 
 .parchment-reader table {
@@ -141,3 +141,78 @@
   border: 1px solid rgba(120, 53, 15, 0.25);
   color: #1c1917;
 }
+
+.parchment-reader li {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: #1c1917;
+  margin-bottom: 0.5rem;
+}
+
+/* Regras de Alto Contraste para elementos escuros no leitor (Garante legibilidade para baixa visão) */
+.parchment-reader [class*="bg-amber-950"],
+.parchment-reader [class*="bg-stone-900"],
+.parchment-reader [class*="bg-stone-950"],
+.parchment-reader [class*="bg-red-950"],
+.parchment-reader [class*="bg-slate-950"],
+.parchment-reader [class*="bg-black"],
+.parchment-reader .bg-amber-950,
+.parchment-reader .bg-stone-900,
+.parchment-reader .bg-black {
+  color: #fffbeb !important;
+}
+
+.parchment-reader [class*="bg-amber-950"] p,
+.parchment-reader [class*="bg-stone-900"] p,
+.parchment-reader [class*="bg-stone-950"] p,
+.parchment-reader [class*="bg-red-950"] p,
+.parchment-reader [class*="bg-slate-950"] p,
+.parchment-reader [class*="bg-black"] p,
+.parchment-reader .bg-amber-950 p,
+.parchment-reader .bg-stone-900 p,
+.parchment-reader .bg-black p {
+  color: #fffbeb !important;
+}
+
+.parchment-reader [class*="bg-amber-950"] li,
+.parchment-reader [class*="bg-stone-900"] li,
+.parchment-reader [class*="bg-stone-950"] li,
+.parchment-reader [class*="bg-red-950"] li,
+.parchment-reader [class*="bg-slate-950"] li,
+.parchment-reader [class*="bg-black"] li,
+.parchment-reader .bg-amber-950 li,
+.parchment-reader .bg-stone-900 li,
+.parchment-reader .bg-black li {
+  color: #fffbeb !important;
+}
+
+.parchment-reader [class*="bg-amber-950"] strong,
+.parchment-reader [class*="bg-stone-900"] strong,
+.parchment-reader [class*="bg-stone-950"] strong,
+.parchment-reader [class*="bg-red-950"] strong,
+.parchment-reader [class*="bg-slate-950"] strong,
+.parchment-reader [class*="bg-black"] strong,
+.parchment-reader .bg-amber-950 strong,
+.parchment-reader .bg-stone-900 strong,
+.parchment-reader .bg-black strong {
+  color: #fde68a !important;
+}
+
+.parchment-reader [class*="bg-amber-950"] span,
+.parchment-reader [class*="bg-stone-900"] span,
+.parchment-reader [class*="bg-stone-950"] span,
+.parchment-reader [class*="bg-red-950"] span,
+.parchment-reader [class*="bg-slate-950"] span,
+.parchment-reader [class*="bg-black"] span {
+  color: #fef3c7;
+}
+
+.parchment-reader [class*="bg-amber-950"] em,
+.parchment-reader [class*="bg-stone-900"] em,
+.parchment-reader [class*="bg-stone-950"] em,
+.parchment-reader [class*="bg-red-950"] em,
+.parchment-reader [class*="bg-slate-950"] em,
+.parchment-reader [class*="bg-black"] em {
+  color: #fef08a;
+}
+
