@@ -61,16 +61,21 @@ export const App: React.FC = () => {
     };
   }, [currentUser]);
 
-  // Keyboard shortcut: TAB or C toggles Radial Compass
+  // Keyboard shortcut: TAB toggles Radial Compass ONLY when logged in and in game view
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (screen === 'grimoire' || screen === 'transition') return;
+      // Never intercept copy/paste or combinations with Ctrl, Meta, Alt
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+      // Don't trigger if user is not logged in or viewing books/grimoire
+      if (!currentUser) return;
+      if (screen === 'grimoire' || screen === 'transition' || screen === 'universe') return;
 
       // Don't trigger if typing in an input or textarea
       const target = e.target as HTMLElement;
       if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA')) return;
 
-      if (e.key === 'Tab' || e.key.toLowerCase() === 'c') {
+      if (e.key === 'Tab') {
         e.preventDefault();
         setIsRadialOpen((prev) => !prev);
       }
@@ -78,7 +83,7 @@ export const App: React.FC = () => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [screen]);
+  }, [screen, currentUser]);
 
   // Handle action from Radial Compass Menu
   const handleRadialAction = (action: RadialAction) => {

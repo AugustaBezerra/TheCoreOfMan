@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { 
   BOOK_CHAPTERS, 
   Chapter 
@@ -69,10 +69,21 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
   }, [searchQuery]);
 
   const [scrollPercent, setScrollPercent] = useState(0);
+  const readerScrollRef = useRef<HTMLDivElement>(null);
+
+  // Scroll immediately to the top whenever selectedChapter changes
+  useEffect(() => {
+    if (readerScrollRef.current) {
+      readerScrollRef.current.scrollTop = 0;
+    }
+  }, [selectedChapter?.id]);
 
   const handleSelectChapter = (chapter: Chapter) => {
     setSelectedChapter(chapter);
     setScrollPercent(0);
+    if (readerScrollRef.current) {
+      readerScrollRef.current.scrollTop = 0;
+    }
   };
 
   const handleNextChapter = () => {
@@ -82,6 +93,9 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
     if (nextChap) {
       setSelectedChapter(nextChap);
       setScrollPercent(0);
+      if (readerScrollRef.current) {
+        readerScrollRef.current.scrollTop = 0;
+      }
     }
   };
 
@@ -92,6 +106,9 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
     if (prevChap) {
       setSelectedChapter(prevChap);
       setScrollPercent(0);
+      if (readerScrollRef.current) {
+        readerScrollRef.current.scrollTop = 0;
+      }
     }
   };
 
@@ -407,6 +424,7 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
 
               {/* Scrollable Chapter Content with GENEROUS SAFE MARGINS */}
               <div 
+                ref={readerScrollRef}
                 onScroll={handleReaderScroll}
                 className="relative z-10 flex-1 overflow-y-auto px-16 sm:px-24 md:px-32 lg:px-40 py-10"
               >

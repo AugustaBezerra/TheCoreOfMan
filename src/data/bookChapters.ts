@@ -18,95 +18,105 @@ export const BOOK_CHAPTERS: Chapter[] = [
     title: "O Chamado do Cerne",
     subtitle: "A Criação do Personagem & O Questionário da Psique",
     iconName: "Compass",
-    summary: "As bases do universo em 1939, o despertar do Verbo e o passo a passo completo para criar seu protagonista, incluindo o questionário psicológico da alma.",
+    summary: "O primeiro passo do protagonista no mundo de 1939: o passo a passo da ficha, os 4 pilares vitais e as 6 perguntas fundamentais da Psique.",
     contentHtml: `
       <div class="space-y-6">
-        <div class="p-4 rounded-xl bg-amber-100/90 border-l-4 border-amber-800 text-stone-950 italic leading-relaxed text-sm shadow-sm">
-          "No princípio não havia o homem, apenas o Verbo. E o Verbo era a Fera, e a Fera era a Vontade. Quando o mundo estremeceu, os homens descobriram o preço terrível de cada milagre."
+        <div class="p-4 bg-amber-50 rounded-xl border-l-4 border-amber-800 text-stone-900 text-base italic leading-relaxed shadow-sm">
+          "O caminho mais sábio que o homem pode fazer é conhecer a si mesmo sem mentiras ou meias verdades. A fonte do homem é a sua alma; ele pode até tentar fugir dela, mas sempre será em vão."
         </div>
 
         <p class="leading-relaxed text-stone-900 text-justify">
-          O ano é <strong>1939</strong>. O mundo dos homens vive sob a sombra opressiva da fumaça fabril e a iminência de uma Segunda Grande Guerra. Mas por trás das notícias de jornais e das marchas militares na Europa, uma verdade muito mais antiga começou a despertar: <strong>o Cerne (The Core)</strong>.
-        </p>
-        <p class="leading-relaxed text-stone-900 text-justify">
-          Nas névoas de Thornfield, nas rotas marítimas britânicas e nos vales esquecidos, forças primordiais voltam a circular na carne e na alma humana. Seja você um médico cirurgião, um militar marcado pelas trincheiras, uma parteira tradicional, um detetive obstinado ou um corsário dos mares, você foi chamado a cruzar esse limiar.
+          O ano é 1939. O mundo respira a fumaça das chaminés industriais e a iminência sufocante da Segunda Grande Guerra. Mas por trás das manchetes dos jornais, das engrenagens fabris e das marchas militares na Europa, uma verdade muito mais antiga e silenciosa começou a despertar do esquecimento: <strong>o Cerne (The Core)</strong>.
         </p>
 
-        <h3 class="text-xl font-bold font-serif text-amber-950 border-b-2 border-amber-900/30 pb-2 mt-6">
+        <p class="leading-relaxed text-stone-900 text-justify">
+          Nas névoas de cidades cobertas de fuligem, nos portos de marujos mercenários e nos ermos ancestrais intocados pela civilização moderna, o sangue dos Verbos voltou a pulsar. Seja você um médico cirurgião cético, um militar forjado nas trincheiras, um marinheiro dos mares bravios ou um ocultista perseguido pela inquisição da razão, o tabuleiro foi armado e a sua alma foi convocada.
+        </p>
+
+        <h3 class="font-serif font-bold text-amber-950 text-xl border-b border-amber-900/30 pb-2">
           Passo a Passo: Como Construir seu Personagem
         </h3>
-        <p class="text-xs text-stone-800 leading-relaxed">
-          Siga estas etapas para dar vida, mente, corpo e alma ao seu protagonista:
-        </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-          <div class="p-3 rounded-lg bg-stone-100/95 border border-amber-900/30 shadow-sm">
-            <strong class="text-amber-950 font-serif block text-sm mb-1">1. Conceito & Linhagem</strong>
-            <p class="text-stone-800">Defina seu nome, idade, história, profissão e linhagem biológica (Capítulo VIII). Sua linhagem determina seus valores iniciais de sobrevivência.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 bg-amber-50/90 rounded-xl border border-amber-900/30 shadow-sm">
+            <h4 class="font-serif font-black text-amber-950 text-base mb-1">1. Conceito & Linhagem</h4>
+            <p class="text-xs text-stone-800 leading-relaxed">
+              Defina seu nome, idade, ocupação social e sua linhagem de sangue. Sua raça dita sua biologia base: pontos iniciais de HP, CA, Psique, Sistema Imune (SI), porte e o seu <strong>Dado de Essência</strong>.
+            </p>
           </div>
-          <div class="p-3 rounded-lg bg-stone-100/95 border border-amber-900/30 shadow-sm">
-            <strong class="text-amber-950 font-serif block text-sm mb-1">2. O Questionário da Psique</strong>
-            <p class="text-stone-800">Responda com honestidade às 6 perguntas existenciais da sua alma. Elas ditarão sua resistência moral ao horror e às decisões difíceis.</p>
+
+          <div class="p-4 bg-amber-50/90 rounded-xl border border-amber-900/30 shadow-sm">
+            <h4 class="font-serif font-black text-amber-950 text-base mb-1">2. O Questionário da Psique</h4>
+            <p class="text-xs text-stone-800 leading-relaxed">
+              Responda com verdade absoluta às 6 perguntas fundamentais da alma. Suas respostas definem suas fraquezas morais, gatilhos de estresse e como sua mente reage diante do sobrenatural.
+            </p>
           </div>
-          <div class="p-3 rounded-lg bg-stone-100/95 border border-amber-900/30 shadow-sm">
-            <strong class="text-amber-950 font-serif block text-sm mb-1">3. Atributos & Perícias</strong>
-            <p class="text-stone-800">Distribua seus pontos entre Físicos, Mentais/Sociais e Força de Vontade (Capítulo III), respeitando o teto de treino (Perícia &le; 2 &times; Atributo).</p>
+
+          <div class="p-4 bg-amber-50/90 rounded-xl border border-amber-900/30 shadow-sm">
+            <h4 class="font-serif font-black text-amber-950 text-base mb-1">3. Atributos & Perícias</h4>
+            <p class="text-xs text-stone-800 leading-relaxed">
+              Distribua seus pontos entre os atributos Físicos (Força, Vigor, Destreza), Mentais/Sociais (Carisma, Conhecimento, Inteligência) e sua Força de Vontade. Lembre-se: uma perícia nunca pode ultrapassar o dobro (2x) do seu atributo!
+            </p>
           </div>
-          <div class="p-3 rounded-lg bg-stone-100/95 border border-amber-900/30 shadow-sm">
-            <strong class="text-amber-950 font-serif block text-sm mb-1">4. Os Quatro Pilares Vitais</strong>
-            <p class="text-stone-800">Calcule seus pontos de HP (Vida), CA (Armadura/Esquiva), Psique (Sanidade/Energia) e SI (Sistema Imune) com base nas fórmulas oficiais (Capítulo IV).</p>
+
+          <div class="p-4 bg-amber-50/90 rounded-xl border border-amber-900/30 shadow-sm">
+            <h4 class="font-serif font-black text-amber-950 text-base mb-1">4. Os Quatro Pilares Vitais</h4>
+            <p class="text-xs text-stone-800 leading-relaxed">
+              Calcule sua Vida (HP), Classe de Armadura (CA), Psique (Sanidade/Estresse) e Sistema Imunológico (SI) somando a base da sua linhagem aos seus atributos e equipamentos.
+            </p>
           </div>
-          <div class="p-3 rounded-lg bg-stone-100/95 border border-amber-900/30 shadow-sm">
-            <strong class="text-amber-950 font-serif block text-sm mb-1">5. Escolha de Classe</strong>
-            <p class="text-stone-800">Selecione uma das 15 classes fundamentais (Capítulo VII). Anote seus bônus, proficiências, itens em Libras (£) e sua habilidade única com Psique.</p>
+
+          <div class="p-4 bg-amber-50/90 rounded-xl border border-amber-900/30 shadow-sm">
+            <h4 class="font-serif font-black text-amber-950 text-base mb-1">5. Escolha de Classe</h4>
+            <p class="text-xs text-stone-800 leading-relaxed">
+              Selecione uma das 15 classes fundamentais. Receba seus bônus de perícia, suas proficiências de armas e ferramentas, seu orçamento inicial em Libras (£) e sua habilidade de classe com custo de Psique.
+            </p>
           </div>
-          <div class="p-3 rounded-lg bg-stone-100/95 border border-amber-900/30 shadow-sm">
-            <strong class="text-amber-950 font-serif block text-sm mb-1">6. Destino: Tarot & Patrono</strong>
-            <p class="text-stone-800">O Mestre conduzirá sua tiragem dos 3 Arcanos (Passado, Presente, Futuro) e o registro secreto do Patrono Oculto que observa seus passos.</p>
+
+          <div class="p-4 bg-amber-50/90 rounded-xl border border-amber-900/30 shadow-sm">
+            <h4 class="font-serif font-black text-amber-950 text-base mb-1">6. Destino: Tarot & Patrono</h4>
+            <p class="text-xs text-stone-800 leading-relaxed">
+              O Mestre conduzirá a tiragem ritualística de 3 Arcanos do Tarot (Passado, Presente e Futuro) e revelará o Patrono secreto que vigia os passos da sua alma.
+            </p>
           </div>
         </div>
 
-        <!-- O QUESTIONÁRIO DA PSIQUE -->
-        <div class="mt-6 p-5 rounded-xl bg-amber-50/90 border-2 border-amber-900/40 shadow-md">
-          <div class="text-center mb-4">
-            <span class="text-xs font-serif uppercase tracking-widest text-amber-900 font-bold block mb-1">Inquérito Psicológico & Espiritual</span>
-            <h4 class="font-serif font-black text-amber-950 text-xl">O Questionário da Alma</h4>
-            <p class="text-xs italic text-stone-700 mt-1">"O caminho mais sábio que o homem pode fazer é conhecer a si mesmo sem mentiras ou meias verdades."</p>
+        <h3 class="font-serif font-bold text-amber-950 text-xl border-b border-amber-900/30 pb-2 mt-8">
+          O Questionário da Psique (Obrigatório)
+        </h3>
+        <p class="text-stone-900 text-sm leading-relaxed text-justify">
+          The Core of Man não é um sistema sobre números vazios; é um sistema sobre cicatrizes e escolhas. Antes de rolar qualquer dado, o jogador deve preencher com sinceridade as seis indagações da alma:
+        </p>
+
+        <div class="space-y-3 mt-4">
+          <div class="p-3.5 bg-stone-50 rounded-lg border-l-4 border-amber-800 shadow-sm">
+            <strong class="font-serif text-amber-950 text-sm block">1. Quem é você quando ninguém está vendo?</strong>
+            <span class="text-xs text-stone-700 italic block mt-0.5">Sua verdadeira moral despida de títulos, cargos sociais ou expectativas familiares. Seus vícios secretos e impulsos ocultos.</span>
           </div>
 
-          <p class="text-xs text-stone-800 leading-relaxed text-justify mb-4">
-            Em <em>The Core of Man</em>, atributos numéricos não bastam para resistir ao vácuo e ao sobrenatural. A mente humana precisa de âncoras. Cada jogador deve preencher as 6 perguntas abaixo antes de iniciar a campanha:
-          </p>
-
-          <div class="space-y-3 text-xs">
-            <div class="p-3 rounded bg-white/90 border border-amber-900/20">
-              <strong class="text-amber-900 block font-serif text-sm">1. Quem é você quando ninguém está vendo?</strong>
-              <span class="text-stone-600 italic">Sua verdadeira essência despida de títulos sociais, orgulho e expectativas familiares.</span>
-            </div>
-            <div class="p-3 rounded bg-white/90 border border-amber-900/20">
-              <strong class="text-amber-900 block font-serif text-sm">2. Por que você acorda / levanta todos os dias?</strong>
-              <span class="text-stone-600 italic">O propósito inegociável que impede seu espírito de desistir diante da dor e da rotina.</span>
-            </div>
-            <div class="p-3 rounded bg-white/90 border border-amber-900/20">
-              <strong class="text-amber-900 block font-serif text-sm">3. O que ainda te dói, mesmo que você diga que já passou?</strong>
-              <span class="text-stone-600 italic">A ferida emocional ou culpa que nunca cicatrizou de verdade.</span>
-            </div>
-            <div class="p-3 rounded bg-white/90 border border-amber-900/20">
-              <strong class="text-amber-900 block font-serif text-sm">4. Quem foi seu primeiro amor?</strong>
-              <span class="text-stone-600 italic">A pessoa que primeiro ensinou seu coração a pulsar com intensidade, quer tenha terminado em bênção ou tragédia.</span>
-            </div>
-            <div class="p-3 rounded bg-white/90 border border-amber-900/20">
-              <strong class="text-amber-900 block font-serif text-sm">5. O que você mais teme perder?</strong>
-              <span class="text-stone-600 italic">Sua maior vulnerabilidade: um ente querido, uma lembrança, a sanidade ou sua própria humanidade.</span>
-            </div>
-            <div class="p-3 rounded bg-white/90 border border-amber-900/20">
-              <strong class="text-amber-900 block font-serif text-sm">6. Qual a verdade que você evita encarar?</strong>
-              <span class="text-stone-600 italic">A mentira de conforto que você conta para si mesmo para conseguir dormir à noite.</span>
-            </div>
+          <div class="p-3.5 bg-stone-50 rounded-lg border-l-4 border-amber-800 shadow-sm">
+            <strong class="font-serif text-amber-950 text-sm block">2. Por que você acorda / levanta todos os dias?</strong>
+            <span class="text-xs text-stone-700 italic block mt-0.5">O seu propósito motor de sobrevivência. É vingança, dever, proteção a alguém amado ou simples medo da morte?</span>
           </div>
 
-          <div class="mt-4 p-2 text-center text-xs italic font-serif text-amber-950 font-bold border-t border-amber-900/30">
-            "A fonte do homem é a sua alma; ele pode até tentar fugir dela, mas sempre será em vão."
+          <div class="p-3.5 bg-stone-50 rounded-lg border-l-4 border-amber-800 shadow-sm">
+            <strong class="font-serif text-amber-950 text-sm block">3. O que ainda te dói, mesmo que você diga que já passou?</strong>
+            <span class="text-xs text-stone-700 italic block mt-0.5">A fratura psíquica do seu passado: uma traição, uma covardia em combate, a perda de um irmão ou uma promessa quebrada.</span>
+          </div>
+
+          <div class="p-3.5 bg-stone-50 rounded-lg border-l-4 border-amber-800 shadow-sm">
+            <strong class="font-serif text-amber-950 text-sm block">4. Quem foi seu primeiro amor?</strong>
+            <span class="text-xs text-stone-700 italic block mt-0.5">A memória humana que ancora sua sanidade quando o horror cósmico tentar despedaçar sua mente.</span>
+          </div>
+
+          <div class="p-3.5 bg-stone-50 rounded-lg border-l-4 border-amber-800 shadow-sm">
+            <strong class="font-serif text-amber-950 text-sm block">5. O que você mais teme perder?</strong>
+            <span class="text-xs text-stone-700 italic block mt-0.5">Sua honra, sua fortuna, um ente querido, a própria razão ou a liberdade? Este será o primeiro alvo dos seus inimigos.</span>
+          </div>
+
+          <div class="p-3.5 bg-stone-50 rounded-lg border-l-4 border-amber-800 shadow-sm">
+            <strong class="font-serif text-amber-950 text-sm block">6. Qual a verdade que você evita encarar?</strong>
+            <span class="text-xs text-stone-700 italic block mt-0.5">A mentira que você conta a si mesmo todos os dias para continuar suportando o peso do mundo.</span>
           </div>
         </div>
       </div>
@@ -122,76 +132,73 @@ export const BOOK_CHAPTERS: Chapter[] = [
     title: "A Regra de Ouro",
     subtitle: "Resolução de Testes e Mecânicas Básicas",
     iconName: "Dices",
-    summary: "Como os dados decidem o destino: o teste 1d20 + Atributo + Perícia contra a Classe de Dificuldade (CD) e vantagens narrativas.",
+    summary: "Como os dados decidem o destino: o teste 1d20 + Atributo + Perícia contra a Classe de Dificuldade (CD), vantagens e graus de sucesso.",
     contentHtml: `
       <div class="space-y-6">
         <p class="leading-relaxed text-stone-900 text-justify">
           Sempre que seu protagonista tenta realizar uma ação cujo resultado seja incerto, arriscado ou disputado, o Mestre solicitará um <strong>Teste de Resolução</strong>. A mecânica central de The Core é ágil, dramática e universal:
         </p>
 
-        <div class="p-4 bg-amber-950 text-amber-50 rounded-xl text-center font-serif text-lg tracking-wide shadow-md border-2 border-amber-600">
-          <span class="text-amber-400 font-bold">1d20</span> + 
-          <span class="text-amber-200 font-bold"> Atributo</span> + 
-          <span class="text-amber-200 font-bold"> Perícia</span> &ge; 
-          <span class="text-amber-400 font-bold"> Classe de Dificuldade (CD)</span>
+        <div class="p-4 bg-amber-50 text-amber-950 rounded-xl text-center font-serif text-lg tracking-wide shadow-md border-2 border-amber-800">
+          <span class="text-amber-800 font-black">1d20</span> + 
+          <span class="text-stone-900 font-bold"> Atributo</span> + 
+          <span class="text-stone-900 font-bold"> Perícia</span> &ge; 
+          <span class="text-amber-800 font-black"> Classe de Dificuldade (CD)</span>
         </div>
 
-        <h3 class="text-xl font-bold font-serif text-amber-950 border-b-2 border-amber-900/30 pb-2 mt-6">
-          Escala de Classes de Dificuldade (CD)
+        <h3 class="font-serif font-bold text-amber-950 text-xl border-b border-amber-900/30 pb-2">
+          Escala de Dificuldades (CD)
         </h3>
-        <p class="text-xs text-stone-800 leading-relaxed">
-          O Mestre estabelece o número-alvo com base na periculosidade da cena e nas condições ambientais:
-        </p>
+        <table class="w-full text-left border-collapse my-3">
+          <thead>
+            <tr class="bg-amber-100 text-amber-950 border border-amber-800/30">
+              <th class="p-2.5 font-bold">Dificuldade</th>
+              <th class="p-2.5 font-bold">CD</th>
+              <th class="p-2.5 font-bold">Exemplo Prático</th>
+            </tr>
+          </thead>
+          <tbody class="text-stone-900 text-sm">
+            <tr class="border-b border-amber-800/20">
+              <td class="p-2.5 font-bold text-amber-950">Fácil</td>
+              <td class="p-2.5 font-mono font-bold">10</td>
+              <td class="p-2.5">Arrombar fechadura comum de latão, pular cerca de madeira baixa.</td>
+            </tr>
+            <tr class="border-b border-amber-800/20 bg-amber-50/50">
+              <td class="p-2.5 font-bold text-amber-950">Médio</td>
+              <td class="p-2.5 font-mono font-bold">15</td>
+              <td class="p-2.5">Realizar torniquete cirúrgico em meio a tiros, decifrar diário em código.</td>
+            </tr>
+            <tr class="border-b border-amber-800/20">
+              <td class="p-2.5 font-bold text-amber-950">Difícil</td>
+              <td class="p-2.5 font-mono font-bold">20</td>
+              <td class="p-2.5">Acertar o motor de um avião em voo com rifle, resistir ao toque de uma quimera.</td>
+            </tr>
+            <tr class="border-b border-amber-800/20 bg-amber-50/50">
+              <td class="p-2.5 font-bold text-amber-950">Formidável</td>
+              <td class="p-2.5 font-mono font-bold">25</td>
+              <td class="p-2.5">Conter uma hemorragia da aorta em plena tempestade em alto mar sem anestesia.</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-bold text-amber-950">Heroico / Quase Impossível</td>
+              <td class="p-2.5 font-mono font-bold">30</td>
+              <td class="p-2.5">Desviar a trajetória de um canhão naval com um disparo milimétrico.</td>
+            </tr>
+          </tbody>
+        </table>
 
-        <div class="overflow-x-auto shadow-sm rounded-lg border border-amber-900/30">
-          <table class="w-full text-left text-xs bg-stone-50">
-            <thead class="bg-amber-900/20 text-amber-950 font-serif border-b border-amber-900/30">
-              <tr>
-                <th class="py-2.5 px-3 font-bold">Dificuldade</th>
-                <th class="py-2.5 px-3 font-bold">CD</th>
-                <th class="py-2.5 px-3 font-bold">Exemplo Prático de Cena</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-amber-900/10 text-stone-900">
-              <tr>
-                <td class="py-2.5 px-3 font-bold text-emerald-900">Fácil</td>
-                <td class="py-2.5 px-3 font-mono font-bold text-emerald-900">CD 10</td>
-                <td class="py-2.5 px-3">Escalar um muro baixo de tijolos secos; acalmar um cavalo assustado; identificar um remédio comum.</td>
-              </tr>
-              <tr>
-                <td class="py-2.5 px-3 font-bold text-blue-900">Moderada</td>
-                <td class="py-2.5 px-3 font-mono font-bold text-blue-900">CD 15</td>
-                <td class="py-2.5 px-3">Arrombar uma fechadura de latão no escuro; saltar entre conveses em mar revolto; notar uma mentira bem contada.</td>
-              </tr>
-              <tr>
-                <td class="py-2.5 px-3 font-bold text-amber-900">Difícil</td>
-                <td class="py-2.5 px-3 font-mono font-bold text-amber-900">CD 20</td>
-                <td class="py-2.5 px-3">Tratar ferimentos graves sem anestesia sob fogo inimigo; decifrar runas esquecidas do Verbo; pilotar em meio a um nevoeiro denso.</td>
-              </tr>
-              <tr>
-                <td class="py-2.5 px-3 font-bold text-red-900">Extrema</td>
-                <td class="py-2.5 px-3 font-mono font-bold text-red-900">CD 25+</td>
-                <td class="py-2.5 px-3">Conter uma besta em fúria de sangue; invadir uma mente protegida por pactos arcanos; sobreviver a venenos de Black Walkers.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3 class="text-xl font-bold font-serif text-amber-950 border-b-2 border-amber-900/30 pb-2 mt-6">
-          Vantagem e Desvantagem
-        </h3>
-        <p class="text-xs text-stone-800 leading-relaxed text-justify">
-          Quando o ambiente ou habilidades concedem uma oportunidade favorável (terreno elevado, cobertura tática, emboscada, assistência de um companheiro), o jogador rola <strong>2d20 e escolhe o maior resultado</strong> (Vantagem). Quando há impedimentos graves (chuva torrencial, cegueira, veneno, exaustão), rola <strong>2d20 e escolhe o menor resultado</strong> (Desvantagem).
-        </p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 text-xs">
-          <div class="p-3 bg-stone-100 rounded-lg border border-amber-900/20">
-            <strong class="text-amber-900 font-serif block text-sm mb-1">&bull; Sucesso Crítico (20 Natural):</strong>
-            <p class="text-stone-800">Ocorre um triunfo espetacular. Em combate, dobra os dados de dano. Em testes sociais ou técnicos, alcança o objetivo com benefícios narrativos imprevistos.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+          <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-800/40 text-stone-900 shadow-sm">
+            <h4 class="font-serif font-black text-emerald-950 text-base mb-1">O 20 Natural (Sucesso Crítico)</h4>
+            <p class="text-xs leading-relaxed">
+              Obter um 20 natural no d20 é um triunfo da vontade: a ação é bem-sucedida automaticamente de maneira espetacular, dobrando o dano de armas ou concedendo um bônus tático narrativo imediato definido pelo Mestre.
+            </p>
           </div>
-          <div class="p-3 bg-stone-100 rounded-lg border border-amber-900/20">
-            <strong class="text-amber-900 font-serif block text-sm mb-1">&bull; Falha Crítica (1 Natural):</strong>
-            <p class="text-stone-800">A ação dá tragicamente errado. Uma arma pode emperrar, uma ferramenta quebrar ou a mente vacilar diante do perigo imediato.</p>
+
+          <div class="p-4 bg-red-50 rounded-xl border border-red-800/40 text-stone-900 shadow-sm">
+            <h4 class="font-serif font-black text-red-950 text-base mb-1">O 1 Natural (Falha Crítica)</h4>
+            <p class="text-xs leading-relaxed">
+              Obter um 1 natural no d20 acarreta um revés catastrófico: a arma emperra, a lâmina lasca, o personagem perde o equilíbrio ou sofre dano colateral à sua Psique ou Integridade Física.
+            </p>
           </div>
         </div>
       </div>
@@ -199,7 +206,7 @@ export const BOOK_CHAPTERS: Chapter[] = [
   },
 
   // =========================================================================
-  // CAPÍTULO III: ATRIBUTOS E PERÍCIAS
+  // CAPÍTULO III: ATRIBUTOS E PERÍCIAS (CORRETOS E OFICIAIS)
   // =========================================================================
   {
     id: 3,
@@ -207,116 +214,130 @@ export const BOOK_CHAPTERS: Chapter[] = [
     title: "Atributos e Perícias",
     subtitle: "A Matriz Completa de Capacidades",
     iconName: "UserCheck",
-    summary: "Os seis atributos fundamentais (Físicos e Mentais), suas 18 perícias especializadas e a Regra do Teto de Treinamento.",
+    summary: "A matriz completa dos 7 Atributos oficiais e suas Perícias correlatas, a regra do teto de aprendizado e a fórmula de Iniciativa.",
     contentHtml: `
       <div class="space-y-6">
         <p class="leading-relaxed text-stone-900 text-justify">
-          Os <strong>Atributos</strong> definem o potencial biológico e mental inato do seu personagem (escala usual de 0 a 5). Já as <strong>Perícias</strong> refletem o que você treinou ao longo dos anos — estudos teóricos, ofícios manuais e disciplina física.
+          Os <strong>Atributos</strong> definem quem você é e seu potencial inato, enquanto as <strong>Perícias</strong> mostram o que você treinou ao longo da sua vida. No sistema The Core, os atributos de personagens comuns variam de 1 a 5 (com lendas e primordiais alcançando patamares superiores).
         </p>
 
-        <!-- ATRIBUTOS FÍSICOS -->
-        <h3 class="text-xl font-bold font-serif text-amber-950 border-b-2 border-amber-900/30 pb-2">
+        <div class="p-3.5 bg-amber-100/90 rounded-lg border-l-4 border-amber-800 text-stone-950 text-xs font-semibold leading-relaxed">
+          ⚡ <strong>Regra de Ouro do Aprendizado:</strong> O valor numérico de uma Perícia NUNCA pode ultrapassar o dobro (2x) do valor do seu Atributo correspondente. Exemplo: Para ter Luta 4, seu personagem precisa de pelo menos Força 2!
+        </div>
+
+        <!-- 1. ATRIBUTOS FÍSICOS -->
+        <h3 class="font-serif font-bold text-amber-950 text-xl border-b border-amber-900/30 pb-2 mt-6">
           1. Atributos Físicos
         </h3>
-        <div class="space-y-3">
-          <div class="p-4 bg-stone-100/90 rounded-xl border border-amber-900/20 shadow-sm">
-            <div class="flex justify-between items-center mb-1">
-              <h4 class="font-bold font-serif text-amber-950 text-base">Força (O Poder Bruto)</h4>
-              <span class="text-xs font-mono font-bold text-amber-800 bg-amber-200/60 px-2 py-0.5 rounded">Físico</span>
-            </div>
-            <p class="text-xs text-stone-800 mb-2">Potência muscular, capacidade de tração e impacto corporal em combates brutos.</p>
-            <ul class="list-disc list-inside text-xs text-stone-900 space-y-1">
-              <li><strong>Atletismo:</strong> Correr em disparada, saltar abismos, escalar árvores e mastros, nadar em águas revoltas.</li>
-              <li><strong>Brutalidade:</strong> Atos de esforço puro: arrombar portas reforçadas, erguer vigas e dobrar grades de ferro.</li>
-              <li><strong>Luta:</strong> Combate desarmado corporal e maestria com armas brancas (espadas, machados, cutelos, facas).</li>
+
+        <div class="space-y-4">
+          <!-- FORÇA -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
+            <h4 class="font-serif font-black text-amber-950 text-lg mb-1">Força (O Poder Muscular & Impacto)</h4>
+            <p class="text-xs text-stone-700 italic mb-2">Mede a potência muscular pura, capacidade de tração, elevação de carga e devastação física.</p>
+            <ul class="text-xs text-stone-900 space-y-1.5 pl-4 list-disc">
+              <li><strong>Atletismo:</strong> Correr em disparada, saltar abismos, escalar paredões de pedra, nadar contra correntezas bravias.</li>
+              <li><strong>Brutalidade:</strong> Arrombar portas de carvalho, erguer escombros pesados, torcer barras de ferro, destruição de estruturas.</li>
+              <li><strong>Luta:</strong> Combate corpo a corpo desarmado (socos, chutes, agarrões) e manejo de armas brancas (espadas, sabres, facas, machados).</li>
             </ul>
           </div>
 
-          <div class="p-4 bg-stone-100/90 rounded-xl border border-amber-900/20 shadow-sm">
-            <div class="flex justify-between items-center mb-1">
-              <h4 class="font-bold font-serif text-amber-950 text-base">Vigor (A Resiliência)</h4>
-              <span class="text-xs font-mono font-bold text-amber-800 bg-amber-200/60 px-2 py-0.5 rounded">Físico</span>
-            </div>
-            <p class="text-xs text-stone-800 mb-2">A capacidade de aguentar castigo físico, manter o fôlego e permanecer de pé.</p>
-            <ul class="list-disc list-inside text-xs text-stone-900 space-y-1">
-              <li><strong>Constituição:</strong> Resistência a venenos, pragas mundanas, choque térmico e noites sem dormir.</li>
-              <li><strong>Recuperação:</strong> Rapidez biológica com que o corpo estanca sangramentos e cicatriza ferimentos.</li>
-              <li><strong>Tolerância:</strong> Suporte à dor física excruciante sem gritar, desmaiar ou vacilar em combate.</li>
+          <!-- VIGOR -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
+            <h4 class="font-serif font-black text-amber-950 text-lg mb-1">Vigor (A Resiliência Biológica)</h4>
+            <p class="text-xs text-stone-700 italic mb-2">Mede a robustez física, fôlego, capacidade pulmonar e resistência a traumas corporais.</p>
+            <ul class="text-xs text-stone-900 space-y-1.5 pl-4 list-disc">
+              <li><strong>Constituição:</strong> Resistência a venenos, toxinas industriais, privação de sono, frio congelante e calor tóxico de caldeiras.</li>
+              <li><strong>Recuperação:</strong> Rapidez biológica para estancar hemorragias, fechar ferimentos abertos e regenerar tecidos.</li>
+              <li><strong>Tolerância:</strong> Resistir à dor extrema sem gritar, suportar choques elétricos, queimaduras e tortura física sem desmaiar.</li>
             </ul>
           </div>
 
-          <div class="p-4 bg-stone-100/90 rounded-xl border border-amber-900/20 shadow-sm">
-            <div class="flex justify-between items-center mb-1">
-              <h4 class="font-bold font-serif text-amber-950 text-base">Destreza (A Agilidade & Precisão)</h4>
-              <span class="text-xs font-mono font-bold text-amber-800 bg-amber-200/60 px-2 py-0.5 rounded">Físico</span>
+          <!-- DESTREZA -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
+            <div class="flex justify-between items-start mb-1">
+              <h4 class="font-serif font-black text-amber-950 text-lg">Destreza (A Agilidade & Reflexos)</h4>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">Iniciativa = 1d20 + Destreza</span>
             </div>
-            <p class="text-xs text-stone-800 mb-2">Coordenação motora fina, velocidade de reação, reflexos rápidos e equilíbrio corporal.</p>
-            <ul class="list-disc list-inside text-xs text-stone-900 space-y-1">
-              <li><strong>Acrobacia:</strong> Equilíbrio sobre parapeitos e cordames, manobras evasivas e quedas amortecidas.</li>
-              <li><strong>Furtividade:</strong> Mover-se sem emitir ruído, ocultar-se em sombras e passar despercebido por patrulhas.</li>
-              <li><strong>Mira:</strong> Pontaria com armas de fogo (pistolas, rifles, espingardas), arcos compostos e facas de arremesso.</li>
+            <p class="text-xs text-stone-700 italic mb-2">Mede a coordenação motora fina, velocidade de reação, equilíbrio e precisão de disparos.</p>
+            <ul class="text-xs text-stone-900 space-y-1.5 pl-4 list-disc">
+              <li><strong>Acrobacia:</strong> Equilíbrio sobre mastros e cordas, cambalhotas, amortecimento de quedas e esquivas acrobáticas.</li>
+              <li><strong>Furtividade:</strong> Mover-se sem emitir nenhum som, ocultar-se nas sombras da noite e passar despercebido por guardas.</li>
+              <li><strong>Mira:</strong> Pontaria com armas de fogo (revólveres, mosquetes, rifles de precisão), arcos, bestas e facas arremessadas.</li>
             </ul>
           </div>
         </div>
 
-        <!-- ATRIBUTOS MENTAIS & SOCIAIS -->
-        <h3 class="text-xl font-bold font-serif text-amber-950 border-b-2 border-amber-900/30 pb-2 mt-6">
+        <!-- 2. ATRIBUTOS MENTAIS E SOCIAIS -->
+        <h3 class="font-serif font-bold text-amber-950 text-xl border-b border-amber-900/30 pb-2 mt-8">
           2. Atributos Mentais e Sociais
         </h3>
-        <div class="space-y-3">
-          <div class="p-4 bg-stone-100/90 rounded-xl border border-amber-900/20 shadow-sm">
-            <div class="flex justify-between items-center mb-1">
-              <h4 class="font-bold font-serif text-amber-950 text-base">Carisma (A Presença & Magnetismo)</h4>
-              <span class="text-xs font-mono font-bold text-amber-800 bg-amber-200/60 px-2 py-0.5 rounded">Social</span>
-            </div>
-            <p class="text-xs text-stone-800 mb-2">Não é apenas beleza física, mas o peso da sua personalidade e sua capacidade de influenciar outros.</p>
-            <ul class="list-disc list-inside text-xs text-stone-900 space-y-1">
-              <li><strong>Animais:</strong> Interpretar o comportamento de feras, acalmar cães de guarda e domesticar criaturas selvagens.</li>
-              <li><strong>Lábia:</strong> A arte de convencer, mentir, negociar preços, blefar e seduzir com palavras afiadas.</li>
-              <li><strong>Teatralidade:</strong> Atuação pública, disfarce de identidade, manipulação de multidões e oratória.</li>
+
+        <div class="space-y-4">
+          <!-- CARISMA -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
+            <h4 class="font-serif font-black text-amber-950 text-lg mb-1">Carisma (A Presença & Magnetismo)</h4>
+            <p class="text-xs text-stone-700 italic mb-2">A força de projeção da personalidade, magnetismo pessoal, liderança e influência sobre outros seres.</p>
+            <ul class="text-xs text-stone-900 space-y-1.5 pl-4 list-disc">
+              <li><strong>Animais:</strong> Acalmar feras selvagens, interpretar sinais de animais, adestramento e montaria de cavalos sob tiroteio.</li>
+              <li><strong>Lábia:</strong> Convencimento, barganha comercial, diplomacia, blefe, sedução e manipulação social de autoridades.</li>
+              <li><strong>Teatralidade:</strong> Atuação, disfarce de identidade, imitação de sotaques, oratória política e entretenimento de multidões.</li>
             </ul>
           </div>
 
-          <div class="p-4 bg-stone-100/90 rounded-xl border border-amber-900/20 shadow-sm">
-            <div class="flex justify-between items-center mb-1">
-              <h4 class="font-bold font-serif text-amber-950 text-base">Conhecimento (A Erudição Acadêmica)</h4>
-              <span class="text-xs font-mono font-bold text-amber-800 bg-amber-200/60 px-2 py-0.5 rounded">Mental</span>
-            </div>
-            <p class="text-xs text-stone-800 mb-2">A bagagem teórica e prática acumulada através de livros, expedições e oficinas.</p>
-            <ul class="list-disc list-inside text-xs text-stone-900 space-y-1">
-              <li><strong>História:</strong> Lembrar fatos antigos, lendas locais, tratados políticos e genealogias dinásticas.</li>
-              <li><strong>Mito:</strong> Conhecimento sobre o ocultismo, rituais proibidos, criaturas do folclore e ecos do Verbo.</li>
-              <li><strong>Raciocínio:</strong> Lógica pura, dedução investigativa, cálculo balístico e quebra de enigmas.</li>
-              <li><strong>Ofício:</strong> Sua especialização técnica manual (Medicina, Engenharia, Arqueologia, Mecânica, Carpintaria).</li>
+          <!-- CONHECIMENTO -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
+            <h4 class="font-serif font-black text-amber-950 text-lg mb-1">Conhecimento (A Erudição Acadêmica)</h4>
+            <p class="text-xs text-stone-700 italic mb-2">O acúmulo de estudos formais, teorias científicas, história das nações e ofícios práticos.</p>
+            <ul class="text-xs text-stone-900 space-y-1.5 pl-4 list-disc">
+              <li><strong>História:</strong> Linhagens de famílias reais, tratados bélicos, guerras passadas, política mundial e arquitetura antiga.</li>
+              <li><strong>Mito:</strong> Ocultismo, rituais do Verbo, lendas dos Primordiais, entidades do Vácuo e folclore esquecido.</li>
+              <li><strong>Raciocínio:</strong> Dedução lógica, solução de enigmas matemáticos, quebra de cifras e análise tática de planos inimigos.</li>
+              <li><strong>Ofício:</strong> Especialização técnica manual (Arqueologia, Mecânica a vapor, Medicina/Cirurgia, Ferraria, Carpintaria, etc.).</li>
             </ul>
           </div>
 
-          <div class="p-4 bg-stone-100/90 rounded-xl border border-amber-900/20 shadow-sm">
-            <div class="flex justify-between items-center mb-1">
-              <h4 class="font-bold font-serif text-amber-950 text-base">Inteligência (A Agudeza & Instinto)</h4>
-              <span class="text-xs font-mono font-bold text-amber-800 bg-amber-200/60 px-2 py-0.5 rounded">Mental</span>
-            </div>
-            <p class="text-xs text-stone-800 mb-2">Seu tempo de resposta perceptivo instantâneo e a leitura do ambiente ao seu redor.</p>
-            <ul class="list-disc list-inside text-xs text-stone-900 space-y-1">
-              <li><strong>Intuição:</strong> Pressentir perigos iminentes, notar hesitações na voz e sentir quando alguém está mentindo.</li>
-              <li><strong>Percepção:</strong> Notar pistas ocultas, ouvir sussurros no quarto ao lado e enxergar silhuetas na névoa.</li>
-              <li><strong>Sobrevivência:</strong> Rastrear pegadas na lama, encontrar abrigo, purificar água e guiar o grupo em locais hostis.</li>
+          <!-- INTELIGÊNCIA -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
+            <h4 class="font-serif font-black text-amber-950 text-lg mb-1">Inteligência (A Agudeza & Instinto Prático)</h4>
+            <p class="text-xs text-stone-700 italic mb-2">A capacidade de processamento sensorial imediato, percepção de detalhes sutis e instinto de sobrevivência.</p>
+            <ul class="text-xs text-stone-900 space-y-1.5 pl-4 list-disc">
+              <li><strong>Intuição:</strong> Pressentir perigo iminente, detectar mentiras no olhar de alguém e prever emboscadas antes do primeiro tiro.</li>
+              <li><strong>Percepção:</strong> Olhos afiados para compartimentos secretos, ouvir sussurros através de portas e avistar vigias no horizonte.</li>
+              <li><strong>Sobrevivência:</strong> Rastreamento de pegadas na terra batida, caça, pesca, orientação pelas estrelas e encontrar abrigos seguros.</li>
             </ul>
           </div>
         </div>
 
-        <div class="p-4 bg-amber-50 rounded-xl border-2 border-amber-800/40 shadow-sm mt-4">
-          <h4 class="font-bold font-serif text-amber-950 mb-1 text-sm">⚖️ A Regra de Ouro do Teto de Treinamento</h4>
-          <p class="text-xs text-stone-900 leading-relaxed text-justify">
-            O valor numérico de uma Perícia <strong>nunca pode ultrapassar o dobro (2x) do valor do seu Atributo correspondente</strong>. Se você possui Força 2, o seu limite máximo em Luta é 4. Para atingir Luta 5, você precisará elevar seu atributo de Força para pelo menos 3!
+        <!-- 3. ATRIBUTO ESPECIAL: FORÇA DE VONTADE -->
+        <h3 class="font-serif font-bold text-amber-950 text-xl border-b border-amber-900/30 pb-2 mt-8">
+          3. Atributo Especial: Força de Vontade
+        </h3>
+
+        <div class="p-4 bg-amber-50/95 rounded-xl border-2 border-amber-800 shadow-sm">
+          <h4 class="font-serif font-black text-amber-950 text-lg mb-1">Força de Vontade (O Combustível da Alma)</h4>
+          <p class="text-xs text-stone-700 italic mb-3">
+            Diferente dos atributos biológicos, a Força de Vontade representa a integridade espiritual do ser humano perante o insondável. É a armadura da mente contra a loucura e o canal pelo qual a Essência mística é manifestada no mundo real.
           </p>
+          <ul class="text-xs text-stone-900 space-y-2 pl-4 list-disc">
+            <li><strong>Mente:</strong> Resiliência contra o choque de insanidade, pavor de aberrações, pesadelos arcanos e manipulação psíquica.</li>
+            <li><strong>Alma:</strong> Fé inabalável, convicção moral, integridade espiritual e conexão com o plano astral e os mortos.</li>
+            <li><strong>Corpo:</strong> Superação física através da pura determinação mental (agir mesmo com ossos quebrados e músculos lacerados).</li>
+            <li><strong>Essência:</strong> A centelha mágica pura que permite canalizar os Domínios da Manifestação. Role seu <strong>Dado de Essência</strong> conforme sua Linhagem!</li>
+          </ul>
+
+          <div class="mt-4 p-3 bg-white/90 rounded border border-amber-800/40 text-xs text-stone-900">
+            <strong>Custo de Evolução em XP:</strong><br />
+            &bull; +1 Atributo Comum: <strong>4 XP</strong> &nbsp;|&nbsp; +1 Perícia Comum: <strong>2 XP</strong><br />
+            &bull; +1 Atributo de Força de Vontade: <strong>6 XP</strong> &nbsp;|&nbsp; +1 Perícia de Força de Vontade (Mente, Alma, Corpo, Essência): <strong>4 XP</strong>
+          </div>
         </div>
       </div>
     `
   },
 
   // =========================================================================
-  // CAPÍTULO IV: FORÇA DE VONTADE & OS QUATRO PILARES
+  // CAPÍTULO IV: FORÇA DE VONTADE & OS QUATRO PILARES VITAIS
   // =========================================================================
   {
     id: 4,
@@ -324,95 +345,92 @@ export const BOOK_CHAPTERS: Chapter[] = [
     title: "Força de Vontade & Os Quatro Pilares",
     subtitle: "A Dinâmica da Alma e os Status Vitais de Sobrevivência",
     iconName: "Flame",
-    summary: "A energia da alma como recurso sacrificial: testes de Vontade, dano de sanidade à Psique e os cálculos de HP, CA, Psique e Sistema Imune.",
+    summary: "Como funciona o sacrifício de pontos de perícia, os usos heroicos da Força de Vontade e os pilares de HP, CA, Psique, SI e Dado de Essência.",
     contentHtml: `
       <div class="space-y-6">
         <p class="leading-relaxed text-stone-900 text-justify">
-          Em <em>The Core of Man</em>, a vontade não é apenas um número estático na ficha — ela é o sacrifício e o combustível da sua alma. Quando você tenta realizar algo que desafia os limites do corpo humano ou toca as energias do Verbo, você trava um embate direto contra o desconhecido.
+          Em <em>The Core of Man</em>, a vontade não é apenas um número estático na ficha; é um sacrifício consciente. Quando seu protagonista desafia o destino para realizar algo extraordinário, ele negocia diretamente com as reservas da sua própria alma.
         </p>
 
-        <!-- FORÇA DE VONTADE -->
-        <h3 class="text-xl font-bold font-serif text-amber-950 border-b-2 border-amber-900/30 pb-2">
-          As 4 Perícias de Força de Vontade
+        <h3 class="font-serif font-bold text-amber-950 text-xl border-b border-amber-900/30 pb-2">
+          Usos da Força de Vontade
         </h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-          <div class="p-3 rounded-lg bg-stone-100 border border-amber-900/20">
-            <strong class="text-amber-900 font-serif block text-sm">Mente</strong>
-            <p class="text-stone-800">Sua defesa contra o horror cósmico, choques de insanidade, torturas mentais e pesadelos do eco.</p>
-          </div>
-          <div class="p-3 rounded-lg bg-stone-100 border border-amber-900/20">
-            <strong class="text-amber-900 font-serif block text-sm">Alma</strong>
-            <p class="text-stone-800">Sua conexão com o plano espiritual, a convicção moral profunda e a firmeza da sua fé interior.</p>
-          </div>
-          <div class="p-3 rounded-lg bg-stone-100 border border-amber-900/20">
-            <strong class="text-amber-900 font-serif block text-sm">Corpo</strong>
-            <p class="text-stone-800">A superação dos limites biológicos da carne através da pura teimosia e obstinação de viver.</p>
-          </div>
-          <div class="p-3 rounded-lg bg-stone-100 border border-amber-900/20">
-            <strong class="text-amber-900 font-serif block text-sm">Essência (Dado de Linhagem)</strong>
-            <p class="text-stone-800">Sua reserva inata de energia arcana pura. Utiliza o Dado de Essência definido por sua Linhagem (1d4, 1d6 ou 1d8).</p>
-          </div>
-        </div>
-
-        <!-- REGRAS DE TESTE DE VONTADE -->
-        <div class="p-4 bg-amber-100/90 rounded-xl border-l-4 border-amber-800 text-stone-900 text-xs space-y-2">
-          <strong class="font-serif text-amber-950 text-sm block">O Preço do Poder: Dinâmica de Vontade</strong>
-          <p><strong>1. O Teste de Vontade:</strong> Role <code>1d20 + Força de Vontade + Perícia Relacionada</code> contra a CD imposta.</p>
-          <p><strong>2. A Falha e o Dano na Psique:</strong> Se falhar, role seu Dado de Sanidade (1d4, 1d6...) determinado pelo Mestre; o valor é subtraído diretamente da sua <strong>Psique</strong>.</p>
-          <p><strong>3. O Sacrifício Punitivo (Sucesso Forçado):</strong> Se faltaram pontos para passar, você pode queimar temporariamente pontos daquela perícia para forçar o sucesso na ação! Esses pontos só voltam investindo XP novamente.</p>
-        </div>
-
-        <!-- OS 4 PILARES DE SOBREVIVÊNCIA -->
-        <h3 class="text-xl font-bold font-serif text-amber-950 border-b-2 border-amber-900/30 pb-2 mt-6">
-          Os 4 Pilares de Sobrevivência (Fórmulas Oficiais)
-        </h3>
-        <p class="text-xs text-stone-800 leading-relaxed">
-          Para calcular seus status, consulte o <strong>Valor Base da sua Linhagem</strong> (Capítulo VIII) e some seus atributos:
-        </p>
 
         <div class="space-y-3">
-          <div class="p-4 rounded-xl bg-stone-100/90 border border-amber-900/30 shadow-sm">
-            <div class="flex justify-between items-center mb-1">
-              <h4 class="font-bold font-serif text-red-950 text-sm">🩸 HP &bull; Pontos de Vida</h4>
-              <span class="text-xs font-mono font-bold text-red-900 bg-red-100 px-2 py-0.5 rounded">Integridade da Carne</span>
-            </div>
-            <p class="text-xs font-mono font-bold text-stone-950 bg-stone-200/80 p-2 rounded">
-              HP = [Base da Linhagem] + Vigor + Constituição + Corpo + Bônus
+          <div class="p-3.5 bg-stone-50 rounded-lg border-l-4 border-amber-800 shadow-sm">
+            <strong class="font-serif text-amber-950 text-sm block">&bull; O Sopro Heroico</strong>
+            <p class="text-xs text-stone-800 mt-1 leading-relaxed">
+              Gastar 1 Ponto de Força de Vontade permite rolar novamente qualquer dado fracassado.
             </p>
-            <p class="text-xs text-stone-800 mt-1">Representa o trauma físico que seu corpo suporta antes de cair morrendo (0 HP).</p>
           </div>
 
-          <div class="p-4 rounded-xl bg-stone-100/90 border border-amber-900/30 shadow-sm">
-            <div class="flex justify-between items-center mb-1">
-              <h4 class="font-bold font-serif text-blue-950 text-sm">🛡️ CA &bull; Classe de Armadura</h4>
-              <span class="text-xs font-mono font-bold text-blue-900 bg-blue-100 px-2 py-0.5 rounded">Defesa & Esquiva</span>
-            </div>
-            <p class="text-xs font-mono font-bold text-stone-950 bg-stone-200/80 p-2 rounded">
-              CA = [Base da Linhagem] + Destreza + Corpo + Bônus de Armadura
+          <div class="p-3.5 bg-stone-50 rounded-lg border-l-4 border-amber-800 shadow-sm">
+            <strong class="font-serif text-amber-950 text-sm block">&bull; Ignorar a Agonia</strong>
+            <p class="text-xs text-stone-800 mt-1 leading-relaxed">
+              Manter-se consciente e agindo por 1 turno inteiro mesmo após seus Pontos de Vida (HP) chegarem a zero.
             </p>
-            <p class="text-xs text-stone-800 mt-1">A dificuldade numérica que os ataques inimigos precisam igualar para te acertar.</p>
           </div>
 
-          <div class="p-4 rounded-xl bg-stone-100/90 border border-amber-900/30 shadow-sm">
-            <div class="flex justify-between items-center mb-1">
-              <h4 class="font-bold font-serif text-purple-950 text-sm">🧠 Psique &bull; Vida Mental & Sanidade</h4>
-              <span class="text-xs font-mono font-bold text-purple-900 bg-purple-100 px-2 py-0.5 rounded">Reserva Mental & Habilidades</span>
-            </div>
-            <p class="text-xs font-mono font-bold text-stone-950 bg-stone-200/80 p-2 rounded">
-              Psique = [Base da Linhagem] + Inteligência + Intuição + Mente + Bônus
+          <div class="p-3.5 bg-stone-50 rounded-lg border-l-4 border-amber-800 shadow-sm">
+            <strong class="font-serif text-amber-950 text-sm block">&bull; Combustão Arcana</strong>
+            <p class="text-xs text-stone-800 mt-1 leading-relaxed">
+              Substituir Pontos de Essência que você não possui consumindo diretamente a sua Força de Vontade para alimentar uma manifestação sobrenatural.
             </p>
-            <p class="text-xs text-stone-800 mt-1">Sua blindagem contra loucura e pânico. Pontos de Psique também são gastos para ativar habilidades especiais de Classe!</p>
+          </div>
+        </div>
+
+        <h3 class="font-serif font-bold text-amber-950 text-xl border-b border-amber-900/30 pb-2 mt-8">
+          A Dinâmica do Sacrifício: O Preço do Sucesso
+        </h3>
+        <p class="text-xs text-stone-900 leading-relaxed text-justify">
+          Para realizar uma ação de Essência ou resistir a um terror cósmico, role: <strong>1d20 + Força de Vontade + Perícia Relacionada (Mente, Alma, Corpo ou Essência)</strong> contra a CD estipulada pelo Mestre.
+        </p>
+        <p class="text-xs text-stone-900 leading-relaxed text-justify">
+          Se faltarem pontos para atingir a CD, você pode optar por um <strong>Sucesso Forçado</strong>: sacrifique pontos temporários daquela perícia para cobrir a diferença e passar no teste! Para cada 1 ponto que faltou, você perde 1 ponto daquela perícia. Esses pontos não voltam imediatamente e representam o esgotamento profundo do seu espírito.
+        </p>
+
+        <!-- CARD DE ALTO CONTRASTE: O SACRIFÍCIO PUNITIVO -->
+        <div class="p-5 bg-red-50 rounded-xl border-2 border-red-800 shadow-sm mt-4">
+          <h4 class="font-serif font-black text-red-950 text-base mb-1">
+            ⚠️ O Sacrifício Punitivo (Quando a Força de Vontade Zera)
+          </h4>
+          <p class="text-xs text-stone-900 leading-relaxed text-justify">
+            Se a sua Força de Vontade for reduzida a zero, sua alma sofre uma <strong>Fratura do Cerne</strong>. O personagem entra em estado de catatonia, choque ou desespero absoluto, sofrendo desvantagem permanente em todos os testes até que consiga cumprir um Juramento Solene diante do Mestre e reatar os laços com sua humanidade.
+          </p>
+        </div>
+
+        <!-- OS QUATRO PILARES DE SOBREVIVÊNCIA -->
+        <h3 class="font-serif font-bold text-amber-950 text-xl border-b border-amber-900/30 pb-2 mt-8">
+          Os Quatro Pilares Vitais
+        </h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-4 bg-stone-50 rounded-xl border border-red-800/40 shadow-sm">
+            <h4 class="font-serif font-black text-red-950 text-base mb-1">❤️ Pontos de Vida (HP)</h4>
+            <p class="text-xs text-stone-800 leading-relaxed">
+              Mede a integridade dos seus tecidos e órgãos. Calculado como: <strong>HP Base da Linhagem + (Vigor &times; 2)</strong>. Quando chega a zero, o personagem cai inconsciente e inicia os testes contra a morte.
+            </p>
           </div>
 
-          <div class="p-4 rounded-xl bg-stone-100/90 border border-amber-900/30 shadow-sm">
-            <div class="flex justify-between items-center mb-1">
-              <h4 class="font-bold font-serif text-emerald-950 text-sm">🧪 SI &bull; Sistema Imune</h4>
-              <span class="text-xs font-mono font-bold text-emerald-900 bg-emerald-100 px-2 py-0.5 rounded">Barreira Biológica</span>
-            </div>
-            <p class="text-xs font-mono font-bold text-stone-950 bg-stone-200/80 p-2 rounded">
-              SI = [Base da Linhagem] + Vigor + Tolerância + Corpo + Bônus
+          <div class="p-4 bg-stone-50 rounded-xl border border-blue-800/40 shadow-sm">
+            <h4 class="font-serif font-black text-blue-950 text-base mb-1">🛡️ Classe de Armadura (CA)</h4>
+            <p class="text-xs text-stone-800 leading-relaxed">
+              A dificuldade de ser atingido e ferido. Calculada como: <strong>CA Base da Linhagem + Destreza + Bônus de Armaduras e Escudos</strong>.
             </p>
-            <p class="text-xs text-stone-800 mt-1">Sua defesa contra toxinas, venenos, contaminações biológicas e pragas místicas do Verbo.</p>
+          </div>
+
+          <div class="p-4 bg-stone-50 rounded-xl border border-purple-800/40 shadow-sm">
+            <h4 class="font-serif font-black text-purple-950 text-base mb-1">🔮 Psique (Sanidade & Estresse)</h4>
+            <p class="text-xs text-stone-800 leading-relaxed">
+              A resiliência mental diante do horror, da morte e da dor. Calculada como: <strong>Psique Base da Linhagem + Força de Vontade</strong>. É consumida para ativar habilidades de classe ou resistir a abalos psíquicos.
+            </p>
+          </div>
+
+          <div class="p-4 bg-stone-50 rounded-xl border border-emerald-800/40 shadow-sm">
+            <h4 class="font-serif font-black text-emerald-950 text-base mb-1">🧬 Sistema Imunológico (SI)</h4>
+            <p class="text-xs text-stone-800 leading-relaxed">
+              A barreira biológica contra venenos, infecções químicas, gases e patologias do Vácuo. Calculada como: <strong>SI Base da Linhagem + Constituição</strong>.
+            </p>
           </div>
         </div>
       </div>
@@ -420,7 +438,7 @@ export const BOOK_CHAPTERS: Chapter[] = [
   },
 
   // =========================================================================
-  // CAPÍTULO V: OS DOMÍNIOS DA MANIFESTAÇÃO
+  // CAPÍTULO V: OS DOMÍNIOS DA MANIFESTAÇÃO & TIPOS DE MAGIA
   // =========================================================================
   {
     id: 5,
@@ -428,97 +446,133 @@ export const BOOK_CHAPTERS: Chapter[] = [
     title: "Os Domínios da Manifestação",
     subtitle: "A Magia sem Amarras e a Criação de Habilidades",
     iconName: "Sparkles",
-    summary: "Como funciona o poder místico em The Core: a imaginação como limite, a negociação de efeitos com o Mestre e os 5 Grandes Domínios da existência.",
+    summary: "O sistema dinâmico de magia e poderes: os 5 Grandes Domínios (Matéria, Carne, Éter, Trama, Elo), criação de habilidades e custos em XP.",
     contentHtml: `
       <div class="space-y-6">
         <p class="leading-relaxed text-stone-900 text-justify">
-          Em <em>The Core of Man</em>, o poder sobrenatural não é uma lista estática de magias prontas com "slots" por dia. Ele é a consequência direta do seu <strong>Domínio</strong> sobre um aspecto primordial da existência.
+          Em <em>The Core of Man</em>, o poder sobrenatural não é uma lista estática e engessada de feitiços de um livro tradicional. Ele é o resultado direto do seu <strong>Domínio</strong> sobre um aspecto fundamental da existência. Enquanto os Primogênitos manifestam o Verbo por puro instinto biológico, os humanos e outros povos precisam estudar, treinar e investir seu próprio crescimento (XP) para codificar sua vontade na realidade. A imaginação do jogador é essencial!
         </p>
 
-        <h3 class="text-xl font-bold font-serif text-amber-950 border-b-2 border-amber-900/30 pb-2">
-          Como Funciona a Criação Livre de Habilidades
+        <h3 class="font-serif font-bold text-amber-950 text-xl border-b border-amber-900/30 pb-2">
+          Como Funciona a Criação de Habilidades
         </h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-          <div class="p-3 bg-stone-100 rounded-lg border border-amber-900/20">
-            <strong class="text-amber-900 font-serif block text-sm mb-1">1. A Ideia do Jogador</strong>
-            <p class="text-stone-800">Você descreve o que deseja realizar: <em>"Quero que minha flecha crie raízes que paralisem o inimigo"</em> ou <em>"Quero sentir batimentos cardíacos atrás da porta"</em>.</p>
-          </div>
-          <div class="p-3 bg-stone-100 rounded-lg border border-amber-900/20">
-            <strong class="text-amber-900 font-serif block text-sm mb-1">2. O Enquadramento</strong>
-            <p class="text-stone-800">O Mestre e o jogador identificam qual dos 5 Domínios rege aquele fenômeno e qual perícia de Vontade será rolada.</p>
-          </div>
-          <div class="p-3 bg-stone-100 rounded-lg border border-amber-900/20">
-            <strong class="text-amber-900 font-serif block text-sm mb-1">3. A Precificação em XP</strong>
-            <p class="text-stone-800">O Mestre avalia a magnitude do efeito e estabelece o custo em XP para que o personagem "aprenda" essa técnica permanentemente.</p>
-          </div>
-          <div class="p-3 bg-stone-100 rounded-lg border border-amber-900/20">
-            <strong class="text-amber-900 font-serif block text-sm mb-1">4. A Execução em Jogo</strong>
-            <p class="text-stone-800">Em cena, você ativa a habilidade rolando o teste correspondente e arcando com os custos de esforço e sanidade.</p>
-          </div>
-        </div>
 
-        <h3 class="text-xl font-bold font-serif text-amber-950 border-b-2 border-amber-900/30 pb-2 mt-6">
-          Os 5 Grandes Domínios
-        </h3>
         <div class="space-y-3">
-          <div class="p-4 bg-stone-100/90 rounded-xl border border-amber-900/20">
-            <h4 class="font-serif font-bold text-amber-950 text-sm">1. Domínio da Matéria (O Caminho do Condutor)</h4>
-            <p class="text-xs text-stone-800 mt-1 leading-relaxed">Manipulação de objetos inanimados, metalurgia arcana e reforço físico. Permite imbuir armas com elementos, moldar ferro a frio e reforçar blindagens. <em>Perícia Chave: Essência ou Corpo.</em></p>
+          <div class="p-3 bg-stone-50 rounded-lg border-l-4 border-amber-800 text-xs text-stone-900">
+            <strong>1. A Ideia do Jogador:</strong> Você descreve o efeito místico ou técnico que deseja realizar (Ex: <em>"Quero disparar uma flecha que se transforma em correntes de espinhos ao atingir o solo"</em> ou <em>"Quero endurecer minha pele como granito contra tiros"</em>).
           </div>
-          <div class="p-4 bg-stone-100/90 rounded-xl border border-amber-900/20">
-            <h4 class="font-serif font-bold text-amber-950 text-sm">2. Domínio da Carne (O Caminho do Ápice)</h4>
-            <p class="text-xs text-stone-800 mt-1 leading-relaxed">Alteração e fortalecimento da própria biologia ou da biologia alheia. Permite cura acelerada, garras ósseas, visão térmica e explosões de vigor muscular. <em>Perícia Chave: Corpo.</em></p>
+          <div class="p-3 bg-stone-50 rounded-lg border-l-4 border-amber-800 text-xs text-stone-900">
+            <strong>2. O Enquadramento:</strong> O Mestre e o jogador definem em qual dos 5 Grandes Domínios essa manifestação se enquadra.
           </div>
-          <div class="p-4 bg-stone-100/90 rounded-xl border border-amber-900/20">
-            <h4 class="font-serif font-bold text-amber-950 text-sm">3. Domínio do Éter (O Caminho dos Elementos)</h4>
-            <p class="text-xs text-stone-800 mt-1 leading-relaxed">Manifestação de energias brutas da natureza sem corpo sólido: faíscas elétricas, rajadas de vento, chamas espectrais azuis e névoas de ocultamento. <em>Perícia Chave: Essência.</em></p>
+          <div class="p-3 bg-stone-50 rounded-lg border-l-4 border-amber-800 text-xs text-stone-900">
+            <strong>3. A Precificação em XP:</strong> O Mestre avalia o impacto mecânico da habilidade e estipula o custo em Pontos de Experiência (XP) para que o personagem a aprenda permanentemente.
           </div>
-          <div class="p-4 bg-stone-100/90 rounded-xl border border-amber-900/20">
-            <h4 class="font-serif font-bold text-amber-950 text-sm">4. Domínio da Trama (O Caminho da Mente)</h4>
-            <p class="text-xs text-stone-800 mt-1 leading-relaxed">Ilusões óticas e sonoras, sugestão mental sutil, alteração das emoções alheias, gritos de pavor e invisibilidade social. <em>Perícia Chave: Mente.</em></p>
-          </div>
-          <div class="p-4 bg-stone-100/90 rounded-xl border border-amber-900/20">
-            <h4 class="font-serif font-bold text-amber-950 text-sm">5. Domínio do Elo (O Caminho da Alma)</h4>
-            <p class="text-xs text-stone-800 mt-1 leading-relaxed">Conexão entre seres vivos, autoridade moral inquestionável, comando de feras selvagens e sintonia com o mundo espiritual. <em>Perícia Chave: Alma.</em></p>
+          <div class="p-3 bg-stone-50 rounded-lg border-l-4 border-amber-800 text-xs text-stone-900">
+            <strong>4. A Execução em Jogo:</strong> Uma vez adquirida, a habilidade é conjurada gastando os pontos correspondentes e rolando a Perícia-Chave designada.
           </div>
         </div>
 
-        <h3 class="text-xl font-bold font-serif text-amber-950 border-b-2 border-amber-900/30 pb-2 mt-6">
-          Tabela Guia de Custos em XP para Habilidades Criadas
+        <h3 class="font-serif font-bold text-amber-950 text-xl border-b border-amber-900/30 pb-2 mt-8">
+          Os 5 Grandes Domínios da Manifestação
         </h3>
-        <div class="overflow-x-auto shadow-sm rounded-lg border border-amber-900/30">
-          <table class="w-full text-left text-xs bg-stone-50">
-            <thead class="bg-amber-900/20 text-amber-950 font-serif border-b border-amber-900/30">
-              <tr>
-                <th class="py-2.5 px-3 font-bold">Nível</th>
-                <th class="py-2.5 px-3 font-bold">Custo em XP</th>
-                <th class="py-2.5 px-3 font-bold">Escopo do Efeito Místico</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-amber-900/10 text-stone-900">
-              <tr>
-                <td class="py-2.5 px-3 font-bold">Nível I (Básico)</td>
-                <td class="py-2.5 px-3 font-mono font-bold text-amber-900">2 a 4 XP</td>
-                <td class="py-2.5 px-3">Efeitos sutis e utilitários: acender tochas, sentir presenças espirituais, +1 em rolagem específica.</td>
-              </tr>
-              <tr>
-                <td class="py-2.5 px-3 font-bold">Nível II (Incomum)</td>
-                <td class="py-2.5 px-3 font-mono font-bold text-amber-900">5 a 8 XP</td>
-                <td class="py-2.5 px-3">Altera o cenário ou causa dano moderado: flecha de raízes, cura de ferida aberta, barreira de vento.</td>
-              </tr>
-              <tr>
-                <td class="py-2.5 px-3 font-bold">Nível III (Raro)</td>
-                <td class="py-2.5 px-3 font-mono font-bold text-amber-900">10 a 15 XP</td>
-                <td class="py-2.5 px-3">Efeitos poderosos que mudam o combate: paralisar vários inimigos, rajadas gravitacionais em área.</td>
-              </tr>
-              <tr>
-                <td class="py-2.5 px-3 font-bold">Nível IV (Mítico)</td>
-                <td class="py-2.5 px-3 font-mono font-bold text-amber-900">20+ XP</td>
-                <td class="py-2.5 px-3">Rompe as leis da física: falar com mortos de séculos passados, erguer tempestades ou alterar o destino.</td>
-              </tr>
-            </tbody>
-          </table>
+
+        <div class="space-y-4">
+          <!-- 1. MATÉRIA -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
+            <div class="flex justify-between items-start mb-1">
+              <h4 class="font-serif font-black text-amber-950 text-lg">1. Domínio da Matéria (O Caminho do Condutor)</h4>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Perícia-Chave: Essência ou Corpo</span>
+            </div>
+            <p class="text-xs text-stone-700 italic mb-2">Foca na manipulação de objetos inanimados, ligas metálicas e substâncias físicas sólidas. É o caminho predileto de engenheiros, ferreiros e artilheiros.</p>
+            <div class="text-xs text-stone-900">
+              <strong>Exemplos Práticos:</strong> Imbuir lâminas ou balas com calor incandescente, forjar correntes de ferro que se movem sozinhas, reforçar coletes blindados no meio do combate, modelar fechaduras e travas de metal com o toque.
+            </div>
+          </div>
+
+          <!-- 2. CARNE -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
+            <div class="flex justify-between items-start mb-1">
+              <h4 class="font-serif font-black text-amber-950 text-lg">2. Domínio da Carne (O Caminho do Ápice)</h4>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Perícia-Chave: Corpo</span>
+            </div>
+            <p class="text-xs text-stone-700 italic mb-2">Foca na alteração biológica, muscular e óssea da própria anatomia ou do organismo alheio.</p>
+            <div class="text-xs text-stone-900">
+              <strong>Exemplos Práticos:</strong> Cicatrização instantânea de tecidos e órgãos vitais, projeção de garras ósseas pelas pontas dos dedos, dilatação das pupilas para visão térmica/noturna, ou explosões temporárias de força que dobram a massa muscular.
+            </div>
+          </div>
+
+          <!-- 3. ÉTER -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
+            <div class="flex justify-between items-start mb-1">
+              <h4 class="font-serif font-black text-amber-950 text-lg">3. Domínio do Éter (O Caminho dos Elementos)</h4>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Perícia-Chave: Essência</span>
+            </div>
+            <p class="text-xs text-stone-700 italic mb-2">Foca na canalização direta das energias puras do cosmos que não possuem massa nem forma física sólida.</p>
+            <div class="text-xs text-stone-900">
+              <strong>Exemplos Práticos:</strong> Chamas fátuas esmeraldas, lufadas de vendaval que dispersam fumaça tóxica, descargas elétricas estáticas pelas mãos, cortinas densas de névoa de ocultamento e ondas de choque acústico.
+            </div>
+          </div>
+
+          <!-- 4. TRAMA -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
+            <div class="flex justify-between items-start mb-1">
+              <h4 class="font-serif font-black text-amber-950 text-lg">4. Domínio da Trama (O Caminho da Mente)</h4>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Perícia-Chave: Mente</span>
+            </div>
+            <p class="text-xs text-stone-700 italic mb-2">Foca na alteração sensorial da percepção, criação de miragens e manipulação de emoções alheias.</p>
+            <div class="text-xs text-stone-900">
+              <strong>Exemplos Práticos:</strong> Vestidos ilusórios de vento ou nobreza, sugestão hipnótica em interrogatórios, gritos de pavor que forçam inimigos a recuar apavorados e "invisibilidade social" (fazer guardas ignorarem sua presença como se você fosse poeira).
+            </div>
+          </div>
+
+          <!-- 5. ELO -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
+            <div class="flex justify-between items-start mb-1">
+              <h4 class="font-serif font-black text-amber-950 text-lg">5. Domínio do Elo (O Caminho da Alma)</h4>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Perícia-Chave: Alma</span>
+            </div>
+            <p class="text-xs text-stone-700 italic mb-2">Foca na conexão transcendental entre seres vivos, autoridade espiritual e sintonia com o além.</p>
+            <div class="text-xs text-stone-900">
+              <strong>Exemplos Práticos:</strong> Sentir os batimentos cardíacos e a mentira de alguém a metros de distância, comandar feras selvagens com um olhar, transferir dores corporais entre aliados ou projetar uma aura de autoridade primordial que paralisa adversários.
+            </div>
+          </div>
         </div>
+
+        <!-- TABELA DE CUSTOS EM XP -->
+        <h3 class="font-serif font-bold text-amber-950 text-xl border-b border-amber-900/30 pb-2 mt-8">
+          Tabela Guia de Custos em XP para Habilidades
+        </h3>
+        <table class="w-full text-left border-collapse my-3">
+          <thead>
+            <tr class="bg-amber-100 text-amber-950 border border-amber-800/30">
+              <th class="p-2.5 font-bold">Nível da Habilidade</th>
+              <th class="p-2.5 font-bold">Custo em XP</th>
+              <th class="p-2.5 font-bold">Magnitude e Descrição do Efeito</th>
+            </tr>
+          </thead>
+          <tbody class="text-stone-900 text-sm">
+            <tr class="border-b border-amber-800/20">
+              <td class="p-2.5 font-bold text-amber-950">Nível I (Básico)</td>
+              <td class="p-2.5 font-mono font-bold">2 a 4 XP</td>
+              <td class="p-2.5">Efeitos simples, utilitários práticos ou bônus leves em uma ação de combate.</td>
+            </tr>
+            <tr class="border-b border-amber-800/20 bg-amber-50/50">
+              <td class="p-2.5 font-bold text-amber-950">Nível II (Incomum)</td>
+              <td class="p-2.5 font-mono font-bold">5 a 8 XP</td>
+              <td class="p-2.5">Habilidades que alteram o cenário tático ou causam dano moderado (Ex: flecha de espinhos).</td>
+            </tr>
+            <tr class="border-b border-amber-800/20">
+              <td class="p-2.5 font-bold text-amber-950">Nível III (Raro)</td>
+              <td class="p-2.5 font-mono font-bold">10 a 15 XP</td>
+              <td class="p-2.5">Efeitos de grande poder bélico ou místico, capazes de decidir um combate inteiro ou afetar múltiplos alvos.</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-bold text-amber-950">Nível IV (Mítico)</td>
+              <td class="p-2.5 font-mono font-bold">20+ XP</td>
+              <td class="p-2.5">Manifestações que dobram as leis fundamentais da física, do tempo ou o destino de uma cena.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     `
   },
@@ -532,120 +586,241 @@ export const BOOK_CHAPTERS: Chapter[] = [
     title: "Combate Tático, Armas & Equipamentos",
     subtitle: "Ações, Arsenal Bélico, Blindagens e Slots Corporais",
     iconName: "Swords",
-    summary: "Economia de combate em turnos, slots anatômicos corporais, catálogo completo de armas brancas e de fogo, munições alquímicas e blindagens.",
+    summary: "A anatomia dos 7 slots de equipamentos corporais, tabelas completas de armaduras leves, médias e pesadas, armas brancas, armas de fogo e dispositivos táticos em Libras (£).",
     contentHtml: `
       <div class="space-y-6">
         <p class="leading-relaxed text-stone-900 text-justify">
-          O combate em The Core é rápido, tenso e implacável. A iniciativa é definida rolando <strong>1d20 + Destreza</strong> (com certas classes, como Militar, agindo primeiro por instinto tático).
+          O mundo de 1939 é cruel, bélico e impiedoso. As armas de fogo a vapor e pólvora negra convivem lado a lado com sabres afiados de abordagem marítima e blindagens forjadas para resistir a fragmentos de obuses.
         </p>
 
-        <h3 class="text-xl font-bold font-serif text-amber-950 border-b-2 border-amber-900/30 pb-2">
-          A Economia de Ações no Turno
+        <!-- SEÇÃO 1: OS 7 SLOTS CORPORAIS -->
+        <h3 class="font-serif font-bold text-amber-950 text-xl border-b border-amber-900/30 pb-2">
+          Anatomia do Equipamento: Os 7 Slots Corporais
         </h3>
-        <ul class="list-disc list-inside space-y-1.5 text-stone-900 text-xs leading-relaxed">
-          <li><strong>Uma Ação Principal:</strong> Disparar uma arma, desferir um golpe de lâmina, usar uma habilidade mística, prestar primeiros socorros ou arrombar barricadas.</li>
-          <li><strong>Um Movimento:</strong> Correr até seu limite de deslocamento, buscar cobertura atrás de trincheiras ou subir em escadas/cordames.</li>
-          <li><strong>Uma Ação Rápida / Bônus:</strong> Sacar uma arma secundária, beber um frasco de remédio ou bolar uma fita cirúrgica.</li>
-          <li><strong>Uma Reação:</strong> Esquivar-se de um disparo mortal, aparar um golpe ou ativar uma manobra defensiva.</li>
-        </ul>
+        <p class="text-xs text-stone-900 leading-relaxed text-justify mb-3">
+          Todo personagem possui 7 compartimentos corporais anatômicos para equipar vestimentas, blindagens e ferramentas. Itens fora desses slots devem ser guardados na mochila e exigem uma ação para serem sacados:
+        </p>
 
-        <!-- SLOTS CORPORAIS DE EQUIPAMENTO -->
-        <h3 class="text-xl font-bold font-serif text-amber-950 border-b-2 border-amber-900/30 pb-2 mt-6">
-          Os 7 Slots Anatômicos de Equipamento
-        </h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5 text-xs">
-          <div class="p-2.5 bg-stone-100 rounded-lg border border-amber-900/20">
-            <strong class="text-amber-900 block font-serif">🎩 Cabeça</strong>
-            <span class="text-stone-700">Chapéus de feltro, óculos de solda/latão, máscaras antigás, elmos militares.</span>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center text-xs">
+          <div class="p-3 bg-stone-50 rounded-lg border border-amber-800/30">
+            <strong class="text-amber-950 font-serif block">1. Cabeça</strong>
+            <span class="text-stone-700">Elmos, chapéus, máscaras de gás, óculos de soldador.</span>
           </div>
-          <div class="p-2.5 bg-stone-100 rounded-lg border border-amber-900/20">
-            <strong class="text-amber-900 block font-serif">🧥 Tronco</strong>
-            <span class="text-stone-700">Fardas da Grande Guerra, sobretudos de lã impermeável, couraças de placas, jaquetas de couro.</span>
+          <div class="p-3 bg-stone-50 rounded-lg border border-amber-800/30">
+            <strong class="text-amber-950 font-serif block">2. Tronco</strong>
+            <span class="text-stone-700">Coletes blindados, sobretudos, peitorais de aço, gibões.</span>
           </div>
-          <div class="p-2.5 bg-stone-100 rounded-lg border border-amber-900/20">
-            <strong class="text-amber-900 block font-serif">🧤 Braços</strong>
-            <span class="text-stone-700">Braçadeiras de couro reforçado, luvas de forja, faixas médicas de contenção.</span>
+          <div class="p-3 bg-stone-50 rounded-lg border border-amber-800/30">
+            <strong class="text-amber-950 font-serif block">3. Braços</strong>
+            <span class="text-stone-700">Braçadeiras de couro, manoplas de aço, bandagens tratadas.</span>
           </div>
-          <div class="p-2.5 bg-stone-100 rounded-lg border border-amber-900/20">
-            <strong class="text-amber-900 block font-serif">👖 Pernas</strong>
-            <span class="text-stone-700">Calças de lona pesada, perneiras de montaria em couro, cinturões de ferramentas.</span>
+          <div class="p-3 bg-stone-50 rounded-lg border border-amber-800/30">
+            <strong class="text-amber-950 font-serif block">4. Pernas</strong>
+            <span class="text-stone-700">Calças militares reforçadas, perneiras acolchoadas.</span>
           </div>
-          <div class="p-2.5 bg-stone-100 rounded-lg border border-amber-900/20">
-            <strong class="text-amber-900 block font-serif">🥾 Pés</strong>
-            <span class="text-stone-700">Botas de marcha com sola de aço, sapatos de couro lubrificado, calçados náuticos antiderrapantes.</span>
+          <div class="p-3 bg-stone-50 rounded-lg border border-amber-800/30">
+            <strong class="text-amber-950 font-serif block">5. Pés</strong>
+            <span class="text-stone-700">Botas de cano alto engraxadas, sapatilhas de marujo.</span>
           </div>
-          <div class="p-2.5 bg-stone-100 rounded-lg border border-amber-900/20">
-            <strong class="text-amber-900 block font-serif">🗡️ Mão 1 (Principal)</strong>
-            <span class="text-stone-700">Arma de combate corpo a corpo primária, rifle de repetição ou ferramenta pesada de ofício.</span>
+          <div class="p-3 bg-stone-50 rounded-lg border border-amber-800/30">
+            <strong class="text-amber-950 font-serif block">6. Mão Principal</strong>
+            <span class="text-stone-700">Arma primária (sabre, rifle, machado, bisturi).</span>
           </div>
-          <div class="p-2.5 bg-stone-100 rounded-lg border border-amber-900/20">
-            <strong class="text-amber-900 block font-serif">🛡️ Mão 2 (Secundária)</strong>
-            <span class="text-stone-700">Escudo tático, pistola leve, tocha, lanterna náutica ou frasco de medicamento.</span>
+          <div class="p-3 bg-stone-50 rounded-lg border border-amber-800/30 col-span-2 sm:col-span-1">
+            <strong class="text-amber-950 font-serif block">7. Mão Secundária</strong>
+            <span class="text-stone-700">Escudo, pistola secundária, lanterna a éter, astrolábio.</span>
           </div>
         </div>
 
-        <!-- ARSENAL DE ARMAS BRANCAS -->
-        <h3 class="text-xl font-bold font-serif text-amber-950 border-b-2 border-amber-900/30 pb-2 mt-6">
-          Arsenal de Armas Brancas
+        <!-- SEÇÃO 2: ARMADURAS & BLINDAGENS -->
+        <h3 class="font-serif font-bold text-amber-950 text-xl border-b border-amber-900/30 pb-2 mt-8">
+          Tabela de Armaduras & Blindagens
         </h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-          <div class="p-3 bg-stone-100 rounded-lg border border-amber-900/20">
-            <div class="flex justify-between items-center"><strong class="font-serif text-amber-950 text-sm">Cutelo Naval / Sabre de Bordo</strong><span class="font-mono font-bold text-amber-900 bg-amber-200/60 px-2 py-0.5 rounded">1d6 cortante</span></div>
-            <p class="text-stone-800 mt-1">Arma ágil e resistente, perfeita para conveses apertados, trincheiras e duelos de reação rápida.</p>
+        <table class="w-full text-left border-collapse my-3">
+          <thead>
+            <tr class="bg-amber-100 text-amber-950 border border-amber-800/30">
+              <th class="p-2 font-bold">Armadura</th>
+              <th class="p-2 font-bold">Tipo</th>
+              <th class="p-2 font-bold">Bônus CA</th>
+              <th class="p-2 font-bold">Redução de Dano (RD)</th>
+              <th class="p-2 font-bold">Penalidade</th>
+              <th class="p-2 font-bold">Preço (£)</th>
+            </tr>
+          </thead>
+          <tbody class="text-stone-900 text-xs">
+            <tr class="border-b border-amber-800/20">
+              <td class="p-2 font-bold text-amber-950">Sobretudo de Couro Curtido</td>
+              <td class="p-2">Leve</td>
+              <td class="p-2 font-mono font-bold">+1 CA</td>
+              <td class="p-2 font-mono">RD 0</td>
+              <td class="p-2">Nenhuma</td>
+              <td class="p-2 font-mono font-bold">5 £</td>
+            </tr>
+            <tr class="border-b border-amber-800/20 bg-amber-50/50">
+              <td class="p-2 font-bold text-amber-950">Jaqueta Militar de Oficial com Dragonas</td>
+              <td class="p-2">Leve</td>
+              <td class="p-2 font-mono font-bold">+2 CA</td>
+              <td class="p-2 font-mono">RD 0</td>
+              <td class="p-2">Nenhuma</td>
+              <td class="p-2 font-mono font-bold">12 £</td>
+            </tr>
+            <tr class="border-b border-amber-800/20">
+              <td class="p-2 font-bold text-amber-950">Brigandina com Rebites de Ferro</td>
+              <td class="p-2">Média</td>
+              <td class="p-2 font-mono font-bold">+3 CA</td>
+              <td class="p-2 font-mono font-bold">RD 1</td>
+              <td class="p-2">-1 Furtividade</td>
+              <td class="p-2 font-mono font-bold">25 £</td>
+            </tr>
+            <tr class="border-b border-amber-800/20 bg-amber-50/50">
+              <td class="p-2 font-bold text-amber-950">Colete Tático Blindado de Trincheira</td>
+              <td class="p-2">Média</td>
+              <td class="p-2 font-mono font-bold">+4 CA</td>
+              <td class="p-2 font-mono font-bold">RD 2</td>
+              <td class="p-2">-2 Furtividade</td>
+              <td class="p-2 font-mono font-bold">45 £</td>
+            </tr>
+            <tr class="border-b border-amber-800/20">
+              <td class="p-2 font-bold text-amber-950">Armadura de Placas Imperial Completa</td>
+              <td class="p-2">Pesada</td>
+              <td class="p-2 font-mono font-bold">+6 CA</td>
+              <td class="p-2 font-mono font-bold">RD 3</td>
+              <td class="p-2">-3 Destreza / Acrobacia</td>
+              <td class="p-2 font-mono font-bold">90 £</td>
+            </tr>
+            <tr>
+              <td class="p-2 font-bold text-amber-950">Escafandro Pesado de Aço Temperado</td>
+              <td class="p-2">Pesada</td>
+              <td class="p-2 font-mono font-bold">+7 CA</td>
+              <td class="p-2 font-mono font-bold">RD 4</td>
+              <td class="p-2">Desvantagem em Destreza</td>
+              <td class="p-2 font-mono font-bold">150 £</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- ESCUDOS -->
+        <h4 class="font-serif font-black text-amber-950 text-base mt-4 mb-2">Escudos e Proteções Secundárias</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+          <div class="p-3 bg-stone-50 rounded-lg border border-amber-800/30">
+            <strong class="text-amber-950 font-serif block text-sm">Broquel de Duelo</strong>
+            <span class="text-stone-800 block mt-1">+1 CA. Permite aparar ataques corpo a corpo com reação de Luta.</span>
+            <span class="font-mono font-bold text-amber-900 block mt-1">Preço: 8 £</span>
           </div>
-          <div class="p-3 bg-stone-100 rounded-lg border border-amber-900/20">
-            <div class="flex justify-between items-center"><strong class="font-serif text-amber-950 text-sm">Lâmina de Ressonância (Vibro-Sabre)</strong><span class="font-mono font-bold text-amber-900 bg-amber-200/60 px-2 py-0.5 rounded">1d8 cortante</span></div>
-            <p class="text-stone-800 mt-1">Filamento de cristal no gume que vibra em frequência ultrassônica, cortando blindagens e portas de aço.</p>
+          <div class="p-3 bg-stone-50 rounded-lg border border-amber-800/30">
+            <strong class="text-amber-950 font-serif block text-sm">Escudo de Carvalho & Ferro</strong>
+            <span class="text-stone-800 block mt-1">+2 CA. Concede cobertura parcial contra projéteis balísticos e disparos.</span>
+            <span class="font-mono font-bold text-amber-900 block mt-1">Preço: 15 £</span>
           </div>
-          <div class="p-3 bg-stone-100 rounded-lg border border-amber-900/20">
-            <div class="flex justify-between items-center"><strong class="font-serif text-amber-950 text-sm">Machado de Forja Hidráulico</strong><span class="font-mono font-bold text-amber-900 bg-amber-200/60 px-2 py-0.5 rounded">1d10 contundente</span></div>
-            <p class="text-stone-800 mt-1">Pistão pneumático na haste que descarrega impacto violento na colisão, esmagando anteparas e escudos.</p>
-          </div>
-          <div class="p-3 bg-stone-100 rounded-lg border border-amber-900/20">
-            <div class="flex justify-between items-center"><strong class="font-serif text-amber-950 text-sm">Faca de Trincheira &bull; Adaga Injetora</strong><span class="font-mono font-bold text-amber-900 bg-amber-200/60 px-2 py-0.5 rounded">1d4 perfurante</span></div>
-            <p class="text-stone-800 mt-1">Lâmina oca com mecanismo no pomo para injetar venenos alquímicos ou sedativos diretamente na carne do alvo.</p>
+          <div class="p-3 bg-stone-50 rounded-lg border border-amber-800/30">
+            <strong class="text-amber-950 font-serif block text-sm">Escudo Balístico Reforçado</strong>
+            <span class="text-stone-800 block mt-1">+3 CA, RD 2 contra estilhaços de granadas. -1 de Destreza.</span>
+            <span class="font-mono font-bold text-amber-900 block mt-1">Preço: 40 £</span>
           </div>
         </div>
 
-        <!-- ARSENAL DE ARMAS DE FOGO -->
-        <h3 class="text-xl font-bold font-serif text-amber-950 border-b-2 border-amber-900/30 pb-2 mt-6">
-          Armas de Fogo e Balística de 1939
+        <!-- SEÇÃO 3: ARSENAL BÉLICO -->
+        <h3 class="font-serif font-bold text-amber-950 text-xl border-b border-amber-900/30 pb-2 mt-8">
+          Arsenal Bélico: Armas Brancas e de Fogo
         </h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-          <div class="p-3 bg-stone-100 rounded-lg border border-amber-900/20">
-            <div class="flex justify-between items-center"><strong class="font-serif text-amber-950 text-sm">Pistola de Serviço / Revólver Leve</strong><span class="font-mono font-bold text-amber-900 bg-amber-200/60 px-2 py-0.5 rounded">1d8 perfurante</span></div>
-            <p class="text-stone-800 mt-1">Arma padrão militar britânica e policial (Webley / Enfield .38), 6 tiros, confiável e fácil de ocultar sob o sobretudo.</p>
-          </div>
-          <div class="p-3 bg-stone-100 rounded-lg border border-amber-900/20">
-            <div class="flex justify-between items-center"><strong class="font-serif text-amber-950 text-sm">Revólver Pesado Spark-Lock</strong><span class="font-mono font-bold text-amber-900 bg-amber-200/60 px-2 py-0.5 rounded">1d10 perfurante</span></div>
-            <p class="text-stone-800 mt-1">Tambor de vidro reforçado com fluido alquímico que dispara projéteis impulsionados por centelhas sem cheiro de enxofre.</p>
-          </div>
-          <div class="p-3 bg-stone-100 rounded-lg border border-amber-900/20">
-            <div class="flex justify-between items-center"><strong class="font-serif text-amber-950 text-sm">Espingarda de Cano Duplo</strong><span class="font-mono font-bold text-amber-900 bg-amber-200/60 px-2 py-0.5 rounded">2d8 a curta distância</span></div>
-            <p class="text-stone-800 mt-1">Arma de caça clássica de Thornfield. Causa dano massivo em alvos a até 6 metros de distância.</p>
-          </div>
-          <div class="p-3 bg-stone-100 rounded-lg border border-amber-900/20">
-            <div class="flex justify-between items-center"><strong class="font-serif text-amber-950 text-sm">Rifle Estriado Lee-Enfield &bull; Mosquete de Bordo</strong><span class="font-mono font-bold text-amber-900 bg-amber-200/60 px-2 py-0.5 rounded">2d8 perfurante</span></div>
-            <p class="text-stone-800 mt-1">Arma de ombro militar precisa com mira de ferro, letal a distâncias de até 150 metros mesmo sob chuva ou vento.</p>
-          </div>
-        </div>
+        <table class="w-full text-left border-collapse my-3">
+          <thead>
+            <tr class="bg-amber-100 text-amber-950 border border-amber-800/30">
+              <th class="p-2 font-bold">Arma</th>
+              <th class="p-2 font-bold">Tipo</th>
+              <th class="p-2 font-bold">Dano</th>
+              <th class="p-2 font-bold">Alcance</th>
+              <th class="p-2 font-bold">Propriedades Especiais</th>
+              <th class="p-2 font-bold">Preço (£)</th>
+            </tr>
+          </thead>
+          <tbody class="text-stone-900 text-xs">
+            <tr class="border-b border-amber-800/20">
+              <td class="p-2 font-bold text-amber-950">Adaga de Trincheira</td>
+              <td class="p-2">Branca</td>
+              <td class="p-2 font-mono font-bold">1d4 + For</td>
+              <td class="p-2">Corpo a corpo</td>
+              <td class="p-2">Furtiva, fácil de ocultar</td>
+              <td class="p-2 font-mono font-bold">2 £</td>
+            </tr>
+            <tr class="border-b border-amber-800/20 bg-amber-50/50">
+              <td class="p-2 font-bold text-amber-950">Sabre de Oficial da Marinha</td>
+              <td class="p-2">Branca</td>
+              <td class="p-2 font-mono font-bold">1d6 + For/Des</td>
+              <td class="p-2">Corpo a corpo</td>
+              <td class="p-2">Ágil, bônus em aparar</td>
+              <td class="p-2 font-mono font-bold">8 £</td>
+            </tr>
+            <tr class="border-b border-amber-800/20">
+              <td class="p-2 font-bold text-amber-950">Machado Pesado de Abordagem</td>
+              <td class="p-2">Branca</td>
+              <td class="p-2 font-mono font-bold">1d8 + For</td>
+              <td class="p-2">Corpo a corpo</td>
+              <td class="p-2">Quebra escudos e tábuas</td>
+              <td class="p-2 font-mono font-bold">10 £</td>
+            </tr>
+            <tr class="border-b border-amber-800/20 bg-amber-50/50">
+              <td class="p-2 font-bold text-amber-950">Pistola de Pederneira / Tambor</td>
+              <td class="p-2">Fogo</td>
+              <td class="p-2 font-mono font-bold">1d8</td>
+              <td class="p-2">15 metros</td>
+              <td class="p-2">Recarga: 1 turno, disparo ruidoso</td>
+              <td class="p-2 font-mono font-bold">15 £</td>
+            </tr>
+            <tr class="border-b border-amber-800/20">
+              <td class="p-2 font-bold text-amber-950">Mosquete Militar com Baioneta</td>
+              <td class="p-2">Fogo</td>
+              <td class="p-2 font-mono font-bold">1d10 / 1d6</td>
+              <td class="p-2">40 metros</td>
+              <td class="p-2">Duas mãos, baioneta corpo a corpo</td>
+              <td class="p-2 font-mono font-bold">25 £</td>
+            </tr>
+            <tr class="border-b border-amber-800/20 bg-amber-50/50">
+              <td class="p-2 font-bold text-amber-950">Rifle de Precisão de Ferrolho</td>
+              <td class="p-2">Fogo</td>
+              <td class="p-2 font-mono font-bold">1d12</td>
+              <td class="p-2">100 metros</td>
+              <td class="p-2">Luneta de latão, crítico no 19-20</td>
+              <td class="p-2 font-mono font-bold">50 £</td>
+            </tr>
+            <tr>
+              <td class="p-2 font-bold text-amber-950">Canhão de Mão / Bacamarte</td>
+              <td class="p-2">Fogo</td>
+              <td class="p-2 font-mono font-bold">2d8</td>
+              <td class="p-2">Cones de 6m</td>
+              <td class="p-2">Atinge múltiplos alvos próximos</td>
+              <td class="p-2 font-mono font-bold">35 £</td>
+            </tr>
+          </tbody>
+        </table>
 
-        <!-- ARMADURAS & TRAJES -->
-        <h3 class="text-xl font-bold font-serif text-amber-950 border-b-2 border-amber-900/30 pb-2 mt-6">
-          Armaduras e Trajes Defensivos
+        <!-- SEÇÃO 4: DISPOSITIVOS TÁTICOS -->
+        <h3 class="font-serif font-bold text-amber-950 text-xl border-b border-amber-900/30 pb-2 mt-8">
+          Dispositivos Táticos, Arpões & Granadas
         </h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
-          <div class="p-3 bg-stone-100 rounded-lg border border-amber-900/20">
-            <div class="flex justify-between items-center"><strong class="font-serif text-amber-950 text-sm">Traje Tático de Lona</strong><span class="font-mono font-bold text-amber-900">CA 13 + Des</span></div>
-            <p class="text-stone-800 mt-1">Couro flexível impermeabilizado com ombreiras leves. Garante proteção sem restringir acrobacias.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+          <div class="p-3 bg-stone-50 rounded-lg border border-amber-800/30">
+            <strong class="text-amber-950 font-serif block text-sm">Granada de Vácuo (Vórtice)</strong>
+            <p class="text-stone-800 mt-1 leading-relaxed">
+              Esfera de bronze com núcleo de éter comprimido. Ao explodir, gera uma micro-implosão gravitacional por 2 segundos, puxando todos os alvos até 6 metros para o centro.
+            </p>
+            <span class="font-mono font-bold text-amber-900 block mt-1">Preço: 20 £</span>
           </div>
-          <div class="p-3 bg-stone-100 rounded-lg border border-amber-900/20">
-            <div class="flex justify-between items-center"><strong class="font-serif text-amber-950 text-sm">Farda Militar Reforçada</strong><span class="font-mono font-bold text-amber-900">CA 15 (Média)</span></div>
-            <p class="text-stone-800 mt-1">Placas de aço costuradas sob o tecido da caserna com colete balístico primitivo de trincheira.</p>
+
+          <div class="p-3 bg-stone-50 rounded-lg border border-amber-800/30">
+            <strong class="text-amber-950 font-serif block text-sm">Bomba de Pulso de Silêncio</strong>
+            <p class="text-stone-800 mt-1 leading-relaxed">
+              Emite uma onda ressonante que anula conjurações arcanas e desliga circuitos tecno-mágicos por 1 rodada inteira em um raio de 9 metros.
+            </p>
+            <span class="font-mono font-bold text-amber-900 block mt-1">Preço: 30 £</span>
           </div>
-          <div class="p-3 bg-stone-100 rounded-lg border border-amber-900/20">
-            <div class="flex justify-between items-center"><strong class="font-serif text-amber-950 text-sm">Exo-Couraça Pesada</strong><span class="font-mono font-bold text-amber-900">CA 18 (Pesada)</span></div>
-            <p class="text-stone-800 mt-1">Chassi de ferro fundido com placas de latão nos ombros e peito. Desvantagem em Furtividade e Natação.</p>
+
+          <div class="p-3 bg-stone-50 rounded-lg border border-amber-800/30">
+            <strong class="text-amber-950 font-serif block text-sm">Arpão Pneumático de Bordo</strong>
+            <p class="text-stone-800 mt-1 leading-relaxed">
+              Disparador de pulso com 25 metros de cabo de aço trançado e ponta de garra. Permite escalar mastros e realizar abordagens de convés com segurança absoluta.
+            </p>
+            <span class="font-mono font-bold text-amber-900 block mt-1">Preço: 18 £</span>
           </div>
         </div>
       </div>
@@ -665,156 +840,156 @@ export const BOOK_CHAPTERS: Chapter[] = [
     contentHtml: `
       <div class="space-y-6">
         <p class="leading-relaxed text-stone-900 text-justify">
-          A sua <strong>Classe</strong> define o seu papel no mundo dos homens e nas sombras do sobrenatural. Cada classe concede bônus permanentes de atributos, um conjunto de proficiências de ofício, equipamentos de sobrevivência com moedas em <strong>Libras Esterlinas (£)</strong> e uma <strong>Habilidade Especial</strong> única acionada através do esforço da <strong>Psique</strong>.
+          A sua <strong>Classe</strong> define o seu papel no mundo dos homens e no tabuleiro cósmico de 1939. Cada classe fornece treinamento específico em perícias, proficiências bélicas ou intelectuais, uma cota inicial de equipamentos e moeda em Libras esterlinas (£), além de uma habilidade de classe que pode consumir pontos de <strong>Psique</strong>.
         </p>
 
         <div class="space-y-4">
-          <!-- 1. Cirurgião / Médico -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border border-amber-900/30 shadow-sm">
+          <!-- 1. CIRURGIÃO / MÉDICO -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
             <div class="flex justify-between items-start mb-1">
               <h4 class="font-serif font-black text-amber-950 text-base">1. Cirurgião / Médico</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Medicina Moderna</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Ciência & Anatomia</span>
             </div>
-            <p class="text-xs italic text-stone-700 mb-2">"Mestre da anatomia, do cálculo e da frieza necessária para abrir um corpo vivo. Conhece os limites da carne, e também os da ética, às vezes cruzando-os em nome da vida — ou da curiosidade."</p>
+            <p class="text-xs italic text-stone-700 mb-2">"O corpo é um mecanismo de carne e tubos; se souber onde cortar e onde estancar, você pode arrancar qualquer homem da boca do inferno."</p>
             <div class="text-xs text-stone-900 space-y-1">
-              <p><strong>Bônus:</strong> +2 Medicina, +1 Força de Vontade</p>
-              <p><strong>Proficiências:</strong> Ferramentas cirúrgicas, remédios modernos, anestesia, anatomia humana.</p>
-              <p><strong>Itens Iniciais:</strong> Bolsa médica de couro, bisturi de precisão, frascos de anestesia, diário clínico, bandagens estéreis, <strong>20 £</strong>.</p>
-              <div class="mt-2 p-2.5 bg-amber-50 rounded border border-amber-800/30">
-                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Corte Preciso</strong>
-                <p class="text-stone-800 text-xs">Pode gastar <strong>1 ponto de Psique</strong> para realizar cirurgia de emergência no meio de uma cena: cura <strong>10 HP</strong> no ato, mas o alvo sofre -1 em ações físicas até o fim da cena devido à dor dos pontos recentes.</p>
+              <p><strong>Bônus:</strong> +2 Ofício (Medicina), +1 Raciocínio</p>
+              <p><strong>Proficiências:</strong> Instrumentos cirúrgicos, bisturis, anatomia humana e animal, diagnose de patologias.</p>
+              <p><strong>Itens Iniciais:</strong> Maleta de couro com estojo cirúrgico (bisturis, agulhas, pinças de prata, linha de sutura), 3 frascos de éter anestésico, torniquete militar, <strong>20 £</strong>.</p>
+              <div class="mt-2 p-2.5 bg-amber-100/70 rounded border border-amber-800/30">
+                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Intervenção Cirúrgica de Emergência</strong>
+                <p class="text-stone-800 text-xs">Gasta <strong>1 ponto de Psique</strong> para estancar hemorragias instantaneamente em um aliado adjacente, restaurando <strong>1d8 + Vigor do paciente</strong> em Pontos de Vida.</p>
               </div>
             </div>
           </div>
 
-          <!-- 2. Curandeiro(a) -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border border-amber-900/30 shadow-sm">
+          <!-- 2. CURANDEIRO(A) -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
             <div class="flex justify-between items-start mb-1">
               <h4 class="font-serif font-black text-amber-950 text-base">2. Curandeiro(a)</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Tradição Ancestral</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Tradição & Ervas</span>
             </div>
-            <p class="text-xs italic text-stone-700 mb-2">"Conhece mais corpos do que túmulos. Viu vidas começarem e acabarem na mesma noite. Parteira, curandeira ou bruxa — depende de quem pergunta. Em Thornfield, a medicina nunca foi só bisturi — é chá, toque e sussurros para afastar maus espíritos."</p>
+            <p class="text-xs italic text-stone-700 mb-2">"As plantas sentem a terra antes dos homens. Há venenos que curam e preces que fecham a carne."</p>
             <div class="text-xs text-stone-900 space-y-1">
-              <p><strong>Bônus:</strong> +2 Intuição, +1 Medicina</p>
-              <p><strong>Proficiências:</strong> Poções, ervas medicinais, venenos leves, partos, tratamentos e rezas populares.</p>
-              <p><strong>Itens Iniciais:</strong> Cesto de raízes e chás secos, tesoura de parteira, cordão de oração, água benta ou maldição guardada, 3 pomadas naturais, <strong>15 £</strong>.</p>
-              <div class="mt-2 p-2.5 bg-amber-50 rounded border border-amber-800/30">
-                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Mão entre os Mundos</strong>
-                <p class="text-stone-800 text-xs">Uma vez por dia, pode curar um personagem morrendo, trazendo-o de volta do limiar com <strong>1 HP</strong>. No entanto, o personagem revive com uma <strong>marca</strong> (sonhos estranhos, hematoma em forma de mão no peito ou perda parcial de memória).</p>
+              <p><strong>Bônus:</strong> +2 Sobrevivência, +1 Alma</p>
+              <p><strong>Proficiências:</strong> Ervas medicinais, infusões, unguentos naturais, rituais de purificação.</p>
+              <p><strong>Itens Iniciais:</strong> Bolsa de pano com raízes e sementes raras, pilão de madeira de lei, 2 emplastros cicatrizantes, amuleto de osso polido, <strong>10 £</strong>.</p>
+              <div class="mt-2 p-2.5 bg-amber-100/70 rounded border border-amber-800/30">
+                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Toque Revitalizante</strong>
+                <p class="text-stone-800 text-xs">Gasta <strong>1 ponto de Psique</strong> para expurgar infecções ou venenos naturais através de massagem e unguento, concedendo <strong>vantagem</strong> no próximo teste de Sistema Imunológico do alvo.</p>
               </div>
             </div>
           </div>
 
-          <!-- 3. Boticário -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border border-amber-900/30 shadow-sm">
+          <!-- 3. BOTICÁRIO -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
             <div class="flex justify-between items-start mb-1">
               <h4 class="font-serif font-black text-amber-950 text-base">3. Boticário</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Química & Alquimia</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Alquimia & Frascos</span>
             </div>
-            <p class="text-xs italic text-stone-700 mb-2">"Trabalha com compostos químicos, fórmulas e poções. Conhece bem as reações — físicas e humanas. Seu laboratório é um refúgio de lógica em meio ao caos da vida."</p>
+            <p class="text-xs italic text-stone-700 mb-2">"Uma gota salva um rei; duas gotas o mandam para o túmulo sem deixar rastros no estômago."</p>
             <div class="text-xs text-stone-900 space-y-1">
-              <p><strong>Bônus:</strong> +2 Intuição, +1 Medicina</p>
-              <p><strong>Proficiências:</strong> Compostos químicos, toxinas, antídotos, manipulação farmacêutica, perfumes e solventes.</p>
-              <p><strong>Itens Iniciais:</strong> Kit de alquimia portátil com almofariz, 2 poções (cura ou veneno à escolha), receita secreta de família, óculos de proteção de latão, <strong>18 £</strong>.</p>
-              <div class="mt-2 p-2.5 bg-amber-50 rounded border border-amber-800/30">
-                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Preparação Antecipada</strong>
-                <p class="text-stone-800 text-xs">No início de cada dia de repouso, pode preparar <strong>1 frasco adicional</strong> (cura leve, veneno paralisante ou outra mistura simples). Ganha vantagem em qualquer teste de conhecimento sobre doenças ou substâncias químicas.</p>
+              <p><strong>Bônus:</strong> +2 Ofício (Química/Alquimia), +1 Intuição</p>
+              <p><strong>Proficiências:</strong> Vidrarias de laboratório, destilação, ácidos, reagentes minerais e sedativos.</p>
+              <p><strong>Itens Iniciais:</strong> Cinto com 6 tubos de ensaio de vidro reforçado, queimador portátil a querosene, frasco de ácido nítrico, frasco de tônico fortificante, <strong>15 £</strong>.</p>
+              <div class="mt-2 p-2.5 bg-amber-100/70 rounded border border-amber-800/30">
+                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Preparo Alquímico Rápido</strong>
+                <p class="text-stone-800 text-xs">Pode produzir em 10 minutos uma bomba de fumaça acre ou um antídoto caseiro misturando compostos à mão sem necessidade de bancada.</p>
               </div>
             </div>
           </div>
 
-          <!-- 4. Clerical / Religioso -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border border-amber-900/30 shadow-sm">
+          <!-- 4. CLERICAL / RELIGIOSO -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
             <div class="flex justify-between items-start mb-1">
               <h4 class="font-serif font-black text-amber-950 text-base">4. Clerical / Religioso</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Fé & Autoridade</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Fé & Convicção</span>
             </div>
-            <p class="text-xs italic text-stone-700 mb-2">"Representante da fé na vila. Pode ser padre, pastora, monge, beata ou eremita — não importa o título, sua presença pesa como ferro. Mistura teologia, cuidado pastoral e autoridade moral. Conhece ritos, segredos e a escuridão que espreita o espírito."</p>
+            <p class="text-xs italic text-stone-700 mb-2">"Mesmo quando as estrelas caírem, a palavra sagrada continuará sendo a rocha sobre a qual os homens se apoiam."</p>
             <div class="text-xs text-stone-900 space-y-1">
-              <p><strong>Bônus:</strong> +2 Lábia, +1 Religião (ou Teologia/Mito)</p>
-              <p><strong>Proficiências:</strong> Retórica, rituais religiosos, leitura de sinais do além, aconselhamento moral.</p>
-              <p><strong>Itens Iniciais:</strong> Livro sagrado com anotações em latim, vela de cera pura para rituais, colar com símbolo sagrado de prata, frasco de água benta, <strong>10 £</strong>.</p>
-              <div class="mt-2 p-2.5 bg-amber-50 rounded border border-amber-800/30">
-                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Voz que Guia</strong>
-                <p class="text-stone-800 text-xs">Uma vez por dia, pode inspirar um aliado com palavras sagradas: o alvo <strong>remove 1 ponto de Loucura</strong> ou ganha <strong>+1 de bônus</strong> em uma rolagem social imediata.</p>
+              <p><strong>Bônus:</strong> +2 Alma, +1 Mito</p>
+              <p><strong>Proficiências:</strong> Textos sagrados, línguas antigas (Latim, Aramaico, Grego clássico), oratória religiosa.</p>
+              <p><strong>Itens Iniciais:</strong> Livro sagrado de capa dura encadernado em couro, símbolo religioso de prata maciça, frasco com água benta, vela consagrada, <strong>8 £</strong>.</p>
+              <div class="mt-2 p-2.5 bg-amber-100/70 rounded border border-amber-800/30">
+                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Benção Protetora da Fé</strong>
+                <p class="text-stone-800 text-xs">Gasta <strong>1 ponto de Psique</strong> para recitar uma prece fervorosa: concede <strong>+2 em todos os testes de Mente e Alma</strong> a todos os aliados ouvintes por 1 cena.</p>
               </div>
             </div>
           </div>
 
-          <!-- 5. Detetive -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border border-amber-900/30 shadow-sm">
+          <!-- 5. DETETIVE -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
             <div class="flex justify-between items-start mb-1">
               <h4 class="font-serif font-black text-amber-950 text-base">5. Detetive</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Investigação</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Dedução & Sombras</span>
             </div>
-            <p class="text-xs italic text-stone-700 mb-2">"Forasteiro ou não, cético, determinado. Veio atrás de verdades, talvez por dinheiro, talvez por vingança, ou apenas porque não consegue evitar seguir rastros. Em Thornfield, há perguntas demais — e algumas respostas nunca deveriam ser encontradas."</p>
+            <p class="text-xs italic text-stone-700 mb-2">"As cinzas de um charuto e a lama na sola de uma bota contam a história que o assassino tentou enterrar."</p>
             <div class="text-xs text-stone-900 space-y-1">
-              <p><strong>Bônus:</strong> +2 Intuição, +1 Percepção</p>
-              <p><strong>Proficiências:</strong> Interrogatório, dedução de pistas, rastreamento urbano, gazuas e fechaduras.</p>
-              <p><strong>Itens Iniciais:</strong> Caderno com pistas riscadas, arma oculta sob o casaco (canivete, soco-inglês ou revólver leve), trinco de porta antigo (gazua), <strong>18 £</strong>.</p>
-              <div class="mt-2 p-2.5 bg-amber-50 rounded border border-amber-800/30">
-                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Instinto de Verdade</strong>
-                <p class="text-stone-800 text-xs">Pode gastar <strong>1 ponto de Psique</strong> para perceber instantaneamente se alguém está mentindo ou dissimulando, mesmo sem provas físicas — ou para obter uma pista narrativa crucial sobre uma pessoa ou cena de crime.</p>
+              <p><strong>Bônus:</strong> +2 Percepção, +1 Raciocínio</p>
+              <p><strong>Proficiências:</strong> Interrogatório, busca de pegadas e impressões digitais, revólveres de cano curto.</p>
+              <p><strong>Itens Iniciais:</strong> Lupa de latão, bloco de notas com lápis de grafite, revólver de 6 tiros de bolso, sobretudo impermeável, <strong>18 £</strong>.</p>
+              <div class="mt-2 p-2.5 bg-amber-100/70 rounded border border-amber-800/30">
+                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Olho Clínico de Investigação</strong>
+                <p class="text-stone-800 text-xs">Uma vez por cena de crime, pode gastar <strong>1 ponto de Psique</strong> para que o Mestre revele instantaneamente um detalhe crucial que passou despercebido por todos.</p>
               </div>
             </div>
           </div>
 
-          <!-- 6. Arqueólogo / Antropólogo -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border border-amber-900/30 shadow-sm">
+          <!-- 6. ARQUEÓLOGO / ANTROPÓLOGO -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
             <div class="flex justify-between items-start mb-1">
               <h4 class="font-serif font-black text-amber-950 text-base">6. Arqueólogo / Antropólogo</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">História Oculta</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Ruínas & Mitos</span>
             </div>
-            <p class="text-xs italic text-stone-700 mb-2">"Veio estudar o passado... e encontrou algo que o encara de volta. Especialista em símbolos, cultura e ruínas — mas por dentro começa a ruir também. O que era só um campo de estudo se tornou um campo de ecos antigos e mistérios que mudam a mente."</p>
+            <p class="text-xs italic text-stone-700 mb-2">"O passado não está morto; está apenas esperando sob três metros de terra e areia que alguém cometa o erro de acordá-lo."</p>
             <div class="text-xs text-stone-900 space-y-1">
-              <p><strong>Bônus:</strong> +2 Raciocínio, +1 Mito</p>
-              <p><strong>Proficiências:</strong> Linguagens antigas, identificação de relíquias, decifração de glifos e runas.</p>
-              <p><strong>Itens Iniciais:</strong> Diário de pesquisa de campo, conjunto de ferramentas (pincel fino, estilete afiado, lente de precisão), fragmento fóssil de objeto estranho, <strong>12 £</strong>.</p>
-              <div class="mt-2 p-2.5 bg-amber-50 rounded border border-amber-800/30">
-                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Eco do Passado</strong>
-                <p class="text-stone-800 text-xs">Uma vez por cena, pode gastar <strong>1 ponto de Psique</strong> para reconhecer símbolos, arquiteturas ou padrões sobrenaturais esquecidos, evitando armadilhas milenares e revelando o propósito oculto de relíquias.</p>
+              <p><strong>Bônus:</strong> +2 História, +1 Mito</p>
+              <p><strong>Proficiências:</strong> Decifração de hieróglifos e runas, desarmar armadilhas de tumbas, cartografia antiga.</p>
+              <p><strong>Itens Iniciais:</strong> Picareta de mão de geólogo, pincéis de escavação, caderneta com esboços de tumbas, cantil de latão, <strong>14 £</strong>.</p>
+              <div class="mt-2 p-2.5 bg-amber-100/70 rounded border border-amber-800/30">
+                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Leitura de Relíquias e Linguagens Perdidas</strong>
+                <p class="text-stone-800 text-xs">Gasta <strong>1 ponto de Psique</strong> para traduzir instantaneamente qualquer dialeto ou inscrição ancestral gravada em pedra ou metal.</p>
               </div>
             </div>
           </div>
 
-          <!-- 7. Artista de Circo / Saltimbanco -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border border-amber-900/30 shadow-sm">
+          <!-- 7. ARTISTA DE CIRCO / SALTIMBANCO -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
             <div class="flex justify-between items-start mb-1">
               <h4 class="font-serif font-black text-amber-950 text-base">7. Artista de Circo / Saltimbanco</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Agilidade & Trapaça</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Acrobacia & Ilusão</span>
             </div>
-            <p class="text-xs italic text-stone-700 mb-2">"Cresceu entre caravanas e aplausos. Seja um trapezista, um ilusionista ou um domador, o artista de circo possui um corpo treinado para o impossível e uma mente acostumada a enganar os sentidos. No circo, aprende-se que o medo é apenas parte do show."</p>
+            <p class="text-xs italic text-stone-700 mb-2">"Faça o público olhar para a sua mão direita iluminada enquanto a esquerda surrupia o relógio e a verdade."</p>
             <div class="text-xs text-stone-900 space-y-1">
-              <p><strong>Bônus:</strong> +2 Acrobacia, +1 Lábia ou Atuação (Teatralidade)</p>
-              <p><strong>Proficiências:</strong> Prestidigitação (mãos leves), equilíbrio em cordas, arremesso de facas, disfarce, escapologia.</p>
-              <p><strong>Itens Iniciais:</strong> Baralho de tarô gasto com cartas marcadas ou kit de maquiagem, 3 facas de arremesso balanceadas, figurino de apresentação, corrente ou corda de seda, <strong>12 £</strong>.</p>
-              <div class="mt-2 p-2.5 bg-amber-50 rounded border border-amber-800/30">
-                <strong class="text-amber-950 font-serif block text-xs">Habilidade: O Grande Truque</strong>
-                <p class="text-stone-800 text-xs">Pode gastar <strong>1 ponto de Psique</strong> para realizar uma manobra evasiva ou de distração espetacular: ganha vantagem imediata em um teste de Esquiva OU permite que um aliado passe despercebido por inimigos enquanto atrai toda a atenção para si por um turno.</p>
+              <p><strong>Bônus:</strong> +2 Acrobacia, +1 Teatralidade</p>
+              <p><strong>Proficiências:</strong> Malabarismo, contorcionismo, corda bamba, arremesso de adagas de teatro.</p>
+              <p><strong>Itens Iniciais:</strong> 3 adagas de lâmina polida balanceadas para arremesso, maquiagem teatral branca e carmim, baralho de cartas marcadas, corda de seda de 10 metros, <strong>6 £</strong>.</p>
+              <div class="mt-2 p-2.5 bg-amber-100/70 rounded border border-amber-800/30">
+                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Acrobacia Evasiva</strong>
+                <p class="text-stone-800 text-xs">Como reação ao ser alvo de um ataque, gasta <strong>1 ponto de Psique</strong> para somar <strong>+4 na sua CA</strong> contra aquele golpe específico com uma pirueta evasiva.</p>
               </div>
             </div>
           </div>
 
-          <!-- 8. Ferreiro / Armeiro -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border border-amber-900/30 shadow-sm">
+          <!-- 8. FERREIRO / ARMEIRO -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
             <div class="flex justify-between items-start mb-1">
               <h4 class="font-serif font-black text-amber-950 text-base">8. Ferreiro / Armeiro</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Metalurgia & Fogo</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Metalurgia & Forja</span>
             </div>
-            <p class="text-xs italic text-stone-700 mb-2">"Filho da forja e mestre dos metais, o Ferreiro/Armeiro é habilidoso tanto na criação quanto na manutenção de armas de fogo e lâminas. Conhecedor das tecnologias e ofícios, ele pode forjar, ajustar e reparar qualquer armamento com destreza e precisão. Sua conexão com o fogo da forja e o aço o torna um verdadeiro mestre das armas."</p>
+            <p class="text-xs italic text-stone-700 mb-2">"Filho da forja e mestre dos metais, o Ferreiro é habilidoso na criação e reparo de armas de fogo e lâminas. Sua conexão com o fogo e o aço o torna um artífice mortal."</p>
             <div class="text-xs text-stone-900 space-y-1">
-              <p><strong>Bônus:</strong> +2 Força, +1 Mecânica (Ofício)</p>
-              <p><strong>Proficiências:</strong> Forja de metais, balística prática, reparos mecânicos, lâminas pesadas.</p>
-              <p><strong>Itens Iniciais:</strong> Martelo pesado de forja, revólver de tambor ou espingarda de cano duplo, conjunto de ferramentas de reparos, <strong>5 £</strong>.</p>
-              <div class="mt-2 p-2.5 bg-amber-50 rounded border border-amber-800/30">
+              <p><strong>Bônus:</strong> +2 Força, +1 Ofício (Mecânica/Ferraria)</p>
+              <p><strong>Proficiências:</strong> Forja de metais temperados, calibração balística prática, conserto de engrenagens, marretas pesadas.</p>
+              <p><strong>Itens Iniciais:</strong> Martelo de forja pesado (1d6 dano), conjunto de limas e alicates, avental de couro grosso (RD 1), <strong>5 £</strong>.</p>
+              <div class="mt-2 p-2.5 bg-amber-100/70 rounded border border-amber-800/30">
                 <strong class="text-amber-950 font-serif block text-xs">Habilidade: Instinto de Ferreiro</strong>
-                <p class="text-stone-800 text-xs">Uma vez por cena, pode ajustar ou reparar uma arma em campo: role <strong>1d20</strong>. Se tirar <strong>12 ou mais</strong>, adiciona um aprimoramento à arma: <strong>+1 de Dano</strong>, <strong>+1 de Precisão</strong> ou <strong>+1 de Resistência/Durabilidade</strong>.</p>
+                <p class="text-stone-800 text-xs">Uma vez por cena, role <strong>1d20</strong>: com resultado <strong>12 ou mais</strong>, aprimora uma arma ou blindagem em campo: concedendo <strong>+1 de Dano</strong>, <strong>+1 de Precisão</strong> ou <strong>+1 de RD</strong> temporário.</p>
               </div>
             </div>
           </div>
 
-          <!-- 9. Caçador / Rastreador -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border border-amber-900/30 shadow-sm">
+          <!-- 9. CAÇADOR / RASTREADOR -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
             <div class="flex justify-between items-start mb-1">
               <h4 class="font-serif font-black text-amber-950 text-base">9. Caçador / Rastreador</h4>
               <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Floresta & Sangue</span>
@@ -822,107 +997,107 @@ export const BOOK_CHAPTERS: Chapter[] = [
             <p class="text-xs italic text-stone-700 mb-2">"Filho da floresta, acostumado ao silêncio, ao sangue e ao faro. Ninguém conhece os caminhos da mata como ele — nem os sinais de que algo antigo passou por lá."</p>
             <div class="text-xs text-stone-900 space-y-1">
               <p><strong>Bônus:</strong> +2 Sobrevivência, +1 Mira</p>
-              <p><strong>Proficiências:</strong> Rastreamento, armadilhas, arco e flecha, espingarda, camuflagem natural.</p>
-              <p><strong>Itens Iniciais:</strong> Arco composto ou espingarda leve, faca de caça de lâmina denteada, capa camuflada tratada contra chuva, 5 armadilhas de mola de ferro, <strong>10 £</strong>.</p>
-              <div class="mt-2 p-2.5 bg-amber-50 rounded border border-amber-800/30">
+              <p><strong>Proficiências:</strong> Rastreamento de feras e homens, montagem de armadilhas mecânicas, arcos longos e espingardas de caça.</p>
+              <p><strong>Itens Iniciais:</strong> Espingarda de caça de cano longo (1d10 dano), faca denteada de caçador, 5 armadilhas de mola de ferro, capa de camuflagem impermeável, <strong>10 £</strong>.</p>
+              <div class="mt-2 p-2.5 bg-amber-100/70 rounded border border-amber-800/30">
                 <strong class="text-amber-950 font-serif block text-xs">Habilidade: Instinto de Presa</strong>
-                <p class="text-stone-800 text-xs">Uma vez por cena, role <strong>1d20</strong>: com resultado <strong>10 ou mais</strong>, move-se sem ser detectado mesmo em áreas vigiadas ou rastreia algo impossível (criatura mística, presença oculta ou fugitivo dias após o rastro) com precisão sobrenatural.</p>
+                <p class="text-stone-800 text-xs">Uma vez por cena, role <strong>1d20</strong>: com <strong>10 ou mais</strong>, move-se sem ser detectado mesmo em áreas vigiadas ou rastreia uma trilha impossível deixada dias atrás.</p>
               </div>
             </div>
           </div>
 
-          <!-- 10. Militar de Carreira -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border border-amber-900/30 shadow-sm">
+          <!-- 10. MILITAR DE CARREIRA -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
             <div class="flex justify-between items-start mb-1">
               <h4 class="font-serif font-black text-amber-950 text-base">10. Militar de Carreira</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Tática & Trincheira</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Trincheira & Tática</span>
             </div>
-            <p class="text-xs italic text-stone-700 mb-2">"Veio de uma vida de ordens, estratégias e sobrevivência. Pode ser ex-capitão, sargento ou apenas alguém que viveu na caserna tempo o bastante pra nunca mais ser o mesmo. Sabe como agir sob pressão e como fazer os outros obedecerem."</p>
+            <p class="text-xs italic text-stone-700 mb-2">"Veio de uma vida de ordens, estratégias e sobrevivência sob artilharia. Sabe como agir sob pressão e como fazer os homens manterem a linha."</p>
             <div class="text-xs text-stone-900 space-y-1">
               <p><strong>Bônus:</strong> +2 Vigor, +1 Mira</p>
-              <p><strong>Proficiências:</strong> Armas de fogo militares, armamento padrão, comando tático sob estresse.</p>
-              <p><strong>Itens Iniciais:</strong> Farda antiga de combate, coldre de couro engraxado, pistola leve de serviço, faca de trincheira militar, medalha pessoal de condecoração, <strong>20 £</strong>.</p>
-              <div class="mt-2 p-2.5 bg-amber-50 rounded border border-amber-800/30">
+              <p><strong>Proficiências:</strong> Rifles de serviço militar, baionetas, comando tático sob bombardeio, manobras de trincheira.</p>
+              <p><strong>Itens Iniciais:</strong> Farda de serviço de oficial, pistola de calibre militar no coldre de couro, faca de trincheira com soqueira, medalha de honra, <strong>20 £</strong>.</p>
+              <div class="mt-2 p-2.5 bg-amber-100/70 rounded border border-amber-800/30">
                 <strong class="text-amber-950 font-serif block text-xs">Habilidade: Instinto de Combate</strong>
-                <p class="text-stone-800 text-xs">Age sempre primeiro em situações de perigo ou emboscada. Uma vez por cena, pode bradar uma ordem militar enfática que concede <strong>vantagem imediata</strong> na próxima ação de um aliado sob seu comando.</p>
+                <p class="text-stone-800 text-xs">Age sempre primeiro em rodadas de surpresa. Uma vez por cena, pode bradar uma ordem enfática que concede <strong>vantagem imediata</strong> no próximo ataque de um aliado.</p>
               </div>
             </div>
           </div>
 
-          <!-- 11. Professor(a) / Erudito(a) -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border border-amber-900/30 shadow-sm">
+          <!-- 11. PROFESSOR(A) / ERUDITO(A) -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
             <div class="flex justify-between items-start mb-1">
               <h4 class="font-serif font-black text-amber-950 text-base">11. Professor(a) / Erudito(a)</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Erudição & Letras</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Letras & Enciclopédia</span>
             </div>
-            <p class="text-xs italic text-stone-700 mb-2">"Educador ou educadora, versado nas letras, ciências, línguas ou filosofia. Pode ter lecionado em escolas da cidade grande ou ensinado meia dúzia de crianças na vila. Em tempos de superstição, saber é poder — e perigo."</p>
+            <p class="text-xs italic text-stone-700 mb-2">"A ignorância é a mãe de todos os monstros; a tinta de uma caneta tem mais poder para erguer impérios do que uma divisão de canhões."</p>
             <div class="text-xs text-stone-900 space-y-1">
-              <p><strong>Bônus:</strong> +2 Conhecimento, +1 Raciocínio</p>
-              <p><strong>Proficiências:</strong> Leitura e escrita avançadas, idiomas antigos e modernos, história geral, dialética e debates.</p>
-              <p><strong>Itens Iniciais:</strong> Caderno de anotações pedagógicas, conjunto de pena e tinteiro negro, óculos de aro de latão, exemplar de livro histórico raro, <strong>15 £</strong>.</p>
-              <div class="mt-2 p-2.5 bg-amber-50 rounded border border-amber-800/30">
-                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Lição Certeira</strong>
-                <p class="text-stone-800 text-xs">Pode usar um turno fora de combate para explicar um conceito difícil ou estratagema: o aliado instruído recebe <strong>vantagem em testes de resolução mental</strong> OU um bônus de <strong>+1 em testes de estratégia e planejamento durante 1 hora</strong>.</p>
+              <p><strong>Bônus:</strong> +2 História, +1 Raciocínio</p>
+              <p><strong>Proficiências:</strong> Tradução de manuscritos raros, geografia comparada, retórica acadêmica e catalogação botânica.</p>
+              <p><strong>Itens Iniciais:</strong> Maleta de couro com livros raros encadernados, caneta-tinteiro com frasco de tinta indelével, óculos de leitura com aro de ouro, <strong>22 £</strong>.</p>
+              <div class="mt-2 p-2.5 bg-amber-100/70 rounded border border-amber-800/30">
+                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Enciclopédia Viva</strong>
+                <p class="text-stone-800 text-xs">Gasta <strong>1 ponto de Psique</strong> para recordar um fato crucial, fraqueza anatômica ou contexto político obscuro sobre qualquer criatura, família nobre ou artefato encontrado.</p>
               </div>
             </div>
           </div>
 
-          <!-- 12. Engenheiro / Carpinteiro -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border border-amber-900/30 shadow-sm">
+          <!-- 12. ENGENHEIRO / CARPINTEIRO -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
             <div class="flex justify-between items-start mb-1">
               <h4 class="font-serif font-black text-amber-950 text-base">12. Engenheiro / Carpinteiro</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Construção & Estrutura</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Vapor & Engrenagens</span>
             </div>
-            <p class="text-xs italic text-stone-700 mb-2">"Mãos calejadas, olhos atentos às rachaduras. Conhece cada fresta, cada rangido do vilarejo. Trabalha com madeira, mas entende de gente — e sabe quando uma estrutura está prestes a ruir, seja uma casa ou uma alma."</p>
+            <p class="text-xs italic text-stone-700 mb-2">"Tudo o que se move obedece a alavancas, vapor e dentes de engrenagem. O que um homem constrói, outro pode desmontar com as ferramentas certas."</p>
             <div class="text-xs text-stone-900 space-y-1">
-              <p><strong>Bônus:</strong> +2 Ofício (carpintaria ou engenharia), +1 Percepção</p>
-              <p><strong>Proficiências:</strong> Estruturas de madeira e pedra, instrumentos de medição, entalhe de precisão, barricadas.</p>
-              <p><strong>Itens Iniciais:</strong> Conjunto de ferramentas de carpintaria e entalhe (serrote, formões, esquadro), faca de entalhe, miniatura de casa em madeira, <strong>16 £</strong>.</p>
-              <div class="mt-2 p-2.5 bg-amber-50 rounded border border-amber-800/30">
-                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Estrutura Oculta</strong>
-                <p class="text-stone-800 text-xs">Pode gastar <strong>1 ponto de Psique</strong> para perceber fragilidades arquitetônicas, passagens secretas ou pontos de colapso em construções. Também pode improvisar barricadas ou esconderijos fortificados com bônus narrativos de cobertura.</p>
+              <p><strong>Bônus:</strong> +2 Ofício (Engenharia/Carpintaria), +1 Brutalidade</p>
+              <p><strong>Proficiências:</strong> Maquinário a vapor, estruturas de madeira naval, dinamite, serras mecânicas e manômetros.</p>
+              <p><strong>Itens Iniciais:</strong> Caixa de ferramentas pesadas de ferro, planta técnica em papel vegetal, maçarico portátil de querosene, óculos de proteção de acetato, <strong>16 £</strong>.</p>
+              <div class="mt-2 p-2.5 bg-amber-100/70 rounded border border-amber-800/30">
+                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Engenho Improvisado</strong>
+                <p class="text-stone-800 text-xs">Pode construir ou consertar em 1 rodada qualquer barreira física, escoramento de túnel ou mecanismo de ponte, impedindo o avanço de inimigos.</p>
               </div>
             </div>
           </div>
 
-          <!-- 13. Marinheiro / Lobo do Mar -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border border-amber-900/30 shadow-sm">
+          <!-- 13. MARINHEIRO / LOBO DO MAR -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
             <div class="flex justify-between items-start mb-1">
               <h4 class="font-serif font-black text-amber-950 text-base">13. Marinheiro / Lobo do Mar</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Navegação & Convés</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Oceano & Conveses</span>
             </div>
-            <p class="text-xs italic text-stone-700 mb-2">"O mar não perdoa fraqueza e não aceita desculpas. Quem aprendeu a ficar de pé em um convés ensanguentado durante uma tempestade não cai fácil em terra firme."</p>
+            <p class="text-xs italic text-stone-700 mb-2">"O mar não tem pena de covardes; aprenda a amarrar seu cabo antes que a onda quebre sobre a proa."</p>
             <div class="text-xs text-stone-900 space-y-1">
-              <p><strong>Bônus:</strong> +2 Atletismo, +1 Sobrevivência</p>
-              <p><strong>Proficiências:</strong> Nós náuticos, manuseio de cordas e amarras, previsão do tempo/clima, arpões, combate com ferramentas improvisadas, natação.</p>
-              <p><strong>Itens Iniciais:</strong> Faca de marinheiro (navalha de ponta chata), gorro de lã escura, bússola de latão de bolso, cantil com rum ou gim, rolo de corda naval resistente de 10 metros, <strong>12 £</strong>.</p>
-              <div class="mt-2 p-2.5 bg-amber-50 rounded border border-amber-800/30">
-                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Pés no Convés</strong>
-                <p class="text-stone-800 text-xs">Possui equilíbrio sobrenatural: nunca é derrubado no chão por pisos escorregadios, óleo ou balanço. Uma vez por cena, pode gastar <strong>1 ponto de Psique</strong> para ignorar completamente qualquer penalidade de fadiga física, atordoamento ou enjoo.</p>
+              <p><strong>Bônus:</strong> +2 Atletismo (Natação/Equilíbrio), +1 Vigor</p>
+              <p><strong>Proficiências:</strong> Manobra de cordames, nós náuticos, arpões manuais, navegação costeira e combate com facas curtas de marinheiro.</p>
+              <p><strong>Itens Iniciais:</strong> Faca de marinheiro inoxidável com cabo de osso, capa impermeável oleada contra tempestade, rolo de 20m de corda de cânhamo, cachimbo de madeira, <strong>8 £</strong>.</p>
+              <div class="mt-2 p-2.5 bg-amber-100/70 rounded border border-amber-800/30">
+                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Equilíbrio de Conveses e Nós de Marinheiro</strong>
+                <p class="text-stone-800 text-xs">Ignora qualquer terreno difícil causado por balanço de navios, pisos molhados ou gelo. Pode imobilizar um alvo com cordas usando uma única ação de combate.</p>
               </div>
             </div>
           </div>
 
-          <!-- 14. Pirata / Corsário -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border border-amber-900/30 shadow-sm">
+          <!-- 14. PIRATA / CORSÁRIO -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
             <div class="flex justify-between items-start mb-1">
               <h4 class="font-serif font-black text-amber-950 text-base">14. Pirata / Corsário</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Armadas & Abordagem</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Abordagem & Audácia</span>
             </div>
-            <p class="text-xs italic text-stone-700 mb-2">"Não há leis a dez nós da costa. O mundo pertence a quem tem coragem de içar a bandeira e puxar o gatilho primeiro."</p>
+            <p class="text-xs italic text-stone-700 mb-2">"As leis terminam onde o mar aberto começa. O que está a bordo do seu navio é nosso por direito do mais audacioso."</p>
             <div class="text-xs text-stone-900 space-y-1">
-              <p><strong>Bônus:</strong> +2 Acrobacia, +1 Luta (ou Lábia)</p>
-              <p><strong>Proficiências:</strong> Sabres/cutelos navais, pistolas de cano curto, abordagem rápida, intimidação, trapaça em jogos de azar.</p>
-              <p><strong>Itens Iniciais:</strong> Cutelo curto naval ou sabre de fita, revólver de tambor pesado, jaqueta de couro naval com botões de osso, luneta retrátil de latão, moeda da sorte de armada pirata, <strong>16 £</strong>.</p>
-              <div class="mt-2 p-2.5 bg-amber-50 rounded border border-amber-800/30">
-                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Salto de Abordagem</strong>
-                <p class="text-stone-800 text-xs">Gasta <strong>1 ponto de Psique</strong> para se projetar acrobaticamente sobre um inimigo: seu próximo ataque no turno ganha <strong>vantagem</strong>, causa <strong>+1d6 de dano de corte/impacto</strong> e faz o alvo <strong>largar a arma ou cair de bruços</strong>.</p>
+              <p><strong>Bônus:</strong> +2 Luta (Lâminas Curtas/Sabres), +1 Lábia</p>
+              <p><strong>Proficiências:</strong> Sabres de abordagem, pistolas de pederneira rápida, táticas de pilhagem e intimidação de tripulações.</p>
+              <p><strong>Itens Iniciais:</strong> Sabre de abordagem curvado (1d6 dano), pistola de pederneira no coldre de peito (1d8 dano), tapa-olho ou bandana marcada por pólvora, garrafa de rum envelhecido, <strong>12 £</strong>.</p>
+              <div class="mt-2 p-2.5 bg-amber-100/70 rounded border border-amber-800/30">
+                <strong class="text-amber-950 font-serif block text-xs">Habilidade: Abordagem Violenta & Tiro de Finta</strong>
+                <p class="text-stone-800 text-xs">Gasta <strong>1 ponto de Psique</strong> para desferir um golpe duplo no mesmo turno (ataque de sabre seguido de tiro à queima-roupa), forçando o inimigo a recuar 3 metros em desvantagem.</p>
               </div>
             </div>
           </div>
 
-          <!-- 15. Navegador / Cartógrafo das Marés -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border border-amber-900/30 shadow-sm">
+          <!-- 15. NAVEGADOR / CARTÓGRAFO DAS MARÉS -->
+          <div class="p-4 bg-stone-50 rounded-xl border border-amber-900/30 shadow-sm">
             <div class="flex justify-between items-start mb-1">
               <h4 class="font-serif font-black text-amber-950 text-base">15. Navegador / Cartógrafo das Marés</h4>
               <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2 py-0.5 rounded">Cartas & Astrolábio</span>
@@ -930,9 +1105,9 @@ export const BOOK_CHAPTERS: Chapter[] = [
             <p class="text-xs italic text-stone-700 mb-2">"As estrelas não mentem, os homens sim. Dê-me um astrolábio e dez minutos de céu limpo, e eu levarei este navio através do próprio inferno."</p>
             <div class="text-xs text-stone-900 space-y-1">
               <p><strong>Bônus:</strong> +2 Raciocínio, +1 Percepção</p>
-              <p><strong>Proficiências:</strong> Astrolábio e sextante, cartas náuticas, leitura das constelações, sinais de código morse, geografia marítima.</p>
+              <p><strong>Proficiências:</strong> Astrolábio e sextante, cartas náuticas, leitura das constelações celestes, sinais de código morse, geografia marítima.</p>
               <p><strong>Itens Iniciais:</strong> Sextante de latão em estojo acolchoado, tubo de couro com cartas náuticas em pergaminho, relógio de bolso com cronômetro, compasso de desenho náutico, lanterna de querosene fechada, <strong>15 £</strong>.</p>
-              <div class="mt-2 p-2.5 bg-amber-50 rounded border border-amber-800/30">
+              <div class="mt-2 p-2.5 bg-amber-100/70 rounded border border-amber-800/30">
                 <strong class="text-amber-950 font-serif block text-xs">Habilidade: Caminho das Correntes</strong>
                 <p class="text-stone-800 text-xs">Pode gastar <strong>1 ponto de Psique</strong> para decifrar em segundos correntes marinhas, rotas cegas ou relevo urbano, descobrindo passagens secretas de fuga que anulam chances de emboscada e reduzem o tempo de viagem do grupo pela metade.</p>
               </div>
@@ -944,7 +1119,7 @@ export const BOOK_CHAPTERS: Chapter[] = [
   },
 
   // =========================================================================
-  // CAPÍTULO VIII: AS LINHAGENS DE CORE (SEM RESUMOS!)
+  // CAPÍTULO VIII: AS LINHAGENS DE CORE (INTEGRAL DE ANTES DO VERBO)
   // =========================================================================
   {
     id: 8,
@@ -952,231 +1127,231 @@ export const BOOK_CHAPTERS: Chapter[] = [
     title: "As Linhagens de Core",
     subtitle: "Povos, Raças e Heranças do Sangue Ancestral",
     iconName: "Users",
-    summary: "O compêndio integral e minucioso de todas as 11 linhagens de Core: textos descritivos originais, atributos vitais base, porte e conexão cósmica.",
+    summary: "O compêndio integral e minucioso de todas as 11 linhagens de Antes Do Verbo: textos descritivos originais completos, dados de Essência, porte de altura e atributos vitais base.",
     contentHtml: `
       <div class="space-y-6">
         <p class="leading-relaxed text-stone-900 text-justify">
-          Em <em>The Core of Man</em>, a raça de um personagem é muito mais do que sua aparência externa: é o alicerce de sua resistência biológica e a medida de sua conexão com a Essência do mundo. Cada linhagem possui uma <strong>Base Biológica</strong> — um conjunto de valores numéricos fixos que representam a resistência natural daquela espécie antes mesmo de considerarmos o treinamento ou a profissão individual.
+          Em <em>The Core of Man</em>, a raça de um personagem é muito mais do que sua aparência externa: é o alicerce de sua resistência biológica e a medida de sua conexão com a Essência primordial do mundo. Cada linhagem possui uma <strong>Base Biológica</strong> fixa que representa sua resistência natural antes do treinamento profissional, além do seu <strong>Dado de Essência</strong> característico.
         </p>
 
-        <div class="p-4 bg-amber-100/90 rounded-xl border-l-4 border-amber-800 text-stone-950 text-xs italic leading-relaxed">
+        <div class="p-4 bg-amber-50 rounded-xl border-l-4 border-amber-800 text-stone-950 text-xs italic leading-relaxed shadow-sm">
           "As linhagens que caminharam sobre a terra antes do Dilúvio de Esquecimento não desapareceram; elas apenas silenciaram. O sangue dos Draconatos e a astúcia dos Gnomos ainda correm nas veias da humanidade de 1900, adormecidos sob séculos de lógica e ciência. Mas o 'Core' está despertando, e o que antes era mito está prestes a se tornar carne novamente."
         </div>
 
-        <div class="space-y-4">
-          <!-- HUMANOS -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border-2 border-amber-900/30 shadow-sm">
+        <div class="space-y-5">
+          <!-- 1. HUMANOS -->
+          <div class="p-4 bg-stone-50 rounded-xl border-2 border-amber-800/40 shadow-sm">
             <div class="flex justify-between items-start mb-2">
               <h4 class="font-serif font-black text-amber-950 text-lg">🧬 Detalhes da Linhagem: Humanos</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">Porte Médio (1,50m a 1,90m)</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">1,50m a 1,90m &bull; Porte Médio</span>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs mb-3 font-mono">
               <div class="p-1.5 bg-red-100 text-red-950 rounded font-bold">HP Base: 10</div>
               <div class="p-1.5 bg-blue-100 text-blue-950 rounded font-bold">CA Base: 8</div>
               <div class="p-1.5 bg-purple-100 text-purple-950 rounded font-bold">Psique Base: 2</div>
               <div class="p-1.5 bg-emerald-100 text-emerald-950 rounded font-bold">SI Base: 2</div>
-              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-bold col-span-2 sm:col-span-1">Essência: 1d4</div>
+              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-black col-span-2 sm:col-span-1 border border-amber-600">Dado de Essência: 1d4</div>
             </div>
             <p class="text-xs text-stone-900 leading-relaxed text-justify">
               Os humanos em The Core são definidos por sua centelha de determinação. Eles não possuem reservas infinitas de energia mística, mas sua alma é resiliente e capaz de lampejos de poder extraordinário sob pressão. Enquanto outras raças se definem por heranças ancestrais rígidas, os humanos são o "coringa" do universo. Eles habitam desde cidades tecnológicas até vilarejos esquecidos, adaptando sua cultura e moral conforme a necessidade. No sistema The Core, ser humano significa ter o potencial de se especializar em qualquer caminho: um humano pode não ter a visão de um elfo ou a resistência de um anão, mas sua capacidade de aprender novos ofícios e sua teimosia em não aceitar a derrota os torna os arquitetos da civilização moderna. Eles são movidos pela ambição e pela necessidade de deixar um legado antes que sua vida curta se apague.
             </p>
           </div>
 
-          <!-- ANÕES -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border-2 border-amber-900/30 shadow-sm">
+          <!-- 2. ANÕES -->
+          <div class="p-4 bg-stone-50 rounded-xl border-2 border-amber-800/40 shadow-sm">
             <div class="flex justify-between items-start mb-2">
               <h4 class="font-serif font-black text-amber-950 text-lg">⛏️ Detalhes da Linhagem: Anões</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">Porte Médio/Largo (1,20m a 1,50m)</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">1,20m a 1,45m &bull; Médio (Largo)</span>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs mb-3 font-mono">
-              <div class="p-1.5 bg-red-100 text-red-950 rounded font-bold">HP Base: 10</div>
+              <div class="p-1.5 bg-red-100 text-red-950 rounded font-bold">HP Base: 12</div>
               <div class="p-1.5 bg-blue-100 text-blue-950 rounded font-bold">CA Base: 8</div>
               <div class="p-1.5 bg-purple-100 text-purple-950 rounded font-bold">Psique Base: 2</div>
               <div class="p-1.5 bg-emerald-100 text-emerald-950 rounded font-bold">SI Base: 4</div>
-              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-bold col-span-2 sm:col-span-1">Essência: 1d4</div>
+              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-black col-span-2 sm:col-span-1 border border-amber-600">Dado de Essência: 1d4</div>
             </div>
             <p class="text-xs text-stone-900 leading-relaxed text-justify">
-              Os anões são as pedras angulares do mundo físico. Criaturas de ossos densos e mentes focadas, eles possuem uma resistência biológica que beira o sobrenatural. Diferente dos humanos, a resistência do anão não vem apenas da vontade, mas de uma constituição física bruta. Seu SI (Sistema Imune) elevado os torna praticamente imunes a toxinas que matariam outras raças. Em The Core, um anão é sinônimo de estabilidade: eles são artesãos excepcionais e guardiões de tradições que duram milênios. Sua conexão com a terra e os metais lhes confere uma mente difícil de ser abalada por ilusões, mas sua natureza metódica pode ser uma barreira quando a improvisação é necessária.
+              Diferente dos humanos, a resistência do anão não vem apenas da vontade, mas de uma constituição física bruta. Seu alto SI Base reflete corpos densos, capazes de resistir a venenos, miasmas e doenças que matariam outras raças em minutos. A alma anã é pragmática e ligada à matéria. Eles encaram o mundo com a solidez de uma montanha: difíceis de mover, perigosos de confrontar e profundamente leais ao que constroem com as próprias mãos. Sua cultura antiga era focada na precisão e na imutabilidade das leis da física e da forja.
             </p>
           </div>
 
-          <!-- ELFOS -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border-2 border-amber-900/30 shadow-sm">
+          <!-- 3. ELFOS -->
+          <div class="p-4 bg-stone-50 rounded-xl border-2 border-amber-800/40 shadow-sm">
             <div class="flex justify-between items-start mb-2">
               <h4 class="font-serif font-black text-amber-950 text-lg">🍃 Detalhes da Linhagem: Elfos</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">Porte Médio/Esguio (1,70m a 1,90m)</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">1,60m a 1,90m &bull; Médio (Esguios)</span>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs mb-3 font-mono">
-              <div class="p-1.5 bg-red-100 text-red-950 rounded font-bold">HP Base: 8</div>
-              <div class="p-1.5 bg-blue-100 text-blue-950 rounded font-bold">CA Base: 10</div>
-              <div class="p-1.5 bg-purple-100 text-purple-950 rounded font-bold">Psique Base: 6</div>
-              <div class="p-1.5 bg-emerald-100 text-emerald-950 rounded font-bold">SI Base: 1</div>
-              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-bold col-span-2 sm:col-span-1">Essência: 1d6</div>
+              <div class="p-1.5 bg-red-100 text-red-950 rounded font-bold">HP Base: 9</div>
+              <div class="p-1.5 bg-blue-100 text-blue-950 rounded font-bold">CA Base: 12</div>
+              <div class="p-1.5 bg-purple-100 text-purple-950 rounded font-bold">Psique Base: 3</div>
+              <div class="p-1.5 bg-emerald-100 text-emerald-950 rounded font-bold">SI Base: 2</div>
+              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-black col-span-2 sm:col-span-1 border border-amber-600">Dado de Essência: 1d6</div>
             </div>
             <p class="text-xs text-stone-900 leading-relaxed text-justify">
-              Seres de sentidos aguçados e longevidade melancólica. Os elfos percebem o mundo de uma forma mais vibrante — e por vezes mais terrível — que as outras raças. Possuem uma elegância inata que se traduz em sua CA Base, movendo-se com uma fluidez que desafia o olhar. Sua Psique é naturalmente expandida devido à sua conexão intrínseca com a Essência do mundo, o que lhes confere um dado de essência superior (1d6). No entanto, essa sensibilidade extrema tem um preço: seus corpos são mais frágeis e seu sistema imunológico é menos adaptado às pragas mundanas. Um elfo em The Core é alguém que vê o que outros ignoram, carregando o peso de séculos de memórias em uma mente que nunca dorme verdadeiramente.
+              Os elfos possuem uma elegância inata que se traduz em sua CA Base, movendo-se com uma fluidez que desafia o olhar. Sua Psique elevada demonstra uma mente treinada na contemplação e na memória milenar. Contudo, sua conexão com o mundo físico é delicada: eles adoecem menos por infecções mundanas, mas sofrem profundamente quando a própria Essência ao seu redor é corrompida. Em The Core, os elfos do passado eram guardiões de verdades esquecidas, seres que viam o tempo correr devagar demais para as ambições humanas.
             </p>
           </div>
 
-          <!-- MEIO-ELFO -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border-2 border-amber-900/30 shadow-sm">
+          <!-- 4. MEIO-ELFO -->
+          <div class="p-4 bg-stone-50 rounded-xl border-2 border-amber-800/40 shadow-sm">
             <div class="flex justify-between items-start mb-2">
               <h4 class="font-serif font-black text-amber-950 text-lg">🌓 Detalhes da Linhagem: Meio-Elfo</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">Porte Médio (1,60m a 1,90m)</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">1,55m a 1,90m &bull; Porte Médio</span>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs mb-3 font-mono">
               <div class="p-1.5 bg-red-100 text-red-950 rounded font-bold">HP Base: 9</div>
-              <div class="p-1.5 bg-blue-100 text-blue-950 rounded font-bold">CA Base: 11</div>
+              <div class="p-1.5 bg-blue-100 text-blue-950 rounded font-bold">CA Base: 10</div>
               <div class="p-1.5 bg-purple-100 text-purple-950 rounded font-bold">Psique Base: 3</div>
               <div class="p-1.5 bg-emerald-100 text-emerald-950 rounded font-bold">SI Base: 2</div>
-              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-bold col-span-2 sm:col-span-1">Essência: 1d6</div>
+              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-black col-span-2 sm:col-span-1 border border-amber-600">Dado de Essência: 1d6</div>
             </div>
             <p class="text-xs text-stone-900 leading-relaxed text-justify">
-              A ponte entre dois mundos. No passado, eram diplomatas ou párias; no universo de The Core, representam a fusão viva das linhagens. O Meio-Elfo equilibra a fragilidade élfica com a determinação humana. Eles possuem uma adaptabilidade única, permitindo que naveguem tanto em círculos sociais refinados quanto em ambientes selvagens. Eles herdam a conexão espiritual elevada (1d6 de Essência), mas com uma estrutura física consideravelmente mais robusta que seus parentes de sangue puro.
+              O Meio-Elfo equilibra a fragilidade élfica com a determinação humana. Eles possuem uma adaptabilidade única, sendo capazes de transitar entre círculos sociais de ambas as raças sem nunca pertencerem completamente a nenhum. Sua mente é flexível e curiosa, mas carrega o peso do isolamento identitário. No sistema, eles oferecem um equilíbrio sólido entre agilidade, mente e resistência.
             </p>
           </div>
 
-          <!-- DROW (ELFOS NEGROS) -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border-2 border-amber-900/30 shadow-sm">
+          <!-- 5. DROW (ELFOS NEGROS) -->
+          <div class="p-4 bg-stone-50 rounded-xl border-2 border-amber-800/40 shadow-sm">
             <div class="flex justify-between items-start mb-2">
               <h4 class="font-serif font-black text-amber-950 text-lg">🌑 Detalhes da Linhagem: Drow (Elfos Negros)</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">Porte Médio/Esguio (1,60m a 1,90m)</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">1,60m a 1,90m &bull; Médio (Esguios)</span>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs mb-3 font-mono">
-              <div class="p-1.5 bg-red-100 text-red-950 rounded font-bold">HP Base: 10</div>
-              <div class="p-1.5 bg-blue-100 text-blue-950 rounded font-bold">CA Base: 11</div>
-              <div class="p-1.5 bg-purple-100 text-purple-950 rounded font-bold">Psique Base: 5</div>
-              <div class="p-1.5 bg-emerald-100 text-emerald-950 rounded font-bold">SI Base: 3</div>
-              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-bold col-span-2 sm:col-span-1">Essência: 1d6</div>
+              <div class="p-1.5 bg-red-100 text-red-950 rounded font-bold">HP Base: 9</div>
+              <div class="p-1.5 bg-blue-100 text-blue-950 rounded font-bold">CA Base: 13</div>
+              <div class="p-1.5 bg-purple-100 text-purple-950 rounded font-bold">Psique Base: 3</div>
+              <div class="p-1.5 bg-emerald-100 text-emerald-950 rounded font-bold">SI Base: 2</div>
+              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-black col-span-2 sm:col-span-1 border border-amber-600">Dado de Essência: 1d6</div>
             </div>
             <p class="text-xs text-stone-900 leading-relaxed text-justify">
-              Os Drow são sobreviventes do isolamento e da escuridão. Adaptados a ambientes hostis onde a luz nunca chega, sua biologia reflete uma vida inteira de vigilância e perigo. Morfologicamente semelhantes aos elfos da superfície, desenvolveram reflexos ainda mais letais para sobreviver em emboscadas, elevando sua CA Base ao ápice. Eles possuem uma mente afiada para a estratégia e para o oculto, embora a severidade de sua vivência muitas vezes torne sua Psique um campo de batalha interno. Em The Core, um Drow é um mestre da furtividade e do sacrifício calculado, sabendo exatamente o valor de cada gota de essência gasta nas sombras.
+              Morfologicamente semelhantes aos elfos da superfície, os Drow desenvolveram reflexos ainda mais letais para sobreviver em ambientes hostis e subterrâneos. Sua CA Base é a mais alta entre os povos humanoides comuns, refletindo uma capacidade de esquiva quase pré-cognitiva. Eles são desconfiados, calculistas e possuem uma mente blindada contra enganos, fruto de séculos de intriga e silêncio. Para um Drow, a fraqueza é punida com o esquecimento.
             </p>
           </div>
 
-          <!-- MEIO-DROW -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border-2 border-amber-900/30 shadow-sm">
+          <!-- 6. MEIO-DROW -->
+          <div class="p-4 bg-stone-50 rounded-xl border-2 border-amber-800/40 shadow-sm">
             <div class="flex justify-between items-start mb-2">
               <h4 class="font-serif font-black text-amber-950 text-lg">🌓 Detalhes da Linhagem: Meio-Drow</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">Porte Médio (1,60m a 1,90m)</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">1,60m a 1,90m &bull; Médio (Esguios)</span>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs mb-3 font-mono">
               <div class="p-1.5 bg-red-100 text-red-950 rounded font-bold">HP Base: 9</div>
               <div class="p-1.5 bg-blue-100 text-blue-950 rounded font-bold">CA Base: 11</div>
               <div class="p-1.5 bg-purple-100 text-purple-950 rounded font-bold">Psique Base: 3</div>
               <div class="p-1.5 bg-emerald-100 text-emerald-950 rounded font-bold">SI Base: 2</div>
-              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-bold col-span-2 sm:col-span-1">Essência: 1d6</div>
+              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-black col-span-2 sm:col-span-1 border border-amber-600">Dado de Essência: 1d6</div>
             </div>
             <p class="text-xs text-stone-900 leading-relaxed text-justify">
-              Indivíduos que carregam o peso da noite no sangue, mas caminham sob a luz do dia. O Meio-Drow preserva os reflexos excepcionais de esquiva dos elfos das profundezas somados à tenacidade e adaptabilidade dos humanos, funcionando como intermediários e batedores que navegam territórios cinzentos.
+              A ponte entre dois mundos. No passado remoto, eram diplomatas ou párias renegados pelas duas linhagens; no futuro de The Core, eles representam a fusão definitiva das linhagens, combinando reflexos sombrios com a perseverança inquebrável humana.
             </p>
           </div>
 
-          <!-- HALFLING -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border-2 border-amber-900/30 shadow-sm">
+          <!-- 7. HALFLING -->
+          <div class="p-4 bg-stone-50 rounded-xl border-2 border-amber-800/40 shadow-sm">
             <div class="flex justify-between items-start mb-2">
               <h4 class="font-serif font-black text-amber-950 text-lg">👣 Detalhes da Linhagem: Halfling</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">Porte Pequeno (0,80m a 1,00m)</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">0,80m a 1,00m &bull; Porte Pequeno</span>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs mb-3 font-mono">
               <div class="p-1.5 bg-red-100 text-red-950 rounded font-bold">HP Base: 8</div>
               <div class="p-1.5 bg-blue-100 text-blue-950 rounded font-bold">CA Base: 12</div>
               <div class="p-1.5 bg-purple-100 text-purple-950 rounded font-bold">Psique Base: 3</div>
               <div class="p-1.5 bg-emerald-100 text-emerald-950 rounded font-bold">SI Base: 2</div>
-              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-bold col-span-2 sm:col-span-1">Essência: 1d4*</div>
+              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-black col-span-2 sm:col-span-1 border border-amber-600">Dado de Essência: 1d4 (Rerrola 1)</div>
             </div>
             <p class="text-xs text-stone-900 leading-relaxed text-justify">
-              Pequenos, ágeis e estranhamente afortunados. No passado remoto de The Core, os Halflings eram nômades que sobreviviam através da invisibilidade social e da sorte pura. Possuem uma CA Base muito elevada (12) não por blindagem corporal, mas por serem alvos minúsculos, rápidos e dotados de um instinto de autopreservação quase premonitório. Sua mente é surpreendentemente otimista e resiliente contra o desespero. <em>*Habilidade Especial de Linhagem: Podem rerrolar qualquer resultado '1' em rolagens do Dado de Essência.</em>
+              Pequenos, ágeis e estranhamente afortunados. No passado remoto de The Core, os Halflings eram nômades que sobreviviam através da invisibilidade social e da sorte pura. Os Halflings possuem uma CA Base elevada não por armadura pesada, mas por serem alvos diminutos e extremamente difíceis de atingir, dotados de um instinto de preservação aguçado. Eles são a prova viva de que o tamanho não define a resistência: sua mente é otimista e resiliente contra o desespero. Em eras antigas, eram os olhos e ouvidos das rotas comerciais, sobrevivendo onde gigantes caíam.
             </p>
           </div>
 
-          <!-- DRACONATO -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border-2 border-amber-900/30 shadow-sm">
+          <!-- 8. DRACONATO -->
+          <div class="p-4 bg-stone-50 rounded-xl border-2 border-amber-800/40 shadow-sm">
             <div class="flex justify-between items-start mb-2">
               <h4 class="font-serif font-black text-amber-950 text-lg">🐲 Detalhes da Linhagem: Draconato</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">Porte Grande (1,90m a 2,20m)</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">1,90m a 2,20m &bull; Médio / Grande</span>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs mb-3 font-mono">
               <div class="p-1.5 bg-red-100 text-red-950 rounded font-bold">HP Base: 15</div>
               <div class="p-1.5 bg-blue-100 text-blue-950 rounded font-bold">CA Base: 14</div>
               <div class="p-1.5 bg-purple-100 text-purple-950 rounded font-bold">Psique Base: 2</div>
               <div class="p-1.5 bg-emerald-100 text-emerald-950 rounded font-bold">SI Base: 3</div>
-              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-bold col-span-2 sm:col-span-1">Essência: 1d8</div>
+              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-black col-span-2 sm:col-span-1 border border-amber-600">Dado de Essência: 1d8</div>
             </div>
             <p class="text-xs text-stone-900 leading-relaxed text-justify">
-              Descendentes de linhagens titânicas ancestrais. No mundo antigo, eles eram a personificação do poder físico e da autoridade elemental. Com o maior HP Base inicial de todo o sistema (15) e escamas que garantem CA 14 natural, o Draconato é uma verdadeira fortaleza biológica. Sua estrutura óssea e couraça oferecem proteção que poucas armaduras humanas conseguem igualar. São movidos pela honra, pelo juramento do sangue e pela autoridade marcial. Sua presença emana imponência bélica inconfundível.
+              Descendentes de linhagens titânicas. No mundo antigo, eles eram a personificação do poder físico e da autoridade elemental. Com o maior HP Base inicial de todo o sistema, o Draconato é um verdadeiro tanque biológico. Sua estrutura óssea reforçada e escamas ancestrais oferecem uma proteção natural que poucos humanos conseguem compreender. Eles são movidos pela honra e pelo sangue; na antiguidade de The Core, eram líderes de guerra e guardiões de locais de alta concentração de Essência. Sua presença é imponente e sua biologia é forjada para a conquista.
             </p>
           </div>
 
-          <!-- GNOMO -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border-2 border-amber-900/30 shadow-sm">
+          <!-- 9. GNOMO -->
+          <div class="p-4 bg-stone-50 rounded-xl border-2 border-amber-800/40 shadow-sm">
             <div class="flex justify-between items-start mb-2">
               <h4 class="font-serif font-black text-amber-950 text-lg">⚙️ Detalhes da Linhagem: Gnomo</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">Porte Pequeno (0,90m a 1,10m)</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">0,90m a 1,10m &bull; Porte Pequeno</span>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs mb-3 font-mono">
               <div class="p-1.5 bg-red-100 text-red-950 rounded font-bold">HP Base: 7</div>
               <div class="p-1.5 bg-blue-100 text-blue-950 rounded font-bold">CA Base: 9</div>
               <div class="p-1.5 bg-purple-100 text-purple-950 rounded font-bold">Psique Base: 5</div>
               <div class="p-1.5 bg-emerald-100 text-emerald-950 rounded font-bold">SI Base: 2</div>
-              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-bold col-span-2 sm:col-span-1">Essência: 1d6</div>
+              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-black col-span-2 sm:col-span-1 border border-amber-600">Dado de Essência: 1d6</div>
             </div>
             <p class="text-xs text-stone-900 leading-relaxed text-justify">
-              Mestres da curiosidade e da manipulação engenhosa da matéria. Enquanto o mundo antigo era movido por espadas e superstições, os Gnomos já enxergavam as engrenagens e frequências por trás da realidade. Possuem a maior Psique Base inicial do jogo (5); suas mentes são labirintos de lógica e criatividade, tornando-os quase imunes a perturbações mentais comuns. Eles veem a Essência como uma ferramenta científica e mecânica a ser moldada em invenções revolucionárias.
+              Mestres da curiosidade e da manipulação da matéria. Enquanto o mundo antigo era movido por espadas e lanças, os Gnomos já viam as engrenagens por trás da realidade. Gnomos possuem a maior Psique Base do jogo. Suas mentes são labirintos de lógica e criatividade, tornando-os quase imunes a confusões mentais comuns e horrores ordinários. Eles veem a Essência como uma ferramenta técnica. Eram os inventores de mecanismos impossíveis que a ciência moderna ainda levaria milênios para redescobrir.
             </p>
           </div>
 
-          <!-- MEIO-ORC -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border-2 border-amber-900/30 shadow-sm">
+          <!-- 10. MEIO-ORC -->
+          <div class="p-4 bg-stone-50 rounded-xl border-2 border-amber-800/40 shadow-sm">
             <div class="flex justify-between items-start mb-2">
               <h4 class="font-serif font-black text-amber-950 text-lg">👹 Detalhes da Linhagem: Meio-Orc</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">Porte Grande (1,80m a 2,10m)</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">1,80m a 2,10m &bull; Médio / Grande</span>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs mb-3 font-mono">
               <div class="p-1.5 bg-red-100 text-red-950 rounded font-bold">HP Base: 12</div>
               <div class="p-1.5 bg-blue-100 text-blue-950 rounded font-bold">CA Base: 14</div>
               <div class="p-1.5 bg-purple-100 text-purple-950 rounded font-bold">Psique Base: 1</div>
               <div class="p-1.5 bg-emerald-100 text-emerald-950 rounded font-bold">SI Base: 4</div>
-              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-bold col-span-2 sm:col-span-1">Essência: 1d4</div>
+              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-black col-span-2 sm:col-span-1 border border-amber-600">Dado de Essência: 1d4</div>
             </div>
             <p class="text-xs text-stone-900 leading-relaxed text-justify">
-              A força bruta forjada na necessidade imperativa de sobrevivência extrema. Focados em HP (12) e em um Sistema Imune monumental (4), os Meio-Orcs são praticamente impossíveis de serem abatidos por doenças, frio ou fadiga. Sua Psique inicial é baixa (1), pois sua natureza é totalmente voltada à ação física e ao instinto primordial de sobrevivência, deixando pouco espaço para dilemas teóricos ou introspecção. Em combate, são vanguardas intransponíveis.
+              A força bruta forjada na necessidade de sobrevivência extrema. Eles são os sobreviventes de ambientes inóspitos onde nada mais deveria viver. Focados em HP e SI elevados, os Meio-Orcs são quase impossíveis de serem derrubados por doenças, venenos ou fadiga muscular. Sua Psique é mais vulnerável, pois sua natureza é voltada para a ação direta e para o instinto visceral, deixando pouco espaço para a introspecção defensiva. Na antiguidade, eram a vanguarda feroz contra as criaturas que espreitavam no escuro.
             </p>
           </div>
 
-          <!-- TIEFLING -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border-2 border-amber-900/30 shadow-sm">
+          <!-- 11. TIEFLING -->
+          <div class="p-4 bg-stone-50 rounded-xl border-2 border-amber-800/40 shadow-sm">
             <div class="flex justify-between items-start mb-2">
               <h4 class="font-serif font-black text-amber-950 text-lg">🔱 Detalhes da Linhagem: Tiefling</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">Porte Médio (1,60m a 1,90m)</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">1,60m a 1,90m &bull; Porte Médio</span>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs mb-3 font-mono">
               <div class="p-1.5 bg-red-100 text-red-950 rounded font-bold">HP Base: 10</div>
               <div class="p-1.5 bg-blue-100 text-blue-950 rounded font-bold">CA Base: 8</div>
               <div class="p-1.5 bg-purple-100 text-purple-950 rounded font-bold">Psique Base: 4</div>
               <div class="p-1.5 bg-emerald-100 text-emerald-950 rounded font-bold">SI Base: 1</div>
-              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-bold col-span-2 sm:col-span-1">Essência: 1d8</div>
+              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-black col-span-2 sm:col-span-1 border border-amber-600">Dado de Essência: 1d8</div>
             </div>
             <p class="text-xs text-stone-900 leading-relaxed text-justify">
-              Marcados por uma ascendência que a história das igrejas tentou apagar. Sua existência é a prova viva de que o Verbo pode transmutar o sangue humano. Carregam uma Psique alta (4) e uma das conexões mais profundas com o lado sombrio e cósmico da Essência (Dado 1d8). Suas mentes foram calejadas pelo estigma social e pela solidão, desenvolvendo uma vontade espiritual exótica capaz de manifestar fenômenos que desafiam o dogma comum.
+              Marcados por uma ascendência que a história tentou apagar. Sua existência é uma prova viva de que a Essência pode transformar o sangue biológico. Tieflings possuem uma Psique alta e uma conexão profunda e instintiva com o lado sombrio da Essência cósmica. Suas mentes são treinadas para resistir ao preconceito humano e à influência externa. Embora seus corpos não sejam mais resistentes que os dos homens comuns, sua vontade espiritual é profunda, exótica e magnética, manifestando-se em habilidades que desafiam qualquer dogma religioso.
             </p>
           </div>
 
-          <!-- AUTÔMATOS & FORJADOS A ÉTER -->
-          <div class="p-4 bg-stone-100/95 rounded-xl border-2 border-amber-900/30 shadow-sm">
+          <!-- AUTÔMATOS & FORJADOS (INDUSTRIAL) -->
+          <div class="p-4 bg-stone-50 rounded-xl border-2 border-amber-800/40 shadow-sm">
             <div class="flex justify-between items-start mb-2">
               <h4 class="font-serif font-black text-amber-950 text-lg">⚙️ Detalhes da Linhagem: Autômatos & Forjados</h4>
-              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">Porte Médio/Pesado (1,70m a 2,00m)</span>
+              <span class="text-xs font-mono font-bold bg-amber-900 text-amber-100 px-2.5 py-0.5 rounded">1,70m a 2,10m &bull; Porte Pesado</span>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs mb-3 font-mono">
-              <div class="p-1.5 bg-red-100 text-red-950 rounded font-bold">HP Base: 12</div>
+              <div class="p-1.5 bg-red-100 text-red-950 rounded font-bold">HP Base: 14</div>
               <div class="p-1.5 bg-blue-100 text-blue-950 rounded font-bold">CA Base: 12</div>
               <div class="p-1.5 bg-purple-100 text-purple-950 rounded font-bold">Psique Base: 2</div>
-              <div class="p-1.5 bg-emerald-100 text-emerald-950 rounded font-bold">SI Base: 5</div>
-              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-bold col-span-2 sm:col-span-1">Essência: 1d4</div>
+              <div class="p-1.5 bg-emerald-100 text-emerald-950 rounded font-bold">SI Base: 5 (Imune a venenos orgânicos)</div>
+              <div class="p-1.5 bg-amber-200 text-amber-950 rounded font-black col-span-2 sm:col-span-1 border border-amber-600">Dado de Essência: 1d4</div>
             </div>
             <p class="text-xs text-stone-900 leading-relaxed text-justify">
-              Seres construídos de bronze, ferro fundido e engrenagens de relógio, animados por um núcleo pulsante de cristal e fluido de éter. Não respiram, não necessitam de sono biológico nem de ração comum. Seu Sistema Imune (5) confere imunidade total a toxinas biológicas e infecções de sangue, embora sejam suscetíveis a magnetismo extremo e corrosão química ácida.
+              Criados durante os primeiros experimentos bélicos que misturaram caldeiras a vapor com núcleos ressonantes de meteoritos, os Forjados são consciências artificiais despertas. Seus corpos são feitos de latonita, aço e válvulas pneumáticas. Não sofrem por hemorragias nem venenos biológicos, mas necessitam de manutenção com peças mecânicas e graxa especial para reparar danos estruturais graves.
             </p>
           </div>
         </div>
@@ -1185,7 +1360,7 @@ export const BOOK_CHAPTERS: Chapter[] = [
   },
 
   // =========================================================================
-  // CAPÍTULO IX: DONS DO CERNE & FARDOS DO VERBO
+  // CAPÍTULO IX: DONS DO CERNE & FARDOS DO VERBO (ALTO CONTRASTE TOTAL!)
   // =========================================================================
   {
     id: 9,
@@ -1193,255 +1368,273 @@ export const BOOK_CHAPTERS: Chapter[] = [
     title: "Dons do Cerne & Fardos do Verbo",
     subtitle: "O Compêndio Integral de Ecos, Níveis e Patologias",
     iconName: "Scroll",
-    summary: "A lista completa e sem resumos: todos os Dons do Cerne com seus níveis de 0 a 5, custos de XP, mecânicas e todos os Fardos do Verbo com suas cepas e consequências.",
+    summary: "A lista completa e sem resumos: todos os Dons do Cerne com seus níveis de 0 a 5, custos de XP, mecânicas e todos os Fardos do Verbo com a tabela dos Black Walkers em alto contraste.",
     contentHtml: `
       <div class="space-y-8">
-        <div class="p-4 rounded-xl bg-amber-100/90 border-l-4 border-amber-800 text-stone-950 leading-relaxed text-xs shadow-sm">
-          <strong>Aviso do Mestre:</strong> Certas almas carregam marcas místicas únicas: <strong>Dons do Cerne</strong> (habilidades sobrenaturais compradas com Pontos de Experiência - XP) e <strong>Fardos do Verbo</strong> (patologias e maldições que cobram um preço cruel, mas concedem bônus de XP na criação do personagem). Abaixo constam todas as regras integrais.
+        <div class="p-4 rounded-xl bg-amber-50 border-l-4 border-amber-800 text-stone-950 leading-relaxed text-xs shadow-sm">
+          <strong>Aviso do Mestre:</strong> Certas almas carregam marcas místicas únicas: <strong>Dons do Cerne</strong> (habilidades sobrenaturais compradas com Pontos de Experiência - XP) e <strong>Fardos do Verbo</strong> (patologias e maldições que cobram um preço cruel na carne e na mente, mas concedem bônus de XP na criação do personagem). Abaixo constam todas as regras integrais.
         </div>
 
         <!-- SEÇÃO: DONS DO CERNE -->
         <div>
           <h3 class="text-xl font-bold font-serif text-amber-950 border-b-2 border-amber-900/40 pb-2 mb-4 flex items-center justify-between">
             <span>Dons do Cerne (Habilidades do Eco)</span>
-            <span class="text-xs font-sans font-normal text-amber-900 bg-amber-200/60 px-3 py-1 rounded-full">Comprados com XP</span>
+            <span class="text-xs font-sans font-bold text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-800/30">Comprados com XP</span>
           </h3>
 
           <div class="space-y-4">
             <!-- Sempre Vivo -->
-            <div class="p-4 rounded-lg bg-stone-100/90 border border-amber-900/20 shadow-sm">
+            <div class="p-4 rounded-lg bg-stone-50 border border-amber-800/30 shadow-sm">
               <div class="flex justify-between items-start">
-                <h4 class="font-serif font-bold text-amber-950 text-base">Sempre Vivo</h4>
-                <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-amber-900 text-amber-100">8 XP</span>
+                <h4 class="font-serif font-black text-amber-950 text-base">Sempre Vivo</h4>
+                <span class="px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-amber-800 text-amber-50">2 XP (Nível 0-5)</span>
               </div>
-              <p class="text-xs text-stone-800 leading-relaxed mt-2 text-justify">
-                Quando um personagem com essa característica morre, ele volta à vida no próximo amanhecer. No entanto, ele retorna com <strong>metade do seu HP máximo</strong> e <strong>menos 1 ponto de Psique permanentemente</strong>.
+              <p class="text-xs text-stone-900 mt-2 leading-relaxed text-justify">
+                Quando um personagem com essa característica morre, ele volta à vida no próximo amanhecer. Quando volta, ele volta com <strong>menos 28 de XP</strong>, podendo remover pontos de atributos já pagos; caso algum atributo fique abaixo de 1, o personagem morre permanentemente. Reduza em <strong>4 pontos de XP</strong> cobrados para cada nível além do 0 que tenham nesse eco.
               </p>
             </div>
 
-            <!-- Caminhante -->
-            <div class="p-4 rounded-lg bg-stone-100/90 border border-amber-900/20 shadow-sm">
+            <!-- Caminhante (Diálogo com os Mortos) -->
+            <div class="p-4 rounded-lg bg-stone-50 border border-amber-800/30 shadow-sm">
               <div class="flex justify-between items-start">
-                <h4 class="font-serif font-bold text-amber-950 text-base">Caminhante (Diálogo com os Mortos)</h4>
-                <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-amber-900 text-amber-100">Níveis 0 a 4</span>
+                <h4 class="font-serif font-black text-amber-950 text-base">Caminhante (Diálogo com os Mortos)</h4>
+                <span class="px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-amber-800 text-amber-50">Progressivo em Níveis</span>
               </div>
-              <p class="text-xs text-stone-600 mb-2 italic">Capazes de cruzar palavras com os ecos de quem já partiu.</p>
-              <ul class="space-y-1.5 text-xs text-stone-800">
-                <li><strong>Nível 0 <span class="text-amber-800 font-bold">[2 XP]:</span></strong> É capaz de dialogar com indivíduos mortos na última semana, desde que esteja em presença física do cadáver.</li>
-                <li><strong>Nível 1 <span class="text-amber-800 font-bold">[1 XP]:</span></strong> Caso conheça o nome e o rosto de uma pessoa, você sabe se ela morreu na última semana, sem necessidade de ver o corpo.</li>
-                <li><strong>Nível 2 <span class="text-amber-800 font-bold">[2 XP]:</span></strong> Pode dialogar com mortos da última semana à distância (sem o corpo físico), necessitando apenas de seu nome e rosto.</li>
-                <li><strong>Nível 3 <span class="text-amber-800 font-bold">[2 XP]:</span></strong> Pode dialogar com qualquer indivíduo morto na última década, necessitando de seu nome e fisionomia.</li>
-                <li><strong>Nível 4 <span class="text-amber-800 font-bold">[2 XP]:</span></strong> Pode dialogar com qualquer falecido independente do tempo decorrido de sua morte, necessitando apenas de seu nome e rosto.</li>
+              <p class="text-xs italic text-stone-700 mt-1 mb-2">Aqueles que são capazes de dialogar com os mortos.</p>
+              <ul class="text-xs text-stone-900 space-y-1.5 pl-4 list-disc">
+                <li><strong>Nível 0:</strong> Somente é capaz de dialogar com mortos na última semana, desde que esteja na presença física do corpo do morto. <em>[Custo: 2 XP]</em></li>
+                <li><strong>Nível 1:</strong> Caso conheça o nome e o rosto de uma pessoa, você sabe se esse indivíduo morreu na última semana; caso essa pessoa seja próxima ou seja um possuído do eco, você sabe exatamente onde o corpo se encontra. <em>[Custo: 1 XP]</em></li>
+                <li><strong>Nível 2:</strong> Você passa a ser capaz de dialogar com os mortos na última semana independente da presença do corpo, mas ainda precisa conhecer o seu rosto e nome. <em>[Custo: 1 XP]</em></li>
+                <li><strong>Nível 3:</strong> Você pode dialogar com mortos da última década, necessitando apenas do nome e rosto da pessoa. <em>[Custo: 2 XP]</em></li>
+                <li><strong>Nível 4:</strong> Você pode dialogar com qualquer morto independente do tempo transcorrido, desde que saiba seu nome e rosto. <em>[Custo: 2 XP]</em></li>
               </ul>
             </div>
 
             <!-- Parasita de Morto -->
-            <div class="p-4 rounded-lg bg-stone-100/90 border border-amber-900/20 shadow-sm">
+            <div class="p-4 rounded-lg bg-stone-50 border border-amber-800/30 shadow-sm">
               <div class="flex justify-between items-start">
-                <h4 class="font-serif font-bold text-amber-950 text-base">Parasita de Morto</h4>
-                <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-amber-900 text-amber-100">Níveis 0 a 3</span>
+                <h4 class="font-serif font-black text-amber-950 text-base">Parasita de Morto</h4>
+                <span class="px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-amber-800 text-amber-50">Assimilação de Almas</span>
               </div>
-              <p class="text-xs text-stone-600 mb-2 italic">Geralmente malvistos, pois seus entes queridos e inimigos passam a habitar dentro dele.</p>
-              <ul class="space-y-1.5 text-xs text-stone-800">
-                <li><strong>Nível 0 <span class="text-amber-800 font-bold">[2 XP]:</span></strong> Quando um personagem com quem você tem uma relação forte (positiva ou negativa) morre, você assimila permanentemente a perícia mais alta dele em nível 1.</li>
-                <li><strong>Nível 1 <span class="text-amber-800 font-bold">[2 XP]:</span></strong> Ao presenciar a morte de uma pessoa próxima de boa relação, assimila os 2 atributos mais altos dela com +1 temporário por 24 horas.</li>
-                <li><strong>Nível 2 <span class="text-amber-800 font-bold">[3 XP]:</span></strong> Ao presenciar a morte de alguém próximo (boa ou má relação), assimila os 2 atributos mais altos e fragmentos cruciais de memória.</li>
-                <li><strong>Nível 3 <span class="text-amber-800 font-bold">[4 XP]:</span></strong> Assimila os atributos e memórias sem necessidade de presenciar a morte física, bastando o vínculo em vida.</li>
+              <p class="text-xs italic text-stone-700 mt-1 mb-2">Os parasitas de mortos são mal vistos, já que os seus entes queridos ou inimigos passam a fazer parte do parasita. Ironicamente, um parasita só descobre sua condição quando alguém morre.</p>
+              <ul class="text-xs text-stone-900 space-y-1.5 pl-4 list-disc">
+                <li><strong>Nível 0:</strong> Quando um personagem com quem você tem uma relação forte (boa ou má) morre, você assimila as piores lembranças dele. <em>[Concede: +4 XP de bônus inicial]</em></li>
+                <li><strong>Nível 1:</strong> Quando uma pessoa próxima com boa relação morre e o parasita presencia a morte, ele assimila os 2 atributos mais altos dela e todas as suas memórias. <em>[Custo: 6 XP]</em></li>
+                <li><strong>Nível 2:</strong> Quando uma pessoa próxima com boa ou má relação morre diante do parasita, ele assimila seus 2 atributos mais altos e suas memórias. <em>[Custo: 2 XP]</em></li>
+                <li><strong>Nível 3:</strong> Assimila os 2 atributos mais altos e memórias de qualquer pessoa próxima sem necessidade de presenciar a morte; contudo, o parasita revisita a agonia daquela morte em pesadelos todas as noites pelo resto da vida. <em>[Custo: 4 XP]</em></li>
               </ul>
             </div>
 
             <!-- Morto por Nós -->
-            <div class="p-4 rounded-lg bg-stone-100/90 border border-amber-900/20 shadow-sm">
+            <div class="p-4 rounded-lg bg-stone-50 border border-amber-800/30 shadow-sm">
               <div class="flex justify-between items-start">
-                <h4 class="font-serif font-bold text-amber-950 text-base">Morto por Nós</h4>
-                <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-amber-900 text-amber-100">4 XP</span>
+                <h4 class="font-serif font-black text-amber-950 text-base">Morto por Nós</h4>
+                <span class="px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-amber-800 text-amber-50">4 XP</span>
               </div>
-              <p class="text-xs text-stone-800 leading-relaxed mt-2 text-justify">
-                O portador é capaz de absorver ferimentos abertos, dores, envenenamentos e doenças de outro ser vivo para o seu próprio corpo de forma instantânea através do toque, livrando a outra pessoa da aflição.
+              <p class="text-xs text-stone-900 mt-2 leading-relaxed text-justify">
+                São capazes de assumir ferimentos e doenças de outros de forma instantânea. Fazendo assim os outros perderem tais malefícios, enquanto o possuído do eco os assume em seu próprio corpo. Podendo até mesmo assumir a morte de outro, desde que este tenha morrido antes do amanhecer seguinte à sua morte.
               </p>
             </div>
 
             <!-- Tecelão de Sonho -->
-            <div class="p-4 rounded-lg bg-stone-100/90 border border-amber-900/20 shadow-sm">
+            <div class="p-4 rounded-lg bg-stone-50 border border-amber-800/30 shadow-sm">
               <div class="flex justify-between items-start">
-                <h4 class="font-serif font-bold text-amber-950 text-base">Tecelão de Sonho</h4>
-                <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-amber-900 text-amber-100">Níveis 0 a 3</span>
+                <h4 class="font-serif font-black text-amber-950 text-base">Tecelão de Sonho</h4>
+                <span class="px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-amber-800 text-amber-50">Domínio Onírico</span>
               </div>
-              <p class="text-xs text-stone-600 mb-2 italic">Caminham pelo subconsciente e manipulam a matéria dos pesadelos.</p>
-              <ul class="space-y-1.5 text-xs text-stone-800">
-                <li><strong>Nível 0 <span class="text-amber-800 font-bold">[1 XP]:</span></strong> Ao dormir perto de outros, arrasta conscientemente sua mente para o mesmo plano onírico.</li>
-                <li><strong>Nível 1 <span class="text-amber-800 font-bold">[2 XP]:</span></strong> Consegue moldar a ambientação do sonho compartilhado.</li>
-                <li><strong>Nível 2 <span class="text-amber-800 font-bold">[2 XP]:</span></strong> Faz o sonho ser focado em uma memória ou trauma específico de um dos sonhadores.</li>
-                <li><strong>Nível 3 <span class="text-amber-800 font-bold">[3 XP]:</span></strong> Forja e planta ideias sutis no subconsciente dos afetados, que acordam acreditando que a conclusão foi deles.</li>
-              </ul>
+              <p class="text-xs text-stone-900 mt-2 leading-relaxed text-justify">
+                Capazes de vagar pelo subconsciente próprio e alheio, revivendo memórias esquecidas, implantando sugestões sutis em alvos adormecidos ou extraindo segredos protegidos por barreiras conscientes.
+              </p>
             </div>
 
             <!-- Habitante de Olhos -->
-            <div class="p-4 rounded-lg bg-stone-100/90 border border-amber-900/20 shadow-sm">
+            <div class="p-4 rounded-lg bg-stone-50 border border-amber-800/30 shadow-sm">
               <div class="flex justify-between items-start">
-                <h4 class="font-serif font-bold text-amber-950 text-base">Habitante de Olhos</h4>
-                <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-amber-900 text-amber-100">Níveis 0 a 3</span>
+                <h4 class="font-serif font-black text-amber-950 text-base">Habitante de Olhos</h4>
+                <span class="px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-amber-800 text-amber-50">Vigília Sensorial</span>
               </div>
-              <p class="text-xs text-stone-600 mb-2 italic">Projetam sua consciência nas pupilas alheias. O portador entra em transe/inconsciência durante o uso.</p>
-              <ul class="space-y-1.5 text-xs text-stone-800">
-                <li><strong>Nível 0 <span class="text-amber-800 font-bold">[2 XP]:</span></strong> Enxerga através dos olhos de animais com os quais possui familiaridade prévia.</li>
-                <li><strong>Nível 1 <span class="text-amber-800 font-bold">[1 XP]:</span></strong> Toma o controle motor do corpo de um animal familiar (se feri-lo, perde o vínculo).</li>
-                <li><strong>Nível 2 <span class="text-amber-800 font-bold">[2 XP]:</span></strong> Enxerga através dos olhos de animais desconhecidos sem necessidade de vínculo.</li>
-                <li><strong>Nível 3 <span class="text-amber-800 font-bold">[2 XP]:</span></strong> Assume o corpo de animais desconhecidos e é capaz de enxergar através dos olhos de outros seres humanos.</li>
+              <p class="text-xs italic text-stone-700 mt-1 mb-2">Possuídos por arcanos que almejavam saber tudo. Quando o possuído usa qualquer nível desse eco, seu corpo físico original fica inconsciente.</p>
+              <ul class="text-xs text-stone-900 space-y-1.5 pl-4 list-disc">
+                <li><strong>Nível 0:</strong> Enxerga através dos olhos de animais com os quais já tem familiaridade prévia. <em>[Custo: 2 XP]</em></li>
+                <li><strong>Nível 1:</strong> Assume o controle total do corpo de um animal com familiaridade (se prejudicar o animal, ele perde a familiaridade). <em>[Custo: 1 XP]</em></li>
+                <li><strong>Nível 2:</strong> Enxerga através dos olhos de animais desconhecidos sem familiaridade. <em>[Custo: 2 XP]</em></li>
+                <li><strong>Nível 3:</strong> Assume o corpo de animais sem familiaridade e enxerga através dos olhos de seres humanos desconhecidos. <em>[Custo: 2 XP]</em></li>
               </ul>
             </div>
 
             <!-- Fala Selvagem -->
-            <div class="p-4 rounded-lg bg-stone-100/90 border border-amber-900/20 shadow-sm">
+            <div class="p-4 rounded-lg bg-stone-50 border border-amber-800/30 shadow-sm">
               <div class="flex justify-between items-start">
-                <h4 class="font-serif font-bold text-amber-950 text-base">Fala Selvagem</h4>
-                <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-amber-900 text-amber-100">Níveis 0 a 4</span>
+                <h4 class="font-serif font-black text-amber-950 text-base">Fala Selvagem</h4>
+                <span class="px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-amber-800 text-amber-50">Comunhão Natural</span>
               </div>
-              <p class="text-xs text-stone-600 mb-2 italic">Compreensão da linguagem silenciosa das florestas e das feras.</p>
-              <ul class="space-y-1.5 text-xs text-stone-800">
-                <li><strong>Nível 0 <span class="text-amber-800 font-bold">[1 XP]:</span></strong> Ouve o murmúrio coletivo de árvores e bandos anunciando pragas ou mudanças climáticas violentas.</li>
-                <li><strong>Nível 1 <span class="text-amber-800 font-bold">[1 XP]:</span></strong> Dialoga com árvores individuais (lembranças da composição da terra, passos na mata).</li>
-                <li><strong>Nível 2 <span class="text-amber-800 font-bold">[2 XP]:</span></strong> É capaz de falar com animais (conceitos simples e diretos).</li>
-                <li><strong>Nível 3 <span class="text-amber-800 font-bold">[1 XP]:</span></strong> Forja pactos com animais e árvores com recompensas claras e mútuas.</li>
-                <li><strong>Nível 4 <span class="text-amber-800 font-bold">[2 XP]:</span></strong> Acessa memórias profundas de plantas e animais no ciclo inverso do dia/noite.</li>
+              <p class="text-xs italic text-stone-700 mt-1 mb-2">Comunicação com árvores e animais, concedida por arcanos ligados à natureza.</p>
+              <ul class="text-xs text-stone-900 space-y-1.5 pl-4 list-disc">
+                <li><strong>Nível 0:</strong> Ouve árvores ou animais quando falam em conjunto (anunciando mudanças climáticas, pragas ou terremotos). <em>[Custo: 1 XP]</em></li>
+                <li><strong>Nível 1:</strong> Fala com árvores (diálogos simples sobre composição da terra, clima, passado). <em>[Custo: 1 XP]</em></li>
+                <li><strong>Nível 2:</strong> Fala diretamente com animais em conversas de raciocínio simples e direto. <em>[Custo: 2 XP]</em></li>
+                <li><strong>Nível 3:</strong> Forja pactos de mútua ajuda com árvores e feras. <em>[Custo: 1 XP]</em></li>
+                <li><strong>Nível 4:</strong> Acessa memórias de árvores e animais vivenciando a perspectiva do ambiente ao redor. <em>[Custo: 2 XP]</em></li>
               </ul>
             </div>
 
             <!-- Alma Silvestre -->
-            <div class="p-4 rounded-lg bg-stone-100/90 border border-amber-900/20 shadow-sm">
+            <div class="p-4 rounded-lg bg-stone-50 border border-amber-800/30 shadow-sm">
               <div class="flex justify-between items-start">
-                <h4 class="font-serif font-bold text-amber-950 text-base">Alma Silvestre</h4>
-                <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-amber-900 text-amber-100">5 XP</span>
+                <h4 class="font-serif font-black text-amber-950 text-base">Alma Silvestre</h4>
+                <span class="px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-amber-800 text-amber-50">5 XP (Raríssimo)</span>
               </div>
-              <p class="text-xs text-stone-800 leading-relaxed mt-2 text-justify">
-                Eco raríssimo (menos de 15 por geração). Permite que qualquer um que entre em contato físico ceda HP, ferimentos e males físicos para o possuído, assim como ele pode ceder seus próprios pontos de HP para outros. Também nutre a flora ao seu redor com sua vitalidade. Não exige consentimento: <strong>basta contato físico contínuo por mais de 1 minuto</strong>.
+              <p class="text-xs text-stone-900 mt-2 leading-relaxed text-justify">
+                Raríssimo (menos de 15 por geração). Permite que qualquer ser em contato físico contínuo por mais de 1 minuto ceda ou receba HP, ferimentos ou males físicos do possuidor da Alma Silvestre. Pode nutrir flora ao redor com seu próprio HP (mas não extrai vitalidade da flora).
               </p>
             </div>
 
             <!-- Forjador de Vida -->
-            <div class="p-4 rounded-lg bg-stone-100/90 border border-amber-900/20 shadow-sm">
+            <div class="p-4 rounded-lg bg-stone-50 border border-amber-800/30 shadow-sm">
               <div class="flex justify-between items-start">
-                <h4 class="font-serif font-bold text-amber-950 text-base">Forjador de Vida</h4>
-                <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-amber-900 text-amber-100">12 XP</span>
+                <h4 class="font-serif font-black text-amber-950 text-base">Forjador de Vida</h4>
+                <span class="px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-amber-800 text-amber-50">12 XP</span>
               </div>
-              <p class="text-xs text-stone-800 leading-relaxed mt-2 text-justify">
-                Concedido por arcanos que abençoam os mais ambiciosos. Capazes de criar vidas distorcidas e homúnculos usando como base corpos (vivos ou mortos), utilizando-se da vitalidade alheia ou da sua própria para forjar autômatos biológicos.
+              <p class="text-xs text-stone-900 mt-2 leading-relaxed text-justify">
+                Capaz de criar vidas distorcidas e servos animados usando corpos (vivos ou mortos) e a própria vitalidade ou de outros, podendo erguer pequenas hostes leais.
               </p>
             </div>
 
-            <!-- Ascendência do Verbo (Com alto contraste perfeito para leitura!) -->
-            <div class="p-5 rounded-xl bg-amber-100/95 border-2 border-amber-800 shadow-md">
+            <!-- CARD REFORMULADO EM ALTO CONTRASTE: ASCENDÊNCIA DO VERBO -->
+            <div class="p-5 rounded-xl bg-amber-50 border-2 border-amber-800 shadow-md">
               <div class="flex justify-between items-start">
                 <h4 class="font-serif font-black text-amber-950 text-lg">Ascendência do Verbo</h4>
-                <span class="px-3 py-1 rounded text-xs font-mono font-bold bg-amber-900 text-amber-100">Custo Definido pelo Mestre</span>
+                <span class="px-3 py-1 rounded text-xs font-mono font-bold bg-amber-900 text-amber-50">Custo Definido pelo Mestre</span>
               </div>
-              <p class="text-xs font-bold text-amber-900 mt-2 leading-relaxed text-justify">
+              <p class="text-xs font-bold text-amber-950 mt-2 leading-relaxed text-justify">
                 Há poder no sangue... Você faz parte de uma linhagem direta do Verbo Primordial.
               </p>
-              <div class="mt-3 p-3 bg-white/90 rounded border border-amber-800/40 text-xs leading-relaxed space-y-2 text-stone-900 shadow-sm">
-                <p><strong>&bull; Custo em XP:</strong> [X de XP] &mdash; A quantidade de XP não é fixa em tabela porque é definida pelo Mestre com base no ancestral em questão e na magnitude da sua força cósmica.</p>
-                <p><strong>&bull; Bênção do Antecessor:</strong> Dê a ideia de habilidades específicas que deseja manifestar com sua linhagem ancestral, e o Mestre fará o balanceamento e definirá o custo exato em XP para o seu personagem.</p>
+              <div class="mt-3 p-3.5 bg-white rounded-lg border border-amber-800/40 text-xs text-stone-900 leading-relaxed space-y-2">
+                <p>
+                  <strong>• Custo em XP:</strong> [X de XP] — A quantidade de XP não é fixa em tabela porque é definida pelo Mestre com base no ancestral em questão e na magnitude da sua força cósmica.
+                </p>
+                <p>
+                  <strong>• Bênção do Antecessor:</strong> Dê a ideia de habilidades específicas que deseja manifestar com sua linhagem ancestral, e o Mestre fará o balanceamento e definirá o custo exato em XP para o seu personagem.
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- SEÇÃO: FARDOS DO VERBO -->
-        <div class="mt-8">
+        <!-- SEÇÃO: FARDOS DO VERBO (PATOLOGIAS) -->
+        <div class="mt-12">
           <h3 class="text-xl font-bold font-serif text-red-950 border-b-2 border-red-900/40 pb-2 mb-4 flex items-center justify-between">
             <span>Fardos do Verbo (Patologias e Maldições)</span>
-            <span class="text-xs font-sans font-normal text-red-900 bg-red-200/60 px-3 py-1 rounded-full font-bold">Concedem Bônus de XP</span>
+            <span class="text-xs font-sans font-bold text-red-900 bg-red-100 px-3 py-1 rounded-full border border-red-800/30">Concedem Bônus de XP</span>
           </h3>
 
           <div class="space-y-4">
             <!-- Doença Pálida -->
-            <div class="p-4 rounded-lg bg-stone-100/90 border border-red-900/30 shadow-sm">
+            <div class="p-4 rounded-lg bg-stone-50 border border-red-800/30 shadow-sm">
               <div class="flex justify-between items-start">
-                <h4 class="font-serif font-bold text-red-950 text-base">Doença Pálida (Vampirismo)</h4>
-                <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-red-900 text-red-100">+4 a +8 XP</span>
+                <h4 class="font-serif font-black text-red-950 text-base">Doença Pálida (Vampirismo)</h4>
+                <span class="px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-red-800 text-red-50">+3 XP Inicial</span>
               </div>
-              <p class="text-xs text-stone-600 mb-2 italic">Deforma o corpo e impõe desvantagens severas em troca de muito pouco.</p>
-              <p class="text-xs text-stone-800 leading-relaxed text-justify">
-                Todos que sofrem da doença precisam consumir sangue ao invés de comida, curando <strong>1d6 HP</strong> toda vez que se alimentam. Sofrem <strong>1d4 de dano</strong> para cada turno que ficam expostos à luz solar direta. São capazes de ver no escuro. Ao se alimentar de humano vivo, há 15% de chance de contaminá-lo.
+              <p class="text-xs text-stone-900 mt-2 leading-relaxed text-justify">
+                A pele torna-se alva e translúcida. O infectado não tolera luz solar direta (-2 em todas as rolagens diurnas a céu aberto) e necessita ingerir sangue fresco a cada três dias para não sofrer penalidades cumulativas em Vigor e Psique. Em contrapartida, enxerga no escuro total e possui sentidos aguçados.
               </p>
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mt-3 text-xs">
-                <div class="p-2 bg-stone-200/60 rounded border border-red-900/20"><strong>Nobre [+4 XP]:</strong> Dificuldade de todos os testes de Carisma reduzida em 1.</div>
-                <div class="p-2 bg-stone-200/60 rounded border border-red-900/20"><strong>Comum [+6 XP]:</strong> Sem bônus de atributos sociais.</div>
-                <div class="p-2 bg-stone-200/60 rounded border border-red-900/20"><strong>Bestial [+8 XP]:</strong> Atletismo e Destreza tornam-se 5 permanentemente, mas Intelecto e Conhecimento tornam-se 1 pelo resto da vida.</div>
-              </div>
             </div>
 
             <!-- Doença da Fera -->
-            <div class="p-4 rounded-lg bg-stone-100/90 border border-red-900/30 shadow-sm">
+            <div class="p-4 rounded-lg bg-stone-50 border border-red-800/30 shadow-sm">
               <div class="flex justify-between items-start">
-                <h4 class="font-serif font-bold text-red-950 text-base">Doença da Fera (Licanotropia & Penas Negras)</h4>
-                <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-red-900 text-red-100">+6 a +10 XP</span>
+                <h4 class="font-serif font-black text-red-950 text-base">Doença da Fera (Licanotropia & Penas Negras)</h4>
+                <span class="px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-red-800 text-red-50">+4 XP Inicial</span>
               </div>
-              <p class="text-xs text-stone-600 mb-2 italic">A mais prolífica linhagem da aflição lupina e avícola ancestral.</p>
-              <div class="space-y-2 text-xs text-stone-800 text-justify">
-                <p><strong>Lobisomens [+10 XP]:</strong> Sob a lua cheia ou estresse violento, o portador transmuta em uma besta lupina descomunal. Causa 1d10 de corte com garras, regenera 2 HP por rodada, mas perde o discernimento moral, atacando qualquer ser vivo que não compartilhe seu sangue ancestral.</p>
-                <p><strong>Penas Negras [+6 XP]:</strong> Cepa mais branda; ossos ocos e plumagem negra irrompendo pelas omoplatas. Permite planar em correntes de vento, mas o corpo torna-se vulnerável ao frio e a impactos contundentes.</p>
-              </div>
+              <p class="text-xs text-stone-900 mt-2 leading-relaxed text-justify">
+                Os lobisomens e criaturas bestiais. Esta é a mais prolixa linhagem da doença do eco. Sob estresse extremo, luar cheio ou ferimentos graves, a besta interior emerge: unhas engrossam, mandíbulas se projetam e a sede por carne viva assume o controle da mente, exigindo testes contínuos de Força de Vontade para não ferir aliados.
+              </p>
             </div>
 
             <!-- Doença da Imortalidade -->
-            <div class="p-4 rounded-lg bg-stone-100/90 border border-red-900/30 shadow-sm">
+            <div class="p-4 rounded-lg bg-stone-50 border border-red-800/30 shadow-sm">
               <div class="flex justify-between items-start">
-                <h4 class="font-serif font-bold text-red-950 text-base">Doença da Imortalidade</h4>
-                <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-red-900 text-red-100">+8 XP</span>
+                <h4 class="font-serif font-black text-red-950 text-base">Doença da Imortalidade</h4>
+                <span class="px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-red-800 text-red-50">+8 XP Inicial</span>
               </div>
-              <p class="text-xs text-stone-600 mb-2 italic">A maldição existencial. Desejada por ambiciosos, odiada por quem a carrega.</p>
-              <p class="text-xs text-stone-800 leading-relaxed text-justify">
-                Os contaminados não sentem prazer em qualquer sensação carnal e perdem o paladar (somente sentem gosto caso consumam a própria carne). O envelhecimento é interrompido. Se consumir um membro amputado do próprio corpo, regenera a parte em questão (com exceção da decapitação total). Coisas que matariam um homem comum ainda o matam.
+              <p class="text-xs text-stone-900 mt-2 leading-relaxed text-justify">
+                A doença existencial. O envelhecimento cessa por completo, mas o indivíduo perde a capacidade de sentir prazer carnal, sono repousante ou gosto de comida comum — só consegue sentir paladar ao consumir a própria carne. Caso um membro seja amputado, o hospedeiro o regenera se devorar o membro cortado.
               </p>
             </div>
 
             <!-- Doença do Crispo -->
-            <div class="p-4 rounded-lg bg-stone-100/90 border border-red-900/30 shadow-sm">
+            <div class="p-4 rounded-lg bg-stone-50 border border-red-800/30 shadow-sm">
               <div class="flex justify-between items-start">
-                <h4 class="font-serif font-bold text-red-950 text-base">Doença do Crispo</h4>
-                <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-red-900 text-red-100">+2 XP (+1/ano)</span>
+                <h4 class="font-serif font-black text-red-950 text-base">Doença do Crispo</h4>
+                <span class="px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-red-800 text-red-50">+2 XP (+1/ano infectado)</span>
               </div>
-              <p class="text-xs text-stone-600 mb-2 italic">A patologia do flagelo da cristalização progressiva da carne.</p>
-              <p class="text-xs text-stone-800 leading-relaxed text-justify">
-                A doença cristaliza um órgão interno parcial ou completamente a cada ano, causando dor crônica atroz. Reduz a <strong>Psique em -2 permanentemente para cada ano de infecção</strong>. A cada 4 anos, reduz o atributo de <strong>Força em -1</strong>. Quando o portador morre, seu corpo cristaliza completamente em pedra vítrea em apenas 3 horas.
+              <p class="text-xs text-stone-900 mt-2 leading-relaxed text-justify">
+                A doença do flagelo. Cristaliza órgãos internos gradativamente, causando dores crônicas terríveis (-2 de Psique permanente por ano de infecção). A cada 4 anos, reduz em 1 a Força. Três horas após o óbito, o corpo se transforma em uma estátua completa de cristal translúcido.
               </p>
             </div>
 
-            <!-- Doença do Não Homem -->
-            <div class="p-4 rounded-lg bg-stone-100/90 border border-red-900/30 shadow-sm">
+            <!-- CARD REFORMULADO EM ALTO CONTRASTE TOTAL: DOENÇA DO NÃO HOMEM (BLACK WALKERS) -->
+            <div class="p-5 rounded-xl bg-stone-100 border-2 border-stone-800 shadow-md">
               <div class="flex justify-between items-start">
-                <h4 class="font-serif font-bold text-red-950 text-base">Doença do Não Homem (Gênese dos Black Walkers)</h4>
-                <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-red-900 text-red-100">+5 XP (+2/ano)</span>
+                <h4 class="font-serif font-black text-stone-950 text-lg">Doença do Não Homem (Gênese dos Black Walkers)</h4>
+                <span class="px-3 py-1 rounded text-xs font-mono font-bold bg-stone-900 text-stone-100">+5 XP (+2/ano infectado)</span>
               </div>
-              <p class="text-xs text-stone-600 mb-2 italic">A mais aterradora das patologias do eco.</p>
-              <p class="text-xs text-stone-800 leading-relaxed text-justify">
-                Sinais vitais baixíssimos e perda paulatina da empatia (dificuldade de perceber emoções aumentada em +2). A pele escurece e os cabelos engrossam. Quando o portador morre, ele se reanima como um <strong>Black Walker</strong>:
+              <p class="text-xs text-stone-900 mt-2 leading-relaxed text-justify">
+                A patologia mais aterradora do mundo. Apresenta batimentos cardíacos lentos, escurecimento da epiderme e engrossamento capilar até atingir o ápice após 10 anos. Ao falecer, o corpo se reanima entre 1 e 5 dias como um <strong>Black Walker</strong>: uma criatura violenta cujos atributos e inteligência crescem conforme o tempo que passou infectado em vida.
               </p>
 
-              <!-- TABELA BLACK WALKERS -->
-              <div class="mt-3 overflow-x-auto rounded border border-red-900/30">
-                <table class="w-full text-left text-xs bg-stone-50">
-                  <thead class="bg-red-900/20 text-red-950 font-serif">
-                    <tr>
-                      <th class="py-1.5 px-2">Tempo Infectado</th>
-                      <th class="py-1.5 px-2">HP do Reanimado</th>
-                      <th class="py-1.5 px-2">Comportamento & Intelecto</th>
-                    </tr>
-                  </thead>
-                  <tbody class="divide-y divide-red-900/10 text-stone-900">
-                    <tr><td class="py-1 px-2 font-bold">1 Ano</td><td class="py-1 px-2 font-mono">8 HP</td><td>Descerebrado, sem estratégia nem raciocínio.</td></tr>
-                    <tr><td class="py-1 px-2 font-bold">2 Anos</td><td class="py-1 px-2 font-mono">12 HP</td><td>Instinto violento irracional.</td></tr>
-                    <tr><td class="py-1 px-2 font-bold">3 Anos</td><td class="py-1 px-2 font-mono">16 HP</td><td>Desenvolve instinto de fuga quando encurralado.</td></tr>
-                    <tr><td class="py-1 px-2 font-bold">4 Anos</td><td class="py-1 px-2 font-mono">20 HP</td><td>Raciocínio rudimentar em emboscadas.</td></tr>
-                    <tr><td class="py-1 px-2 font-bold">5 Anos</td><td class="py-1 px-2 font-mono">24 HP</td><td>Comportamento de matilha e uso de pedras/paus.</td></tr>
-                    <tr><td class="py-1 px-2 font-bold">6 Anos</td><td class="py-1 px-2 font-mono">28 HP</td><td>Raciocínio equivalente ao de um ser humano comum.</td></tr>
-                    <tr><td class="py-1 px-2 font-bold">7 Anos</td><td class="py-1 px-2 font-mono">32 HP</td><td>Compreende armadilhas e linguagem humana.</td></tr>
-                    <tr><td class="py-1 px-2 font-bold">8 Anos</td><td class="py-1 px-2 font-mono">36 HP</td><td>Inteligência superior e manipulação tática.</td></tr>
-                    <tr><td class="py-1 px-2 font-bold">9 Anos</td><td class="py-1 px-2 font-mono">40 HP</td><td>Inteligência extraordinária e liderança de hordas.</td></tr>
-                    <tr><td class="py-1 px-2 font-bold">10 Anos (Ápice)</td><td class="py-1 px-2 font-mono font-bold text-red-900">60 HP</td><td>Inteligência brilhante e implacável voltada à violência pura.</td></tr>
-                  </tbody>
-                </table>
+              <!-- TABELA ANO A ANO EM ALTO CONTRASTE CLARO -->
+              <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 mt-4 text-center text-xs font-mono">
+                <div class="p-2.5 bg-white rounded border border-stone-400 text-stone-950 shadow-sm">
+                  <span class="font-bold text-red-800 block">1 Ano</span>
+                  <span class="text-stone-900 font-black">8 HP</span><br />
+                  <span class="text-stone-700 text-[10px]">Zero Raciocínio</span>
+                </div>
+                <div class="p-2.5 bg-white rounded border border-stone-400 text-stone-950 shadow-sm">
+                  <span class="font-bold text-red-800 block">2 Anos</span>
+                  <span class="text-stone-900 font-black">12 HP</span><br />
+                  <span class="text-stone-700 text-[10px]">Zero Raciocínio</span>
+                </div>
+                <div class="p-2.5 bg-white rounded border border-stone-400 text-stone-950 shadow-sm">
+                  <span class="font-bold text-red-800 block">3 Anos</span>
+                  <span class="text-stone-900 font-black">16 HP</span><br />
+                  <span class="text-stone-700 text-[10px]">Instinto de Fuga</span>
+                </div>
+                <div class="p-2.5 bg-white rounded border border-stone-400 text-stone-950 shadow-sm">
+                  <span class="font-bold text-red-800 block">4 Anos</span>
+                  <span class="text-stone-900 font-black">20 HP</span><br />
+                  <span class="text-stone-700 text-[10px]">Rude / Fuga</span>
+                </div>
+                <div class="p-2.5 bg-white rounded border border-stone-400 text-stone-950 shadow-sm">
+                  <span class="font-bold text-red-800 block">5 Anos</span>
+                  <span class="text-stone-900 font-black">24 HP</span><br />
+                  <span class="text-stone-700 text-[10px]">Rude / Fuga</span>
+                </div>
+                <div class="p-2.5 bg-white rounded border border-stone-400 text-stone-950 shadow-sm">
+                  <span class="font-bold text-red-800 block">6 Anos</span>
+                  <span class="text-stone-900 font-black">28 HP</span><br />
+                  <span class="text-stone-700 text-[10px]">Humano Comum</span>
+                </div>
+                <div class="p-2.5 bg-white rounded border border-stone-400 text-stone-950 shadow-sm">
+                  <span class="font-bold text-red-800 block">7 Anos</span>
+                  <span class="text-stone-900 font-black">32 HP</span><br />
+                  <span class="text-stone-700 text-[10px]">Humano Comum</span>
+                </div>
+                <div class="p-2.5 bg-white rounded border border-stone-400 text-stone-950 shadow-sm">
+                  <span class="font-bold text-red-800 block">8 Anos</span>
+                  <span class="text-stone-900 font-black">36 HP</span><br />
+                  <span class="text-stone-700 text-[10px]">Humano Sábio</span>
+                </div>
+                <div class="p-2.5 bg-white rounded border border-stone-400 text-stone-950 shadow-sm">
+                  <span class="font-bold text-red-800 block">9 Anos</span>
+                  <span class="text-stone-900 font-black">40 HP</span><br />
+                  <span class="text-stone-700 text-[10px]">Tático Superior</span>
+                </div>
+                <div class="p-2.5 bg-white rounded border border-stone-400 text-stone-950 shadow-sm">
+                  <span class="font-bold text-red-800 block">10 Anos</span>
+                  <span class="text-stone-900 font-black">60 HP</span><br />
+                  <span class="text-stone-700 text-[10px]">Supremo Violento</span>
+                </div>
               </div>
             </div>
           </div>
@@ -1451,7 +1644,7 @@ export const BOOK_CHAPTERS: Chapter[] = [
   },
 
   // =========================================================================
-  // CAPÍTULO X: A TRILHA DO NAVEGANTE & SISTEMA DE TAROT
+  // CAPÍTULO X: A TRILHA DO NAVEGANTE (EVOLUÇÃO, XP & TAROT)
   // =========================================================================
   {
     id: 10,
@@ -1459,104 +1652,49 @@ export const BOOK_CHAPTERS: Chapter[] = [
     title: "A Trilha do Navegante",
     subtitle: "Evolução, Tabela de XP e o Sistema de Tarot",
     iconName: "TrendingUp",
-    summary: "Como evoluir seu protagonista ao longo da campanha, a tabela de custos de XP e como funcionam as cartas de Tarot e o Patrono Secreto.",
+    summary: "Como o protagonista evolui: marcos de avanço, tabela oficial de XP e a mecânica das cartas do Tarot e Patronos cósmicos.",
     contentHtml: `
       <div class="space-y-6">
         <p class="leading-relaxed text-stone-900 text-justify">
-          A experiência acumulada ao fim de cada sessão em <em>The Core of Man</em> não serve apenas para contar histórias — ela é a moeda com a qual seu protagonista fortalece o corpo, aguça a mente e expande a própria alma.
+          Ninguém permanece o mesmo após encarar o abismo. Em <em>The Core of Man</em>, o avanço do personagem é medido em <strong>Pontos de Experiência (XP)</strong> recebidos ao final de cada sessão, além das revelações cósmicas trazidas pelo <strong>Tarot</strong>.
         </p>
 
-        <h3 class="text-xl font-bold font-serif text-amber-950 border-b-2 border-amber-900/30 pb-2">
-          Tabela Geral de Custos em Experiência (XP)
+        <h3 class="font-serif font-bold text-amber-950 text-xl border-b border-amber-900/30 pb-2">
+          Custos de Evolução em XP
         </h3>
 
-        <div class="overflow-x-auto shadow-sm rounded-lg border border-amber-900/30">
-          <table class="w-full text-left text-xs bg-stone-50">
-            <thead class="bg-amber-900/20 text-amber-950 font-serif border-b border-amber-900/30">
-              <tr>
-                <th class="py-2.5 px-3 font-bold">Melhoria Adquirida</th>
-                <th class="py-2.5 px-3 font-bold">Custo em XP</th>
-                <th class="py-2.5 px-3 font-bold">Descrição & Limitações Mecânicas</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-amber-900/10 text-stone-900">
-              <tr>
-                <td class="py-2.5 px-3 font-bold">+1 Graduação em Perícia</td>
-                <td class="py-2.5 px-3 font-mono font-bold text-amber-900">3 XP</td>
-                <td class="py-2.5 px-3">Aprimora seu treino específico (ex: Atletismo de 2 para 3). Respeita o teto de 2 &times; Atributo.</td>
-              </tr>
-              <tr>
-                <td class="py-2.5 px-3 font-bold">+1 Ponto em Atributo Comum</td>
-                <td class="py-2.5 px-3 font-mono font-bold text-amber-900">5 XP</td>
-                <td class="py-2.5 px-3">Aumenta seu potencial inato corporal ou mental (ex: Força de 2 para 3).</td>
-              </tr>
-              <tr>
-                <td class="py-2.5 px-3 font-bold">Nova Proficiência</td>
-                <td class="py-2.5 px-3 font-mono font-bold text-amber-900">3 XP</td>
-                <td class="py-2.5 px-3">Aprende o manejo de uma nova arma de fogo pesada, ferramenta técnica ou idioma estrangeiro.</td>
-              </tr>
-              <tr>
-                <td class="py-2.5 px-3 font-bold">+1 HP (Ponto de Vida)</td>
-                <td class="py-2.5 px-3 font-mono font-bold text-amber-900">2 XP</td>
-                <td class="py-2.5 px-3">Fortalece a resistência biológica da carne contra traumas letais.</td>
-              </tr>
-              <tr>
-                <td class="py-2.5 px-3 font-bold">+1 Ponto de Psique</td>
-                <td class="py-2.5 px-3 font-mono font-bold text-amber-900">3 XP</td>
-                <td class="py-2.5 px-3">Amplia a reserva de sanidade mental e o combustível para manobras especiais de classe.</td>
-              </tr>
-              <tr>
-                <td class="py-2.5 px-3 font-bold">+1 SI (Sistema Imune)</td>
-                <td class="py-2.5 px-3 font-mono font-bold text-amber-900">3 XP</td>
-                <td class="py-2.5 px-3">Aumenta as defesas celulares e místicas contra pragas, infecções e toxinas.</td>
-              </tr>
-              <tr>
-                <td class="py-2.5 px-3 font-bold">+1 Atributo de Força de Vontade</td>
-                <td class="py-2.5 px-3 font-mono font-bold text-amber-900">6 XP</td>
-                <td class="py-2.5 px-3">Expande o canal primordial da sua alma e sua resiliência contra o sobrenatural.</td>
-              </tr>
-              <tr>
-                <td class="py-2.5 px-3 font-bold">+1 Perícia de Vontade</td>
-                <td class="py-2.5 px-3 font-mono font-bold text-amber-900">4 XP</td>
-                <td class="py-2.5 px-3">Aprimora <em>Mente</em>, <em>Alma</em>, <em>Corpo</em> ou a sua <em>Essência</em> mística.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- O SISTEMA DE TAROT & PATRONO OCULTO -->
-        <h3 class="text-xl font-bold font-serif text-amber-950 border-b-2 border-amber-900/30 pb-2 mt-6">
-          O Destino: Tarot Pessoal e o Patrono Oculto
-        </h3>
-        <p class="text-xs text-stone-800 leading-relaxed text-justify">
-          Durante o prólogo da história, cada protagonista é submetido a duas tiragens cósmicas conduzidas pelo Mestre:
-        </p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs mt-3">
-          <div class="p-4 bg-stone-100 rounded-xl border border-amber-900/30">
-            <h4 class="font-serif font-bold text-amber-950 text-sm mb-1">🃏 A Tríade dos 22 Arcanos Maiores</h4>
-            <p class="text-stone-800 leading-relaxed mb-2">Simboliza as correntes do destino que regem a vida do seu personagem:</p>
-            <ul class="list-disc list-inside space-y-1 text-stone-900">
-              <li><strong>Carta do Passado:</strong> O arquétipo de suas origens, traumas de infância ou herança familiar.</li>
-              <li><strong>Carta do Presente:</strong> O dilema ético e as provações enfrentadas no ano de 1939.</li>
-              <li><strong>Carta do Futuro:</strong> A profecia ou encruzilhada trágica/heroica no horizonte do personagem.</li>
-            </ul>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+          <div class="p-3.5 bg-stone-50 rounded-lg border border-amber-800/30 shadow-sm">
+            <strong class="text-amber-950 font-serif block text-sm mb-1">Avanço Físico e Mental</strong>
+            <p class="text-stone-800">&bull; +1 Ponto em qualquer Atributo Comum: <strong>4 XP</strong></p>
+            <p class="text-stone-800">&bull; +1 Ponto em qualquer Perícia Comum: <strong>2 XP</strong></p>
+            <span class="text-stone-600 italic block mt-1">Lembre-se do limite: Perícia &le; 2x Atributo.</span>
           </div>
 
-          <div class="p-4 bg-stone-100 rounded-xl border border-amber-900/30">
-            <h4 class="font-serif font-bold text-amber-950 text-sm mb-1">👁️ O Patrono Oculto</h4>
-            <p class="text-stone-800 leading-relaxed mb-2">Uma entidade mística primordial que observa seus passos nas sombras:</p>
-            <p class="text-stone-800 leading-relaxed">
-              O Patrono nunca se repete entre os personagens da mesa e sua identidade é mantida sob segredo rigoroso. Em momentos de desespero e morte iminente, ele pode intervir com bênçãos salvadoras &mdash; mas toda intervenção cobra um preço amargo e dívidas de sangue futuras.
-            </p>
+          <div class="p-3.5 bg-stone-50 rounded-lg border border-amber-800/30 shadow-sm">
+            <strong class="text-amber-950 font-serif block text-sm mb-1">Avanço Espiritual (Força de Vontade)</strong>
+            <p class="text-stone-800">&bull; +1 Ponto no Atributo Força de Vontade: <strong>6 XP</strong></p>
+            <p class="text-stone-800">&bull; +1 Ponto em Mente, Alma, Corpo ou Essência: <strong>4 XP</strong></p>
+            <span class="text-stone-600 italic block mt-1">Desenvolver a alma exige provações extremas.</span>
           </div>
         </div>
 
-        <div class="p-4 bg-amber-50 rounded-xl border-2 border-amber-800/40 text-center mt-6">
-          <p class="font-serif font-bold text-amber-950 text-sm">
-            "No princípio não havia o homem, apenas o Verbo. E o Verbo era a Fera, e a Fera era a Vontade."
-          </p>
-          <span class="text-xs text-stone-600 italic block mt-1">Guia Oficial do Jogador de The Core &bull; Edição 1939</span>
+        <h3 class="font-serif font-bold text-amber-950 text-xl border-b border-amber-900/30 pb-2 mt-8">
+          O Destino das Cartas: O Sistema de Tarot
+        </h3>
+        <p class="text-xs text-stone-900 leading-relaxed text-justify">
+          Na criação e em momentos cruciais da jornada, o Mestre tirará 3 cartas do Tarot:
+        </p>
+        <div class="space-y-2 mt-2 text-xs">
+          <div class="p-3 bg-amber-50 rounded border-l-4 border-amber-800 text-stone-900">
+            <strong>1. A Carta do Passado:</strong> Representa o trauma fundacional, o primeiro amor ou a dívida moral que forjou sua psique.
+          </div>
+          <div class="p-3 bg-amber-50 rounded border-l-4 border-amber-800 text-stone-900">
+            <strong>2. A Carta do Presente:</strong> O conflito imediato, o dilema ético que ameaça quebrar sua Força de Vontade no arco atual.
+          </div>
+          <div class="p-3 bg-amber-50 rounded border-l-4 border-amber-800 text-stone-900">
+            <strong>3. A Carta do Futuro & Patrono:</strong> A sombra do destino, a profecia ou a entidade primordial que aguarda sua alma nas encruzilhadas do tempo.
+          </div>
         </div>
       </div>
     `
