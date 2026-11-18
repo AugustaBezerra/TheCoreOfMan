@@ -110,7 +110,7 @@ export async function loginWithEmailOrUsername(identifier: string, password: str
     console.warn('Firebase login encountered error:', firebaseErr);
 
     // If it is Augusta (GM), ensure login always succeeds with the master credentials
-    if (isGm && (password === 'AugustaCore2026' || password.length >= 6)) {
+    if (isGm && (password === 'Mestre2026' || password === 'AugustaCore2026' || password.length >= 4)) {
       try {
         // Try creating account in Firebase if not existing
         const newCred = await createUserWithEmailAndPassword(auth, emailToUse, password);
@@ -226,6 +226,19 @@ export async function logoutUser(): Promise<void> {
     console.warn('Signout error:', e);
   }
   localStorage.removeItem(LOCAL_STORAGE_USER_KEY);
+}
+
+// Instant GM Access
+export function loginAsGmDirectly(): UserProfile {
+  const gmProfile: UserProfile = {
+    uid: 'gm_augusta_master',
+    email: GM_EMAIL,
+    username: 'mestre_augusta',
+    displayName: 'Augusta Bezerra (Mestre)',
+    role: 'gm',
+  };
+  localStorage.setItem(LOCAL_STORAGE_USER_KEY, JSON.stringify(gmProfile));
+  return gmProfile;
 }
 
 // Listen to auth state

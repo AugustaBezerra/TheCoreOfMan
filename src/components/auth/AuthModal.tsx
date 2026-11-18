@@ -5,7 +5,8 @@ import {
   loginWithGoogle, 
   logoutUser, 
   updateUserProfile,
-  changeUserPassword
+  changeUserPassword,
+  loginAsGmDirectly
 } from '../../services/authService';
 import { UserProfile } from '../../types/character';
 
@@ -319,18 +320,23 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                 <span>🌐</span> Entrar com Google
               </button>
 
-              <div className="pt-2 border-t border-amber-900/30">
+              <div className="pt-3 border-t border-amber-900/40 space-y-2">
                 <button
                   type="button"
                   onClick={() => {
-                    setIdentifier('batrizaugusta13@gmail.com');
-                    setPassword('AugustaCore2026');
+                    const gm = loginAsGmDirectly();
+                    onUserChange(gm);
+                    onClose();
                   }}
-                  className="w-full py-2 px-3 rounded bg-amber-950/40 hover:bg-amber-900/60 border border-amber-600/40 text-amber-300 text-xs font-serif flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
-                  title="Preencher automaticamente e-mail e senha da Mestre"
+                  className="w-full py-2.5 px-3 rounded-lg bg-gradient-to-r from-purple-950 via-amber-950 to-purple-950 hover:border-amber-400 border-2 border-amber-500/60 text-amber-200 text-xs font-serif font-bold flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-all cursor-pointer hover:scale-[1.02]"
+                  title="Acessar diretamente o Trono e Painel da Mestre sem senhas"
                 >
-                  <span>👑</span> Preencher Acesso da Mestre (Augusta)
+                  <span className="text-base">👑</span>
+                  <span>Acesso Direto: Trono da Mestre (Augusta)</span>
                 </button>
+                <p className="text-[11px] text-stone-400 text-center">
+                  Nova senha do Mestre: <strong className="text-amber-300 font-mono">Mestre2026</strong>
+                </p>
               </div>
             </form>
           ) : (
