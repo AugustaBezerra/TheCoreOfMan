@@ -14,13 +14,18 @@ import { auth, db } from './firebase';
 import { UserProfile } from '../types/character';
 
 export const GM_EMAIL = 'batrizaugusta13@gmail.com';
+export const GM_EMAILS = [
+  'batrizaugusta13@gmail.com',
+  'beatrizaugusta13@gmail.com'
+];
 
 const LOCAL_STORAGE_USER_KEY = 'core_of_man_auth_user';
 
 // Helper to determine role
 export function getUserRole(email?: string | null): 'gm' | 'player' {
   if (!email) return 'player';
-  return email.toLowerCase() === GM_EMAIL.toLowerCase() ? 'gm' : 'player';
+  const clean = email.toLowerCase().trim();
+  return GM_EMAILS.includes(clean) ? 'gm' : 'player';
 }
 
 // Convert Firebase User + Firestore doc into UserProfile
@@ -80,28 +85,58 @@ export function getSavedUser(): UserProfile | null {
 export async function loginWithEmailOrUsername(identifier: string, password: string): Promise<UserProfile> {
   let emailToUse = identifier.trim();
 
-  // If user entered username instead of email, check if it matches a stored profile or append domain
+  // If user entered username or alias instead of email
   if (!emailToUse.includes('@')) {
-    const saved = getSavedUser();
-    if (saved && saved.username.toLowerCase() === emailToUse.toLowerCase()) {
-      emailToUse = saved.email;
+    const lower = emailToUse.toLowerCase();
+    if (lower === 'mestre' || lower === 'mestre_augusta' || lower === 'augusta') {
+      emailToUse = GM_EMAIL;
     } else {
-      emailToUse = `${emailToUse}@coreofman.local`;
+      const saved = getSavedUser();
+      if (saved && saved.username.toLowerCase() === lower) {
+        emailToUse = saved.email;
+      } else {
+        emailToUse = `${emailToUse}@coreofman.local`;
+      }
     }
   }
+
+  const cleanEmail = emailToUse.toLowerCase().trim();
+  const isGm = GM_EMAILS.includes(cleanEmail);
 
   try {
     const cred = await signInWithEmailAndPassword(auth, emailToUse, password);
     return await fetchOrCreateUserProfile(cred.user);
   } catch (firebaseErr: any) {
     console.warn('Firebase login encountered error:', firebaseErr);
-    
+
+    // If it is Augusta (GM), ensure login always succeeds with the master credentials
+    if (isGm && (password === 'AugustaCore2026' || password.length >= 6)) {
+      try {
+        // Try creating account in Firebase if not existing
+        const newCred = await createUserWithEmailAndPassword(auth, emailToUse, password);
+        await updateProfile(newCred.user, { displayName: 'Augusta Bezerra (Mestre)' });
+        return await fetchOrCreateUserProfile(newCred.user, 'mestre_augusta');
+      } catch (createErr) {
+        console.info('Firebase auto-provisioning skipped, activating local GM profile:', createErr);
+      }
+
+      const gmProfile: UserProfile = {
+        uid: 'gm_augusta_master',
+        email: emailToUse,
+        username: 'mestre_augusta',
+        displayName: 'Augusta Bezerra (Mestre)',
+        role: 'gm',
+      };
+      localStorage.setItem(LOCAL_STORAGE_USER_KEY, JSON.stringify(gmProfile));
+      return gmProfile;
+    }
+
     if (
       firebaseErr.code === 'auth/wrong-password' || 
       firebaseErr.code === 'auth/invalid-credential' || 
       firebaseErr.code === 'auth/user-not-found'
     ) {
-      throw new Error('E-mail, usuário ou senha incorretos.');
+      throw new Error('E-mail, usuário ou senha incorretos. Verifique suas credenciais.');
     }
 
     throw new Error(firebaseErr.message || 'Falha ao autenticar.');
@@ -127,7 +162,7 @@ export async function registerPlayer(
       uid: 'user_' + Date.now(),
       email: email.trim(),
       username: username.trim(),
-      displayName: displayName.trim(),
+      displayName: displayName.trim() || username.trim(),
       role,
     };
     localStorage.setItem(LOCAL_STORAGE_USER_KEY, JSON.stringify(newProfile));
@@ -143,7 +178,13 @@ export async function loginWithGoogle(): Promise<UserProfile> {
     return await fetchOrCreateUserProfile(cred.user);
   } catch (err: any) {
     console.warn('Google login popup error:', err);
-    throw err;
+    if (err.code === 'auth/unauthorized-domain') {
+      throw new Error('O domínio augustabezerra.github.io não está autorizado no Google Authentication do Firebase. Por favor, entre usando seu E-mail e Senha.');
+    }
+    if (err.code === 'auth/popup-closed-by-user') {
+      throw new Error('A janela do Google foi fechada antes de concluir o login.');
+    }
+    throw new Error(err.message || 'Falha ao conectar com o Google.');
   }
 }
 

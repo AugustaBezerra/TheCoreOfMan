@@ -318,6 +318,20 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               >
                 <span>🌐</span> Entrar com Google
               </button>
+
+              <div className="pt-2 border-t border-amber-900/30">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIdentifier('batrizaugusta13@gmail.com');
+                    setPassword('AugustaCore2026');
+                  }}
+                  className="w-full py-2 px-3 rounded bg-amber-950/40 hover:bg-amber-900/60 border border-amber-600/40 text-amber-300 text-xs font-serif flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                  title="Preencher automaticamente e-mail e senha da Mestre"
+                >
+                  <span>👑</span> Preencher Acesso da Mestre (Augusta)
+                </button>
+              </div>
             </form>
           ) : (
             /* VIEW: REGISTER */
