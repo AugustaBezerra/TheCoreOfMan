@@ -50,3 +50,12 @@ serviceAccount*.json
 *.njsproj
 *.sln
 *.sw?
+
+# Vídeos e Renderizações de Mídia (NUNCA subir para o Git / Web)
+*.mp4
+*.webm
+*.mov
+*.avi
+out/
+oneshorts/
+*.ogg

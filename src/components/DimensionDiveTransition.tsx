@@ -37,7 +37,6 @@ export const DimensionDiveTransition: React.FC<DimensionDiveTransitionProps> = (
         autoPlay
         controls={false}
         loop={false}
-        onEnded={onFinish}
       />
 
       {/* Skip button for user convenience */}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, BookOpen, Edit3, Save, Check } from 'lucide-react';
 
 interface BiographyBookModalProps {
@@ -19,6 +19,10 @@ export const BiographyBookModal: React.FC<BiographyBookModalProps> = ({
   const [isEditing, setIsEditing] = useState(false);
   const [bioText, setBioText] = useState(biography);
   const [savedAlert, setSavedAlert] = useState(false);
+
+  useEffect(() => {
+    setBioText(biography);
+  }, [biography, isOpen]);
 
   if (!isOpen) return null;
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Sparkles, RefreshCw } from 'lucide-react';
 
 interface DiceRollerModalProps {
@@ -25,6 +25,12 @@ export const DiceRollerModal: React.FC<DiceRollerModalProps> = ({
   const [isRolling, setIsRolling] = useState(false);
   const [lastRoll, setLastRoll] = useState<{ raw: number; total: number; isCrit: boolean; isFumble: boolean } | null>(null);
   const [rotation, setRotation] = useState(0);
+
+  // Sincronizar modificador ativo sempre que o modal abrir ou o bônus mudar
+  useEffect(() => {
+    setBonus(activeBonus);
+    setLastRoll(null);
+  }, [activeBonus, isOpen]);
 
   if (!isOpen) return null;
 
@@ -115,13 +121,13 @@ export const DiceRollerModal: React.FC<DiceRollerModalProps> = ({
                 💀 Falha Crítica!
               </span>
             )}
-            <div className="text-xl font-serif font-bold text-amber-100 mt-2">
-              Resultado: <span className="text-white font-black">{lastRoll.raw}</span>
+            <div className="text-2xl md:text-3xl font-serif font-black text-amber-100 mt-3">
+              Resultado no Dado: <span className="text-white font-black">{lastRoll.raw}</span>
               {bonus !== 0 && (
                 <span className="text-amber-300">
                   {' '}
                   {bonus >= 0 ? `+ ${bonus}` : `- ${Math.abs(bonus)}`} ={' '}
-                  <span className="text-2xl text-amber-400 font-black">{lastRoll.total}</span>
+                  <span className="text-3xl md:text-4xl text-amber-400 font-black">{lastRoll.total}</span>
                 </span>
               )}
             </div>
@@ -129,20 +135,22 @@ export const DiceRollerModal: React.FC<DiceRollerModalProps> = ({
         )}
 
         {/* Bonus Modifier Controls */}
-        <div className="flex items-center space-x-3 my-4 bg-slate-900/90 border border-amber-500/40 px-4 py-2 rounded-2xl shadow-inner">
-          <span className="text-xs font-serif font-bold text-amber-300 uppercase">Modificador:</span>
+        <div className="flex items-center space-x-4 my-4 bg-slate-900/90 border-2 border-amber-500/50 px-5 py-3 rounded-2xl shadow-inner">
+          <span className="text-base sm:text-lg font-serif font-black text-amber-300 uppercase">Modificador:</span>
           <button
             onClick={() => setBonus((b) => b - 1)}
-            className="w-7 h-7 rounded-lg bg-slate-800 text-amber-200 hover:text-white font-bold cursor-pointer"
+            className="w-10 h-10 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-200 hover:text-white font-black text-xl flex items-center justify-center cursor-pointer transition-colors"
+            title="Diminuir Modificador (-1)"
           >
             -
           </button>
-          <span className="text-sm font-mono font-bold text-white min-w-[24px]">
+          <span className="text-2xl font-mono font-black text-white min-w-[36px] text-center">
             {bonus >= 0 ? `+${bonus}` : bonus}
           </span>
           <button
             onClick={() => setBonus((b) => b + 1)}
-            className="w-7 h-7 rounded-lg bg-slate-800 text-amber-200 hover:text-white font-bold cursor-pointer"
+            className="w-10 h-10 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-200 hover:text-white font-black text-xl flex items-center justify-center cursor-pointer transition-colors"
+            title="Aumentar Modificador (+1)"
           >
             +
           </button>

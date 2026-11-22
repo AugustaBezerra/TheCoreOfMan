@@ -19,7 +19,9 @@ import {
   Swords, 
   Users, 
   Scroll, 
-  TrendingUp
+  TrendingUp,
+  User,
+  LogIn
 } from 'lucide-react';
 import { StarfieldCanvas } from './StarfieldCanvas';
 import { MusicPlayerWidget } from './MusicPlayerWidget';
@@ -151,14 +153,14 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
       <StarfieldCanvas density={selectedChapter ? 30 : 90} speedFactor={0.3} />
 
       {/* Top Header Bar */}
-      <header className="relative z-30 w-full px-4 md:px-8 py-3.5 flex items-center justify-between border-b border-amber-500/20 bg-slate-950/75 backdrop-blur-md">
+      <header className="relative z-30 w-full px-4 md:px-8 py-3 flex items-center justify-between border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
         {/* Left: Return Button and Login Button */}
         <div className="flex items-center space-x-2 md:space-x-3">
           <button
             onClick={onReturnToGrimoire}
-            className="flex items-center space-x-2 px-3 py-1.5 md:px-4 md:py-2 rounded-lg bg-amber-950/40 border border-amber-500/40 text-amber-200 hover:text-white hover:bg-amber-900/60 transition-all font-serif text-xs md:text-sm tracking-wider shadow-lg group cursor-pointer"
+            className="flex items-center space-x-2 px-3.5 py-2 rounded-lg bg-slate-900/80 border border-slate-700/80 text-slate-300 hover:text-amber-100 hover:border-amber-500/40 transition-all font-sans text-xs md:text-sm font-medium shadow-sm group cursor-pointer"
           >
-            <ArrowLeft className="w-4 h-4 text-amber-400 group-hover:-translate-x-1 transition-transform" />
+            <ArrowLeft className="w-4 h-4 text-slate-400 group-hover:text-amber-300 group-hover:-translate-x-0.5 transition-all" />
             <span className="hidden sm:inline">Fechar e Voltar ao Livro</span>
             <span className="sm:hidden">Voltar</span>
           </button>
@@ -167,11 +169,15 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
           {onOpenAuth && (
             <button
               onClick={onOpenAuth}
-              className="flex items-center space-x-1.5 md:space-x-2 px-3 py-1.5 md:px-4 md:py-2 rounded-lg bg-amber-950/50 border border-amber-500/50 text-amber-200 hover:text-amber-100 hover:bg-amber-900/70 hover:border-amber-400 transition-all font-serif text-xs md:text-sm tracking-wider shadow-lg cursor-pointer"
+              className="flex items-center space-x-1.5 md:space-x-2 px-3.5 py-2 rounded-lg bg-slate-900/80 border border-slate-700/80 text-slate-300 hover:text-amber-100 hover:border-amber-500/40 transition-all font-sans text-xs md:text-sm font-medium shadow-sm cursor-pointer"
               title={currentUser ? "Meu Perfil" : "Entrar no Sistema"}
             >
-              <span>{currentUser ? '👤' : '🔑'}</span>
-              <span>{currentUser ? currentUser.displayName : 'Entrar'}</span>
+              {currentUser ? (
+                <User className="w-4 h-4 text-amber-400" />
+              ) : (
+                <LogIn className="w-4 h-4 text-slate-400" />
+              )}
+              <span className="truncate max-w-[140px]">{currentUser ? currentUser.displayName : 'Entrar'}</span>
             </button>
           )}
 
@@ -179,10 +185,10 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
           {currentUser && onOpenHangar && (
             <button
               onClick={onOpenHangar}
-              className="hidden sm:flex items-center space-x-1.5 px-3 py-1.5 md:py-2 rounded-lg bg-stone-900/80 border border-stone-700 text-stone-300 hover:text-amber-200 hover:border-amber-500/40 text-xs md:text-sm font-serif transition-all cursor-pointer"
+              className="hidden sm:flex items-center space-x-1.5 px-3.5 py-2 rounded-lg bg-slate-900/80 border border-slate-700/80 text-slate-300 hover:text-amber-100 hover:border-amber-500/40 text-xs md:text-sm font-sans font-medium transition-all cursor-pointer shadow-sm"
               title="Acessar Hangar de Navegantes"
             >
-              <span>⚙️</span>
+              <Compass className="w-4 h-4 text-amber-400" />
               <span>Hangar</span>
             </button>
           )}
@@ -193,10 +199,10 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
           <img
             src="./art/emblem.webp"
             alt="Core Emblem"
-            className="w-8 h-8 object-contain drop-shadow-[0_0_12px_rgba(212,175,55,0.8)]"
+            className="w-8 h-8 object-contain drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]"
           />
           <div>
-            <span className="text-[10px] font-serif tracking-[0.3em] uppercase text-amber-300/80 block">
+            <span className="text-[10px] font-sans tracking-[0.25em] uppercase text-slate-400 block font-medium">
               Universo dos Céus Partidos
             </span>
             <span className="text-sm font-bold font-serif text-gold-gradient tracking-widest block">
@@ -206,29 +212,35 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
         </div>
 
         {/* Right Controls: Scene Switcher & Music Player Widget */}
-        <div className="flex items-center space-x-3">
-          {/* Scene Switcher */}
-          <div className="hidden md:flex items-center bg-slate-900/80 rounded-lg p-1 border border-amber-500/30 text-xs font-serif">
+        <div className="flex items-center space-x-4">
+          {/* Scene Switcher - Baldur's Gate 3 Underline Tabs */}
+          <div className="hidden md:flex items-center space-x-1 border-b border-slate-800 pb-0.5">
             <button
               onClick={() => setBackgroundScene('universe')}
-              className={`px-2.5 py-1 rounded transition-colors cursor-pointer ${
-                backgroundScene === 'universe' ? 'bg-amber-600 text-slate-950 font-bold' : 'text-slate-300 hover:text-white'
+              className={`px-3 py-1.5 text-xs font-sans transition-all cursor-pointer ${
+                backgroundScene === 'universe'
+                  ? 'text-amber-200 font-semibold border-b-2 border-amber-500 shadow-[0_4px_12px_-2px_rgba(212,175,55,0.25)]'
+                  : 'text-slate-400 font-medium hover:text-slate-200'
               }`}
             >
               Universo
             </button>
             <button
               onClick={() => setBackgroundScene('library')}
-              className={`px-2.5 py-1 rounded transition-colors cursor-pointer ${
-                backgroundScene === 'library' ? 'bg-amber-600 text-slate-950 font-bold' : 'text-slate-300 hover:text-white'
+              className={`px-3 py-1.5 text-xs font-sans transition-all cursor-pointer ${
+                backgroundScene === 'library'
+                  ? 'text-amber-200 font-semibold border-b-2 border-amber-500 shadow-[0_4px_12px_-2px_rgba(212,175,55,0.25)]'
+                  : 'text-slate-400 font-medium hover:text-slate-200'
               }`}
             >
               Biblioteca
             </button>
             <button
               onClick={() => setBackgroundScene('citadel')}
-              className={`px-2.5 py-1 rounded transition-colors cursor-pointer ${
-                backgroundScene === 'citadel' ? 'bg-amber-600 text-slate-950 font-bold' : 'text-slate-300 hover:text-white'
+              className={`px-3 py-1.5 text-xs font-sans transition-all cursor-pointer ${
+                backgroundScene === 'citadel'
+                  ? 'text-amber-200 font-semibold border-b-2 border-amber-500 shadow-[0_4px_12px_-2px_rgba(212,175,55,0.25)]'
+                  : 'text-slate-400 font-medium hover:text-slate-200'
               }`}
             >
               Cidadela
@@ -248,81 +260,85 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
              ========================================================================= */
           <div className="w-full max-w-6xl">
             {/* Banner & Search */}
-            <div className="mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="mb-6 flex flex-col md:flex-row items-center justify-between gap-4">
               <div>
-                <h2 className="text-2xl md:text-3xl font-serif font-black text-amber-100 flex items-center space-x-2.5 drop-shadow">
-                  <BookOpen className="w-7 h-7 text-amber-400" />
+                <h2 className="text-2xl md:text-3xl font-serif font-black text-slate-100 flex items-center space-x-3 tracking-wide">
+                  <BookOpen className="w-6 h-6 text-amber-400" />
                   <span>Compêndio de Regras e Ambientação</span>
                 </h2>
-                <p className="text-sm md:text-base text-amber-200 font-semibold drop-shadow mt-1.5">
+                <p className="text-sm md:text-base text-slate-400 font-sans mt-1">
                   Selecione um capítulo celestial para desvendar suas leis, sistemas e mistérios.
                 </p>
               </div>
 
-              {/* Search Bar with high contrast */}
-              <div className="relative w-full md:w-88">
-                <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-amber-400" />
+              {/* Search Bar - Sleek Dark Slate */}
+              <div className="relative w-full md:w-80">
+                <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Pesquisar Dons, Fardos, Regras..."
-                  className="w-full pl-10 pr-4 py-2.5 bg-slate-950/90 border-2 border-amber-500/50 rounded-full text-sm font-serif font-medium text-amber-100 placeholder:text-slate-400 focus:outline-none focus:border-amber-300 focus:ring-2 focus:ring-amber-400/40 backdrop-blur-md shadow-lg"
+                  className="w-full pl-10 pr-4 py-2 bg-slate-950/80 border border-slate-700/80 focus:border-amber-500/60 rounded-xl text-sm font-sans text-slate-200 placeholder:text-slate-500 focus:outline-none transition-all shadow-sm"
                 />
               </div>
             </div>
 
-            {/* Chapters Grid with High Contrast Typography */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Skyrim Runed Divider */}
+            <div className="flex items-center justify-center my-6 space-x-4 opacity-40">
+              <div className="h-[1px] w-32 bg-gradient-to-r from-transparent to-amber-500/50" />
+              <span className="text-amber-400 text-xs font-serif tracking-[0.3em]">✦</span>
+              <div className="h-[1px] w-32 bg-gradient-to-l from-transparent to-amber-500/50" />
+            </div>
+
+            {/* Chapters Grid with Noble Slate Aesthetic & High Contrast */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {filteredChapters.map((chapter) => (
                 <div
                   key={chapter.id}
                   onClick={() => handleSelectChapter(chapter)}
-                  className={`group relative p-6 rounded-2xl cursor-pointer transition-all duration-300 border-2 flex flex-col justify-between backdrop-blur-xl overflow-hidden shadow-xl ${
+                  className={`group relative p-5 md:p-6 rounded-xl cursor-pointer transition-all duration-200 flex flex-col justify-between backdrop-blur-md shadow-sm border ${
                     chapter.id === 9
-                      ? 'bg-gradient-to-br from-amber-950/90 via-slate-950/95 to-red-950/90 border-amber-400 shadow-[0_0_35px_rgba(212,175,55,0.35)] hover:border-amber-300 hover:scale-[1.02]'
-                      : 'bg-slate-950/90 border-amber-500/40 hover:border-amber-400 hover:bg-slate-900/95 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(212,175,55,0.25)]'
+                      ? 'bg-[#0f121d] border-amber-500/30 hover:border-amber-500/60 hover:bg-[#141827]'
+                      : 'bg-[#0c1019] border-slate-800 hover:border-amber-500/40 hover:bg-[#0f1422]'
                   }`}
                 >
-                  {/* Subtle Corner Ornament Glow */}
-                  <div className="absolute top-0 right-0 w-28 h-28 bg-amber-500/10 rounded-bl-full pointer-events-none group-hover:bg-amber-500/20 transition-colors" />
-
                   <div>
                     {/* Chapter Header */}
-                    <div className="flex items-center justify-between mb-3.5">
+                    <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center space-x-2.5">
-                        <span className="font-mono text-xs font-black text-amber-300 px-2.5 py-1 rounded bg-amber-950/80 border border-amber-500/50 shadow">
+                        <span className="font-mono text-xs font-semibold text-amber-300/90 px-2 py-0.5 rounded bg-slate-900 border border-slate-700/60 shadow-sm">
                           {chapter.roman}
                         </span>
-                        <div className="text-amber-300 group-hover:text-amber-100 transition-colors">
-                          {iconMap[chapter.iconName] || <BookOpen className="w-5 h-5" />}
+                        <div className="text-amber-400/80 group-hover:text-amber-300 transition-colors">
+                          {iconMap[chapter.iconName] || <BookOpen className="w-4 h-4" />}
                         </div>
                       </div>
 
                       {chapter.id === 9 && (
-                        <span className="text-[11px] font-mono font-black tracking-wider uppercase text-amber-200 bg-amber-900/90 px-2.5 py-1 rounded-full border border-amber-400 shadow-md animate-pulse">
+                        <span className="text-[10px] font-mono uppercase tracking-wider text-amber-300 bg-amber-950/40 px-2 py-0.5 rounded border border-amber-500/30">
                           Integral &bull; Níveis 0-5
                         </span>
                       )}
                     </div>
 
-                    <h3 className="font-serif font-black text-xl md:text-2xl text-amber-100 group-hover:text-gold-gradient transition-colors mb-1.5 drop-shadow">
+                    <h3 className="font-serif font-bold text-lg md:text-xl text-slate-100 group-hover:text-amber-200 transition-colors mb-1">
                       {chapter.title}
                     </h3>
 
-                    <h4 className="text-xs md:text-sm text-amber-300 font-serif font-bold tracking-wide mb-3">
+                    <h4 className="text-xs text-amber-400/80 font-sans font-medium uppercase tracking-wider mb-2.5">
                       {chapter.subtitle}
                     </h4>
 
-                    <p className="text-sm md:text-base text-slate-100 font-reading leading-relaxed line-clamp-3 font-normal drop-shadow-sm">
+                    <p className="text-sm text-slate-300 font-sans leading-relaxed line-clamp-3">
                       {chapter.summary}
                     </p>
                   </div>
 
                   {/* Read Link */}
-                  <div className="mt-5 pt-3.5 border-t border-amber-500/30 flex items-center justify-between text-sm font-serif font-bold text-amber-300 group-hover:text-white transition-colors">
+                  <div className="mt-5 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-sans font-medium uppercase tracking-wider text-slate-400 group-hover:text-amber-300 transition-colors">
                     <span>Abrir Pergaminho</span>
-                    <span className="group-hover:translate-x-1.5 transition-transform text-base">&rarr;</span>
+                    <span className="group-hover:translate-x-1 transition-transform text-sm">&rarr;</span>
                   </div>
                 </div>
               ))}
@@ -334,12 +350,12 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
              ========================================================================= */
           <div className="relative w-full max-w-5xl h-full flex flex-col my-auto pb-4">
             {/* Top Reader Actions Bar */}
-            <div className="flex items-center justify-between mb-3 px-2">
+            <div className="flex items-center justify-between mb-3 px-1">
               <button
                 onClick={() => setSelectedChapter(null)}
-                className="flex items-center space-x-2 px-4 py-2 rounded-xl bg-slate-900/90 border border-amber-500/50 text-amber-200 hover:text-white hover:bg-slate-800 text-sm font-serif font-bold tracking-wider shadow-lg cursor-pointer transition-all hover:scale-105"
+                className="flex items-center space-x-2 px-3.5 py-1.5 rounded-lg bg-slate-900/80 border border-slate-700/80 text-slate-300 hover:text-amber-100 hover:border-amber-500/40 text-xs md:text-sm font-sans font-medium shadow-sm cursor-pointer transition-all"
               >
-                <ArrowLeft className="w-4 h-4" />
+                <ArrowLeft className="w-4 h-4 text-slate-400 group-hover:text-amber-300" />
                 <span>Voltar ao Códice</span>
               </button>
 
@@ -347,35 +363,35 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
               <div className="flex items-center space-x-2">
                 <button
                   onClick={handlePrevChapter}
-                  className="flex items-center space-x-1 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-amber-500/50 text-amber-200 hover:text-white text-xs md:text-sm font-serif font-semibold tracking-wider cursor-pointer transition-all hover:bg-slate-800"
+                  className="flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-700/80 text-slate-300 hover:text-amber-100 hover:border-amber-500/40 text-xs font-sans font-medium cursor-pointer transition-all"
                   title="Capítulo Anterior"
                 >
-                  <ChevronLeft className="w-4 h-4" />
+                  <ChevronLeft className="w-4 h-4 text-slate-400" />
                   <span className="hidden sm:inline">Anterior</span>
                 </button>
-                <span className="text-sm font-mono text-amber-300 font-bold px-3 py-1 rounded-lg bg-black/60 border border-amber-500/30">
+                <span className="text-xs font-mono text-amber-300/90 font-semibold px-2.5 py-1 rounded bg-slate-900 border border-slate-700/60 shadow-sm">
                   {selectedChapter.roman} / X
                 </span>
                 <button
                   onClick={handleNextChapter}
-                  className="flex items-center space-x-1 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-amber-500/50 text-amber-200 hover:text-white text-xs md:text-sm font-serif font-semibold tracking-wider cursor-pointer transition-all hover:bg-slate-800"
+                  className="flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-700/80 text-slate-300 hover:text-amber-100 hover:border-amber-500/40 text-xs font-sans font-medium cursor-pointer transition-all"
                   title="Próximo Capítulo"
                 >
                   <span className="hidden sm:inline">Próximo</span>
-                  <ChevronRight className="w-4 h-4" />
+                  <ChevronRight className="w-4 h-4 text-slate-400" />
                 </button>
                 <button
                   onClick={() => setSelectedChapter(null)}
-                  className="p-2 rounded-xl bg-slate-900/90 border border-red-500/50 text-red-300 hover:text-white hover:bg-red-950/80 cursor-pointer transition-colors"
+                  className="p-1.5 rounded-lg bg-slate-900/80 border border-slate-700/80 text-slate-400 hover:text-rose-300 hover:border-rose-500/40 cursor-pointer transition-all shadow-sm"
                   title="Fechar"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4" />
                 </button>
               </div>
             </div>
 
             {/* The Parchment Sheet with Animated Gear Pillars */}
-            <div className="relative flex-1 rounded-2xl shadow-[0_0_80px_rgba(0,0,0,0.95)] border-4 border-[#8c6d3b] overflow-hidden flex flex-col text-stone-950 font-reading bg-[#0a0f1d]">
+            <div className="relative flex-1 rounded-2xl shadow-[0_0_60px_rgba(0,0,0,0.85)] border-2 border-[#8c6d3b]/70 overflow-hidden flex flex-col text-stone-950 font-reading bg-[#0a0f1d]">
               
               {/* Central Parchment Texture (Clean center, no sidebars baked in) */}
               <div 
@@ -476,15 +492,15 @@ export const CosmicUniverseExplorer: React.FC<CosmicUniverseExplorerProps> = ({
       </main>
 
       {/* Footer */}
-      <footer className="relative z-20 w-full px-6 py-3 border-t border-amber-500/20 bg-slate-950/80 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-slate-400">
+      <footer className="relative z-20 w-full px-6 py-2.5 border-t border-slate-800/80 bg-slate-950/85 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-slate-400">
         <div className="flex items-center space-x-2 mb-1 sm:mb-0">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-emerald-500/80 animate-pulse" />
           <span>PORTAL CÓSMICO SINTONIZADO</span>
         </div>
         <span>10 CAPÍTULOS INTEGRADOS &bull; DONS DO CERNE & FARDOS DO VERBO COMPLETOS</span>
         <button
           onClick={onReturnToGrimoire}
-          className="hover:text-amber-300 transition-colors underline font-serif cursor-pointer"
+          className="hover:text-amber-300 text-slate-400 transition-colors font-sans cursor-pointer"
         >
           Retornar ao Grimório
         </button>

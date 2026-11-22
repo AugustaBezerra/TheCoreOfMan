@@ -13,7 +13,8 @@ import { Character, UserProfile } from './types/character';
 import { onAuthUserChange } from './services/authService';
 import { 
   saveCharacter, 
-  subscribePlayerCharacters 
+  subscribePlayerCharacters,
+  getOrCreateLibraryCharacter
 } from './services/characterService';
 
 export type ScreenState = 'grimoire' | 'transition' | 'universe' | 'hangar' | 'sheet' | 'gm';
@@ -30,6 +31,17 @@ export const App: React.FC = () => {
   const [isDiceOpen, setIsDiceOpen] = useState(false);
   const [sharedWorldType, setSharedWorldType] = useState<'maps' | 'bestiary' | 'npcs' | null>(null);
 
+  // Global characters & session participants
+  const [allCharacters, setAllCharacters] = useState<Character[]>([]);
+  const [sessionCharacterIds, setSessionCharacterIds] = useState<string[]>(() => {
+    try {
+      const raw = localStorage.getItem('core_of_man_active_session');
+      return raw ? JSON.parse(raw) : [];
+    } catch {
+      return [];
+    }
+  });
+
   // Initialize Auth
   useEffect(() => {
     const unsubAuth = onAuthUserChange((user) => {
@@ -41,7 +53,26 @@ export const App: React.FC = () => {
     };
   }, []);
 
-  // Subscribe to characters only when authenticated
+  // Subscribe to all characters for session & GM view
+  useEffect(() => {
+    const unsubAll = subscribePlayerCharacters('all', (chars) => {
+      setAllCharacters(chars);
+      setSessionCharacterIds((prev) => {
+        if (prev.length === 0 && chars.length > 0) {
+          const alive = chars.filter((c) => c.status !== 'fallen').map((c) => c.id);
+          localStorage.setItem('core_of_man_active_session', JSON.stringify(alive));
+          return alive;
+        }
+        return prev;
+      });
+    });
+
+    return () => {
+      if (typeof unsubAll === 'function') unsubAll();
+    };
+  }, []);
+
+  // Subscribe to active player's character
   useEffect(() => {
     if (!currentUser) {
       setActiveCharacter(null);
@@ -60,6 +91,32 @@ export const App: React.FC = () => {
       if (typeof unsubChars === 'function') unsubChars();
     };
   }, [currentUser]);
+
+  const handleToggleCharacterInSession = (charId: string) => {
+    setSessionCharacterIds((prev) => {
+      const updated = prev.includes(charId) 
+        ? prev.filter((id) => id !== charId) 
+        : [...prev, charId];
+      localStorage.setItem('core_of_man_active_session', JSON.stringify(updated));
+      return updated;
+    });
+  };
+
+  const handleOpenCharacterByNameOrId = async (nameOrId: string) => {
+    let found = allCharacters.find(
+      (c) => c.id === nameOrId || c.name.toLowerCase() === nameOrId.toLowerCase()
+    );
+    if (!found) {
+      found = await getOrCreateLibraryCharacter({
+        name: nameOrId,
+        userId: currentUser?.uid,
+        playerName: currentUser?.displayName || 'Mestre Augusta',
+      });
+    }
+    if (found) {
+      handleOpenSheetForChar(found);
+    }
+  };
 
   // Keyboard shortcut: TAB toggles Radial Compass ONLY when logged in and in game view
   useEffect(() => {
@@ -140,14 +197,16 @@ export const App: React.FC = () => {
           
           {/* Left: Quick screen jumps */}
           <div className="flex items-center space-x-2 sm:space-x-3">
-            <button
-              onClick={() => setIsRadialOpen(true)}
-              className="flex items-center space-x-2 px-3 py-1.5 rounded-xl border border-amber-400/60 bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-400 text-stone-950 font-serif font-bold text-xs uppercase tracking-wider shadow-[0_0_15px_rgba(245,158,11,0.4)] transition-all hover:scale-105"
-              title="Abrir Astrolábio Celestial (TAB)"
-            >
-              <span>🧭</span>
-              <span className="hidden sm:inline">Astrolábio</span>
-            </button>
+            {currentUser?.role !== 'gm' && (
+              <button
+                onClick={() => setIsRadialOpen(true)}
+                className="flex items-center space-x-2 px-3 py-1.5 rounded-xl border border-amber-400/60 bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-400 text-stone-950 font-serif font-bold text-xs uppercase tracking-wider shadow-[0_0_15px_rgba(245,158,11,0.4)] transition-all hover:scale-105"
+                title="Abrir Astrolábio Celestial (TAB)"
+              >
+                <span>🧭</span>
+                <span className="hidden sm:inline">Astrolábio</span>
+              </button>
+            )}
 
             <button
               onClick={() => setScreen('hangar')}
@@ -172,8 +231,8 @@ export const App: React.FC = () => {
                 onClick={() => setScreen('gm')}
                 className={`px-3 py-1.5 rounded-lg border text-xs font-serif font-bold transition-all ${
                   screen === 'gm'
-                    ? 'border-purple-400 bg-purple-900/60 text-purple-200 shadow-[0_0_15px_rgba(168,85,247,0.4)]'
-                    : 'border-purple-900/60 text-purple-400 hover:text-purple-200'
+                    ? 'border-amber-400 bg-amber-950/60 text-amber-200 shadow-[0_0_12px_rgba(212,175,55,0.25)]'
+                    : 'border-amber-900/50 bg-slate-900/40 text-amber-300/80 hover:text-amber-200 hover:border-amber-600/60'
                 }`}
               >
                 👑 Trono da Mestre
@@ -183,7 +242,7 @@ export const App: React.FC = () => {
 
           {/* Right: Active Character badge, D20 roller, and User Profile */}
           <div className="flex items-center space-x-2 sm:space-x-3">
-            {activeCharacter && screen !== 'sheet' && (
+            {activeCharacter && screen !== 'sheet' && currentUser?.role !== 'gm' && (
               <button
                 onClick={() => handleOpenSheetForChar(activeCharacter)}
                 className="hidden md:flex items-center space-x-2 px-3 py-1 rounded-xl border border-amber-600/30 bg-stone-900/80 hover:bg-stone-800 text-xs font-serif text-amber-200 transition-colors"
@@ -247,17 +306,20 @@ export const App: React.FC = () => {
 
         {/* VIEW 4: CHARACTER HANGAR */}
         {screen === 'hangar' && (
-          <CharacterHangar
-            currentUser={currentUser}
-            activeCharacter={activeCharacter}
-            onSelectCharacter={(char) => {
-              setActiveCharacter(char);
-              setIsRadialOpen(true);
-            }}
-            onOpenSheet={(char) => handleOpenSheetForChar(char)}
-            onOpenGmScreen={() => setScreen('gm')}
-            onOpenAuth={() => setIsAuthOpen(true)}
-          />
+          <div className="h-full w-full overflow-hidden flex flex-col">
+            <CharacterHangar
+              currentUser={currentUser}
+              activeCharacter={activeCharacter}
+              onSelectCharacter={(char) => {
+                setActiveCharacter(char);
+                setIsRadialOpen(true);
+              }}
+              onOpenSheet={(char) => handleOpenSheetForChar(char)}
+              onOpenGmScreen={() => setScreen('gm')}
+              onOpenAuth={() => setIsAuthOpen(true)}
+              onOpenAstrolabe={() => setIsRadialOpen(true)}
+            />
+          </div>
         )}
 
         {/* VIEW 5: FULL CHARACTER SHEET */}
@@ -267,7 +329,9 @@ export const App: React.FC = () => {
               character={activeCharacter}
               initialTab={sheetTab}
               onSaveCharacter={handleSaveCharacter}
-              onBackToCompass={() => setIsRadialOpen(true)}
+              onBack={() => setScreen(currentUser?.role === 'gm' ? 'gm' : 'hangar')}
+              backLabel={currentUser?.role === 'gm' ? 'Voltar para a Biblioteca' : 'Voltar para o Hangar'}
+              onBackToCompass={() => (currentUser?.role === 'gm' ? setScreen('gm') : setIsRadialOpen(true))}
               isGmView={currentUser?.role === 'gm'}
             />
           </div>
@@ -286,8 +350,8 @@ export const App: React.FC = () => {
 
       </div>
 
-      {/* FLOATING ACTION PILL FOR RADIAL COMPASS (Only when logged in) */}
-      {currentUser && screen !== 'grimoire' && screen !== 'transition' && !isRadialOpen && (
+      {/* FLOATING ACTION PILL FOR RADIAL COMPASS (Only for players, not GM) */}
+      {currentUser && currentUser.role !== 'gm' && screen !== 'grimoire' && screen !== 'transition' && !isRadialOpen && (
         <button
           onClick={() => setIsRadialOpen(true)}
           className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full border-2 border-amber-400 bg-stone-950/95 text-amber-300 shadow-[0_0_25px_rgba(245,158,11,0.5)] flex items-center justify-center text-2xl hover:scale-110 active:scale-95 transition-all group cursor-pointer"
@@ -301,6 +365,11 @@ export const App: React.FC = () => {
       <RadialCompassMenu
         isOpen={isRadialOpen}
         activeCharacter={activeCharacter}
+        currentUser={currentUser}
+        allCharacters={allCharacters}
+        sessionCharacterIds={sessionCharacterIds}
+        onToggleCharacterInSession={handleToggleCharacterInSession}
+        onOpenCharacterSheet={handleOpenCharacterByNameOrId}
         onSelectAction={handleRadialAction}
         onClose={() => setIsRadialOpen(false)}
       />

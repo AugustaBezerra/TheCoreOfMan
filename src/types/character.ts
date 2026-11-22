@@ -3,51 +3,58 @@ export interface CharacterAttributes {
     value: number;
     pericias: {
       atletismo: number;
+      brutalidade: number;
       luta: number;
-      potencia: number;
-    };
-  };
-  agilidade: {
-    value: number;
-    pericias: {
-      acrobacia: number;
-      furtividade: number;
-      pontaria: number;
-      pilotagem: number;
     };
   };
   vigor: {
     value: number;
     pericias: {
-      resistencia: number;
-      fortitude: number;
+      constituicao: number;
+      recuperacao: number;
+      tolerancia: number;
+    };
+  };
+  destreza: {
+    value: number;
+    pericias: {
+      acrobacia: number;
+      furtividade: number;
+      mira: number;
+    };
+  };
+  carisma: {
+    value: number;
+    pericias: {
+      animais: number;
+      labia: number;
+      teatralidade: number;
+    };
+  };
+  conhecimento: {
+    value: number;
+    pericias: {
+      historia: number;
+      mito: number;
+      raciocinio: number;
+      oficio: number;
+    };
+  };
+  inteligencia: {
+    value: number;
+    pericias: {
+      intuicao: number;
+      percepcao: number;
       sobrevivencia: number;
     };
   };
-  intelecto: {
+  forcaDeVontade: {
     value: number;
     pericias: {
-      engenhariaEter: number;
-      medicina: number;
-      misticismo: number;
-      historia: number;
-    };
-  };
-  percepcao: {
-    value: number;
-    pericias: {
-      investigacao: number;
-      intuicao: number;
-      prontidao: number;
-    };
-  };
-  presenca: {
-    value: number;
-    pericias: {
-      diplomacia: number;
-      enganacao: number;
-      intimidacao: number;
-      vontade: number;
+      mente: number;
+      alma: number;
+      corpo: number;
+      essencia: number;
     };
   };
 }
@@ -124,4 +131,5 @@ export interface SharedMediaItem {
   imageUrl: string;
   category: 'mapa' | 'criatura' | 'cidade' | 'artefato' | 'cenario' | 'handout';
   isSecret: boolean; // Se false: visível a todos os jogadores!
+  content?: string; // Texto completo, história, pistas e notas da Mestre
 }
